@@ -1,0 +1,13 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editors
+.vscode/
+.idea/
+*.swp
+
+# Nothing else needs ignoring: this site has no build step, no
+# package manager and no dependencies. Everything that makes it
+# run is committed on purpose.

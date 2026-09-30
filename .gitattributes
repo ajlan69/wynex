@@ -1,0 +1,5 @@
+# Keep the working copy identical on Windows, macOS and Linux so a
+# single-file site does not produce whole-file diffs over CRLF alone.
+* text=auto eol=lf
+*.html text eol=lf
+*.txt text eol=lf
