@@ -1,1090 +1,737 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Professional portfolio websites for students, creators, freelancers and professionals.">
-<title>WYNEX — Portfolio Websites That Get You Noticed</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+     WYNEX — single-page site.
+     EDIT THESE FOUR VALUES ANYWHERE THEY APPEAR (marked "EDIT"):
+       1. WhatsApp number  2. UPI ID  3. Instagram handle  4. Email
+     ============================================================ -->
+<title>WYNEX — Custom Portfolio Websites in Kerala &amp; India | Starting ₹1,999, Delivered in 48 Hours</title>
+<meta name="description" content="WYNEX is an independent web-design service based in Kerala, serving clients across India. Custom portfolio websites for students, creators, freelancers, designers, developers, photographers and small businesses. Starting ₹1,999. 48-hour delivery. 50% advance, 50% after delivery. UPI accepted.">
+<meta name="keywords" content="portfolio website India, portfolio website Kerala, personal website India, portfolio website for students, portfolio website for freelancers, portfolio website for creators, custom portfolio website Kerala">
+<meta name="theme-color" content="#fbfbfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e13" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://ajlan69.github.io/wynex/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WYNEX">
+<meta property="og:title" content="WYNEX — Custom Portfolio Websites. Based in Kerala. Built for India.">
+<meta property="og:description" content="Your work deserves a website that looks as good as your work. Starting ₹1,999. Delivered in 48 hours. 50% advance, UPI accepted.">
+<meta property="og:url" content="https://ajlan69.github.io/wynex/">
+<meta property="og:image" content="https://ajlan69.github.io/wynex/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..900&family=Fraunces:opsz,wght@9..144,300..700&family=JetBrains+Mono:wght@400..700&display=swap">
-<script>try{var L="minimal-pro,glassmorphism,bento,neo-brutalism,dark-tech,editorial,luxury,creative,immersive,terminal",s=localStorage.getItem("fc-theme");if(!s||L.split(",").indexOf(s)<0)s="minimal-pro";document.documentElement.setAttribute("data-theme",s)}catch(e){document.documentElement.setAttribute("data-theme","minimal-pro")}</script>
-<style>
-:root{
-/* Three families carry every theme's voice: a neo-grotesque sans, a
-   high-contrast variable serif, and a technical mono. Each theme
-   reassigns --ff / --ffd / --ffm; stacks stay identical so a theme
-   swap never causes reflow of the whole page. */
---ff:"Inter",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
---ffd:"Inter",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
---ffm:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
---r:18px;--r-sm:12px;--r-lg:24px;--bw:1px;--blur:14px;--tilt:0deg;--sh:none;--bg-img:none;
---bg:#f4f5f9;--text:#0e1116;--muted:#5b6373;--line:#e2e6ee;--stroke:#d3d9e4;--stroke-hi:#bcc4d2;--navline:rgba(0,0,0,.09);--link:#4d5565;--pbtn:#14171d;--pbtn-h:#000;--pbtn-fg:#fff;--sec:#1b202a;--sec-bg:#eaeef5;--badge:#4d5565;--badge-bg:rgba(0,0,0,.025);--card:#fff;--card2:#f1f3f8;--step:#fff;--num:#79818f;--feat:#2b313b;--feat-ln:#eceff4;--dim:#6b7382;--foot:#6b7382;--tt-sh:0 6px 18px rgba(20,24,45,.10);
---accent:#111827;--accent2:#111827;--green:#15a05f;--icon-bg:#f1f3f8;--icon-fg:#111827;--pop:#14171d;--pop-fg:#fff;--h1g:linear-gradient(90deg,#111827,#6b7280);--glow:rgba(107,70,245,.10);--feat-bs:0 0 0 1px rgba(17,24,39,.12);
---proj1:linear-gradient(135deg,#eef0f6,#dbd5f7);--proj2:linear-gradient(135deg,#eaf1f0,#d2e5dd);--proj3:linear-gradient(135deg,#f3eeeb,#e7dbd1);--mock:#fbfcfe;--mock-bd:#dbe0ea;--mock-ln:#e4e8f0;--mock-tx:#79818f;
---cta:linear-gradient(135deg,#f1edff,#eef1f7);--cta-ln:#e0daf7
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "WYNEX",
+  "url": "https://ajlan69.github.io/wynex/",
+  "description": "Independent web-design service based in Kerala, India. Custom portfolio websites for students, creators, freelancers, designers, developers, photographers, professionals and small businesses.",
+  "areaServed": "IN",
+  "availableLanguage": ["en"],
+  "priceRange": "₹1999 - ₹9999",
+  "email": "ajlanabduljlaeel@gmail.com",
+  "sameAs": ["https://instagram.com/wynex.studio"],
+  "openingHours": "Mo-Su",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Kerala",
+    "addressCountry": "IN"
+  }
 }
-/* ============================================================
-   SHARED FOUNDATION — motion and depth vocabulary
-   Every theme speaks through these tokens instead of writing
-   its own transition values inline. A theme opts in by
-   overriding them in its own block; anything it leaves alone
-   keeps the calm, physical default below.
-   ============================================================ */
-html{
---sp:1.6rem;--gap:clamp(1rem,2.2vw,1.5rem);
---ease:cubic-bezier(.22,1,.36,1);--ease-back:cubic-bezier(.34,1.4,.64,1);
---dur:.62s;--dur-s:.3s;--dur-l:1.05s;
---lift:translate3d(0,-4px,0);--lift-y:-4px;
---shadow-1:0 1px 2px rgba(15,20,40,.05),0 8px 22px -12px rgba(15,20,40,.14);
---shadow-2:0 2px 4px rgba(15,20,40,.05),0 18px 40px -16px rgba(15,20,40,.2);
---card-t:background var(--card),border-color var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease),translate var(--dur-s) var(--ease);
---card-h:translate var(--lift);--card-bs:var(--shadow-1);
---btn-t:background var(--dur-s) var(--ease),color var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease),translate var(--dur-s) var(--ease)
-}
-nav,.menu{position:relative;z-index:60;transition:background var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease),translate var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease)}
-.hero .lead,.hero h1,.section-head h2{text-wrap:balance}
-p{text-wrap:pretty}
-/* Belt and braces: the runtime already skips the reveal engine under
-   reduced motion, and this guarantees visibility even if a theme's
-   hidden state were ever applied on a later resize. */
-@media(prefers-reduced-motion:reduce){
-html.fc-reveal [data-rv]{opacity:1!important;translate:none!important;translate:0 0!important;transform:none!important;transition:none!important;animation:none!important}
-*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-}
-[data-theme="dark-tech"],[data-theme="immersive"],[data-theme="luxury"],[data-theme="terminal"]{
---text:#f6f7fb;--muted:#9da4b3;--line:#252a35;--stroke:#343a48;--stroke-hi:#3a4050;--navline:rgba(255,255,255,.08);--link:#b8bdc9;--pbtn:#fff;--pbtn-h:#e9e9ed;--pbtn-fg:#080a0f;--sec:#e7e9ef;--sec-bg:#151922;--badge:#c7cbd5;--badge-bg:rgba(255,255,255,.025);--card:#10131a;--card2:#151922;--step:#0d1016;--num:#8f96a4;--feat:#d1d5de;--feat-ln:#20242e;--dim:#686f7e;--foot:#727987;--tt-sh:0 6px 18px rgba(0,0,0,.4)
-}
-
-/* ============================================================
-   SPLASH - a white curtain on first paint.
-   Deliberately pure CSS: the exit animation ends on
-   visibility:hidden, so the page becomes interactive on schedule
-   even if JavaScript is blocked or fails. The script that follows
-   only tidies the node away and adds skip-on-interaction.
-   ============================================================ */
-.splash{position:fixed;inset:0;z-index:9999;background:#fff;display:grid;place-items:center;animation:splashOut .7s cubic-bezier(.22,1,.36,1) 1.05s forwards}
-.splash-in{display:grid;justify-items:center;gap:20px;animation:splashIn .8s cubic-bezier(.22,1,.36,1) both}
-.splash-mark{font-family:var(--ffd);font-size:clamp(30px,7vw,58px);font-weight:900;letter-spacing:.28em;text-indent:.28em;line-height:1;color:#0b0d11}
-.splash-rule{width:clamp(96px,18vw,190px);height:2px;background:#0b0d11;transform-origin:left center;animation:splashRule 1.05s cubic-bezier(.22,1,.36,1) both}
-.splash-tag{margin:0;font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#8b93a2}
-@keyframes splashIn{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
-@keyframes splashRule{from{scale:0 1}to{scale:1 1}}
-@keyframes splashOut{to{opacity:0;visibility:hidden}}
-/* The blanket reduced-motion reset above forces animation-duration to ~0
-   with !important, so these must carry !important too or the curtain would
-   sit blank on screen for the full delay before blinking out. */
-@media(prefers-reduced-motion:reduce){
-.splash{animation:splashOut .25s linear .1s forwards!important}
-.splash-in{animation:none!important;opacity:1}
-.splash-rule{animation:splashRule .1s linear both!important}
-}
-
-/* ============================================================
-   GLASSMORPHISM — design tokens
-   The shared tokens are remapped to glass values, so the base
-   component rules inherit the material without per-component
-   rewrites. The --g* tokens drive the layered surface below.
-   ============================================================ */
-[data-theme="glassmorphism"]{
-/* environment: light sources that sit *behind* the glass.
-   One mesh for the entire page, held as bare rgb triplets so each
-   stop can fade to its own hue at zero alpha (see the environment
-   block below). All five are mid-luminance and close in hue, so any
-   two of them blend instead of one banding over another. */
---m1:79 70 229;--m2:124 58 237;--m3:14 165 233;--m4:45 212 191;--m5:168 85 247;--env-a:.6;
-/* material: edge highlight, refraction, ambient occlusion.
-   Deliberately no blur on the panels themselves - depth comes from
-   transparency, a lit top edge and shadow, so the background stays
-   readable straight through. Only the nav and hero blur the
-   environment behind them, and only via the three tokens below. */
---g-hi:rgba(255,255,255,.26);--g-edge:rgba(255,255,255,.08);--g-ao:rgba(0,0,0,.38);
---g-veil-top:rgba(255,255,255,.075);--g-veil-bot:rgba(255,255,255,.012);
---g-cursor:rgba(255,255,255,.11);
-/* blur budget - the only two frosted surfaces in the theme.
-   Set any of these to `none` to return that surface to sharp. */
---nav-blur:blur(14px) saturate(1.5);--nav-blur-up:blur(24px) saturate(1.75);--hero-blur:blur(18px) saturate(1.4);
-/* transparency levels: low alpha, thin lit edge, deep soft shadow */
---g1-bg:rgba(255,255,255,.04);--g1-bd:rgba(255,255,255,.11);--g1-sh:0 8px 22px -12px rgba(0,0,0,.6);
-/* depth level 2 — cards */
---g2-bg:rgba(255,255,255,.055);--g2-bd:rgba(255,255,255,.13);--g2-sh:0 18px 44px -22px rgba(0,0,0,.66);
-/* depth level 3 — featured / raised */
---g3-bg:rgba(255,255,255,.08);--g3-bd:rgba(255,255,255,.2);--g3-sh:0 26px 60px -26px rgba(0,0,0,.7);
-/* depth level 4 — large surfaces (hero, cta): nearest the viewer */
---g4-bg:rgba(255,255,255,.035);--g4-bd:rgba(255,255,255,.11);--g4-sh:0 34px 80px -34px rgba(0,0,0,.72);
-/* remapped shared tokens */
---bg:#070b16;--text:#eef2ff;--muted:#a9b4d2;--link:#c3cdea;
---line:rgba(255,255,255,.11);--stroke:rgba(255,255,255,.15);--stroke-hi:rgba(255,255,255,.32);--navline:rgba(255,255,255,.13);
---card:var(--g2-bg);--card2:rgba(255,255,255,.07);--step:var(--g1-bg);--num:#b3bdd8;--feat:#dae1f6;--feat-ln:rgba(255,255,255,.09);--dim:#b3bdd8;--foot:#b3bdd8;
---pbtn:rgba(255,255,255,.13);--pbtn-h:rgba(255,255,255,.2);--pbtn-fg:#eef2ff;--sec:#dae1f6;--sec-bg:rgba(255,255,255,.08);--badge:#c3cdea;--badge-bg:rgba(255,255,255,.06);
---accent:#8fa8ff;--accent2:#5eead4;--green:#34d399;--icon-bg:rgba(255,255,255,.07);--icon-fg:#a8bcff;--pop:#3f5fd6;--pop-fg:#fff;
---h1g:linear-gradient(100deg,#ffffff,#a8bcff 55%,#5eead4);--glow:rgba(63,95,214,.2);
---proj1:linear-gradient(135deg,rgba(59,91,219,.4),rgba(109,40,217,.34));--proj2:linear-gradient(135deg,rgba(14,116,144,.4),rgba(4,120,87,.34));--proj3:linear-gradient(135deg,rgba(157,23,77,.4),rgba(180,83,9,.32));
---mock:rgba(255,255,255,.055);--mock-bd:rgba(255,255,255,.15);--mock-ln:rgba(255,255,255,.28);--mock-tx:#a8bcff;
---cta:var(--g4-bg);--cta-ln:rgba(255,255,255,.11);
---feat-bs:0 0 0 1px rgba(255,255,255,.16),0 30px 70px -30px rgba(0,0,0,.7);--tt-sh:0 10px 30px -10px rgba(0,0,0,.6);
---r:22px;--r-sm:14px;--r-lg:32px;--sh:var(--g2-sh);--bw:1px;--blur:0px;--tilt:0deg
-}
-
-[data-theme="bento"]{--accent:#2563eb;--accent2:#0ea5e9;--icon-bg:#e8f0fe;--icon-fg:#2563eb;--pop:#2563eb;--h1g:linear-gradient(100deg,#0f172a,#2563eb 52%,#0ea5e9);--glow:rgba(37,99,235,.14);--r:26px;--r-sm:16px;--r-lg:34px;--sh:0 2px 4px rgba(15,23,42,.03),0 18px 40px -22px rgba(15,23,42,.22);--tt-sh:0 8px 22px rgba(16,24,40,.1);--feat-bs:0 0 0 1px rgba(37,99,235,.2);--bg-img:radial-gradient(circle at 1px 1px,rgba(16,24,40,.07) 1px,transparent 0);--dur:.72s;--dur-s:.38s;--ease:cubic-bezier(.34,1.18,.64,1);--lift-y:-6px;--lift:translate3d(0,-6px,0)}
-[data-theme="bento"] body{background-size:26px 26px}
-
-/* --- the grid itself is the layout, not a container for a layout --- */
-/* One anchor cell spanning two rows, two satellites beside it. Each
-   cell is its own coloured surface, so the section reads as a set of
-   objects rather than a row of equal boxes. */
-[data-theme="bento"] .grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:18px}
-[data-theme="bento"] .card{min-height:0;padding:26px;border-radius:var(--r);display:flex;flex-direction:column;border-color:transparent}
-[data-theme="bento"] .card:first-child{grid-column:span 2;grid-row:span 2;justify-content:flex-end;padding:36px;background:linear-gradient(145deg,#1d4ed8,#0ea5e9);color:#fff;box-shadow:0 18px 44px -18px rgba(29,78,216,.55);border-radius:var(--r-lg)}
-[data-theme="bento"] .card:first-child h3{font-size:clamp(24px,2.6vw,32px);letter-spacing:-.032em;margin-bottom:10px}
-[data-theme="bento"] .card:first-child p{font-size:15px;color:rgba(255,255,255,.88);max-width:36ch}
-[data-theme="bento"] .card:first-child .icon{width:62px;height:62px;border-radius:20px;font-size:27px;margin-bottom:26px;background:rgba(255,255,255,.2);color:#fff}
-[data-theme="bento"] .card:nth-child(2){grid-column:3;grid-row:1;background:linear-gradient(150deg,#f2f7ff,#e3edff)}
-[data-theme="bento"] .card:nth-child(3){grid-column:3;grid-row:2;background:linear-gradient(150deg,#eefbf6,#dff5ee)}
-/* Without explicit placement auto-flow puts both satellites in row 1
-   and leaves a two-cell hole under them, which reads as a bug. */
-[data-theme="bento"] .card:hover{transform:translate3d(0,-6px,0);border-color:transparent}
-[data-theme="bento"] .card:nth-child(2) .icon{background:#dbe9ff;color:#2563eb}
-[data-theme="bento"] .card:nth-child(3) .icon{background:#d3f2e6;color:#0f8a63}
-/* Hero sits in a rounded container of its own, centred like an object. */
-[data-theme="bento"] .hero-panel{max-width:940px;margin:0 auto;padding:clamp(34px,5.4vw,64px) clamp(24px,4vw,56px);background:#fff;border:1px solid rgba(15,23,42,.06);border-radius:var(--r-lg);box-shadow:var(--sh)}
-[data-theme="bento"] .icon{border-radius:var(--r-sm);transition:background .4s var(--ease),color .4s var(--ease),transform .5s var(--ease)}
-[data-theme="bento"] .card:hover .icon{transform:scale(1.08) rotate(-4deg)}
-/* Portfolio: one wide lead project, two supporting. */
-[data-theme="bento"] .portfolio{grid-template-columns:repeat(2,1fr);gap:18px}
-[data-theme="bento"] .project{overflow:hidden;border-color:transparent}
-[data-theme="bento"] .project:first-child{grid-column:span 2}
-[data-theme="bento"] .project:first-child .project-img{height:330px}
-[data-theme="bento"] .project:hover .mock{transform:scale(1.04)}
-/* Pricing: the popular plan is a wide banner with a two-column list. */
-[data-theme="bento"] .pricing{grid-template-columns:repeat(2,1fr);gap:18px}
-[data-theme="bento"] .price.featured{grid-column:span 2;background:linear-gradient(150deg,#1d4ed8,#0ea5e9);color:#fff;border-color:transparent;box-shadow:0 20px 48px -20px rgba(29,78,216,.5)}
-[data-theme="bento"] .price.featured>p,[data-theme="bento"] .price.featured .amount small{color:rgba(255,255,255,.78)}
-[data-theme="bento"] .price.featured .amount{font-size:46px}
-[data-theme="bento"] .price.featured .features{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin:20px 0 26px}
-[data-theme="bento"] .price.featured .features li{border-bottom-color:rgba(255,255,255,.16);color:rgba(255,255,255,.92)}
-[data-theme="bento"] .price.featured .features li::before{color:#c9f7dd}
-[data-theme="bento"] .price.featured .btn.primary{background:#fff;color:#1d4ed8}
-[data-theme="bento"] .pop{background:rgba(255,255,255,.2);color:#fff}
-/* Process folds into a 2x2 block so it never mirrors the base row. */
-[data-theme="bento"] .steps{grid-template-columns:repeat(2,1fr);gap:18px}
-[data-theme="bento"] .step{border-color:transparent;background:linear-gradient(150deg,#fbfdff,#f1f5fb)}
-[data-theme="bento"] .step:hover{border-color:transparent;transform:translate3d(0,-6px,0)}
-[data-theme="bento"] .cta{border-radius:var(--r-lg);background:linear-gradient(150deg,#eef4ff,#f6f0ff);border-color:transparent}
-[data-theme="bento"] .btn{border-radius:999px;padding:15px 26px}
-[data-theme="bento"] .btn:hover{transform:translate3d(0,-3px,0)}
-[data-theme="bento"] .navcta{border-radius:999px}
-/* Motion: a soft, slightly springy pop. Cells scale rather than slide. */
-html.fc-reveal[data-theme="bento"] [data-rv]{opacity:0;scale:.965;transition:opacity .6s var(--ease),scale .6s var(--ease);transition-delay:var(--rd,0s)}
-html.fc-reveal[data-theme="bento"] [data-rv].is-in{opacity:1;scale:1}
-[data-theme="bento"] .grid .card:nth-child(2),[data-theme="bento"] .portfolio .project:nth-child(2),[data-theme="bento"] .pricing .price:nth-child(2){--rd:.08s}
-[data-theme="bento"] .grid .card:nth-child(3),[data-theme="bento"] .portfolio .project:nth-child(3),[data-theme="bento"] .pricing .price:nth-child(3){--rd:.16s}
-@keyframes bentoIn{from{opacity:0;scale:.94}to{opacity:1;scale:1}}
-html.fc-swap[data-theme="bento"] .hero-panel{animation:bentoIn .66s var(--ease) both}
-@media(max-width:900px){
-[data-theme="bento"] .grid{grid-template-columns:repeat(2,1fr)}
-[data-theme="bento"] .card:first-child{grid-column:span 2;grid-row:span 1}
-[data-theme="bento"] .card:nth-child(2),[data-theme="bento"] .card:nth-child(3){grid-column:auto;grid-row:auto}
-[data-theme="bento"] .project:first-child .project-img{height:250px}
-[data-theme="bento"] .price.featured .features{grid-template-columns:1fr}
-}
-@media(max-width:620px){
-[data-theme="bento"] .grid,[data-theme="bento"] .portfolio,[data-theme="bento"] .pricing,[data-theme="bento"] .steps{grid-template-columns:1fr}
-[data-theme="bento"] .card:first-child,[data-theme="bento"] .project:first-child,[data-theme="bento"] .price.featured{grid-column:auto}
-[data-theme="bento"] .hero-panel{border-radius:26px}
-}
-
-[data-theme="neo-brutalism"]{--bg:#fffdf5;--text:#111;--muted:#3a3a3a;--line:#111;--stroke:#111;--stroke-hi:#000;--navline:#111;--link:#111;--pbtn:#111;--pbtn-h:#000;--pbtn-fg:#fff;--sec:#111;--sec-bg:#ffd400;--badge:#111;--badge-bg:#ffd400;--card:#fff;--card2:#fff;--step:#fff;--num:#111;--feat:#111;--feat-ln:#111;--dim:#111;--foot:#111;--accent:#ff5c00;--accent2:#111;--green:#00a63e;--icon-bg:#ffd400;--icon-fg:#111;--pop:#ff5c00;--h1g:linear-gradient(90deg,#111,#ff5c00);--glow:rgba(255,92,0,.16);--r:4px;--r-sm:4px;--r-lg:6px;--bw:3px;--sh:6px 6px 0 #111;--tt-sh:6px 6px 0 #111;--feat-bs:none;--proj1:linear-gradient(135deg,#fff,#ffd400);--proj2:linear-gradient(135deg,#fff,#00e0a4);--proj3:linear-gradient(135deg,#fff,#ff8a3d);--mock:#fff;--mock-bd:#111;--mock-ln:#111;--mock-tx:#111;--cta:linear-gradient(135deg,#fff,#ffd400);--cta-ln:#111}
-[data-theme="neo-brutalism"] .card,[data-theme="neo-brutalism"] .project,[data-theme="neo-brutalism"] .price,[data-theme="neo-brutalism"] .step,[data-theme="neo-brutalism"] .cta{box-shadow:var(--sh);transition:transform .15s,box-shadow .15s}
-[data-theme="neo-brutalism"] .card:hover,[data-theme="neo-brutalism"] .project:hover,[data-theme="neo-brutalism"] .price:hover,[data-theme="neo-brutalism"] .step:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 #111}
-[data-theme="neo-brutalism"] .price.featured{border-color:#111;box-shadow:9px 9px 0 var(--accent)}
-[data-theme="neo-brutalism"] .btn,[data-theme="neo-brutalism"] .navcta{box-shadow:4px 4px 0 #111;border-width:3px}
-[data-theme="neo-brutalism"] .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111}
-[data-theme="neo-brutalism"] .theme-toggle{box-shadow:var(--tt-sh)}
-[data-theme="neo-brutalism"] h1{font-weight:900;letter-spacing:-5px}
-
-/* --- THEME 04: neo-brutalism, developed ------------------------
-   Loud but composed. The rules that make it read as *designed*
-   rather than as a broken page:
-
-     - Every raised surface is a physical object: a 3px black
-       border plus a hard, un-blurred offset shadow. The shadow
-       is the depth cue; nothing here is soft.
-     - Surfaces move the way objects move. Hover pushes an item
-       up-left and deepens its shadow by exactly the same
-       amount, so the offset and the object stay locked together.
-       Active presses it back down into the page.
-     - Nothing is centred by default. The hero is a left-aligned
-       slab with a rotated badge, and sections alternate between
-       a 2-up and an offset 3-up so the page keeps a pulse.
-     - Colour is used as flat, opaque poster ink - yellow, orange
-       and mint blocks on cream - never as gradients or glows.
-   ---------------------------------------------------------- */
-[data-theme="neo-brutalism"]{
---bw:3px;--r:6px;--r-sm:6px;--r-lg:8px;
---sh:6px 6px 0 #111;--tt-sh:5px 5px 0 #111;--feat-bs:none;
---dur:.18s;--dur-s:.14s;--ease:cubic-bezier(.2,.9,.3,1.1);
---shadow-1:6px 6px 0 #111;--shadow-2:10px 10px 0 #111
-}
-[data-theme="neo-brutalism"] h1{font-weight:900;letter-spacing:-.045em;line-height:.92;text-transform:uppercase}
-[data-theme="neo-brutalism"] h2{font-weight:900;letter-spacing:-.035em;text-transform:uppercase}
-/* The hero is a slab that leans into the page, not a centred column. */
-[data-theme="neo-brutalism"] .hero{padding:96px 0 64px;text-align:left}
-[data-theme="neo-brutalism"] .hero-panel{max-width:none;margin:0;padding:clamp(28px,4vw,48px);background:#fff;border:3px solid #111;box-shadow:12px 12px 0 #111}
-[data-theme="neo-brutalism"] .hero-panel p{margin:22px 0 28px;max-width:56ch;color:#2a2a2a;font-weight:500}
-[data-theme="neo-brutalism"] .hero .buttons{justify-content:flex-start}
-[data-theme="neo-brutalism"] .badge{background:#ffd400;border:3px solid #111;box-shadow:4px 4px 0 #111;border-radius:999px;font-weight:800;transform:rotate(-1.6deg)}
-[data-theme="neo-brutalism"] .trust{margin-top:40px;font-weight:700;color:#111}
-/* Every card is its own flat colour block - no gradient anywhere. */
-[data-theme="neo-brutalism"] .card,[data-theme="neo-brutalism"] .project,[data-theme="neo-brutalism"] .price,[data-theme="neo-brutalism"] .step,[data-theme="neo-brutalism"] .cta{box-shadow:var(--sh);transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background-color var(--dur) var(--ease)}
-[data-theme="neo-brutalism"] .card:nth-child(1){background:#ffd400}
-[data-theme="neo-brutalism"] .card:nth-child(2){background:#00e0a4}
-[data-theme="neo-brutalism"] .card:nth-child(3){background:#ff8a3d}
-[data-theme="neo-brutalism"] .card h3,[data-theme="neo-brutalism"] .step h3{font-weight:900;letter-spacing:-.02em}
-[data-theme="neo-brutalism"] .card p,[data-theme="neo-brutalism"] .step p{color:#2f2a1c}
-[data-theme="neo-brutalism"] .card:nth-child(2) p{color:#123528}
-/* Hover and press are one continuous physical idea. */
-[data-theme="neo-brutalism"] .card:hover,[data-theme="neo-brutalism"] .project:hover,[data-theme="neo-brutalism"] .price:hover,[data-theme="neo-brutalism"] .step:hover{transform:translate(-4px,-4px);box-shadow:10px 10px 0 #111}
-[data-theme="neo-brutalism"] .card:active,[data-theme="neo-brutalism"] .project:active,[data-theme="neo-brutalism"] .price:active,[data-theme="neo-brutalism"] .step:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #111}
-[data-theme="neo-brutalism"] .icon{background:#fff;border:3px solid #111;box-shadow:3px 3px 0 #111;border-radius:50%;font-weight:900}
-[data-theme="neo-brutalism"] .card:nth-child(1) .icon{background:#ff5c00;color:#fff}
-[data-theme="neo-brutalism"] .card:nth-child(2) .icon{background:#111;color:#00e0a4}
-[data-theme="neo-brutalism"] .card:nth-child(3) .icon{background:#fff;color:#111}
-/* Portfolio mockups become poster frames. */
-[data-theme="neo-brutalism"] .project-img{border-bottom:3px solid #111;background:#fff}
-[data-theme="neo-brutalism"] .mock{border:3px solid #111;box-shadow:none;background:#fff;border-radius:0}
-[data-theme="neo-brutalism"] .mock-title{font-weight:900;text-transform:uppercase;letter-spacing:-.03em}
-[data-theme="neo-brutalism"] .project:nth-child(1) .project-img{background:#ffd400}
-[data-theme="neo-brutalism"] .project:nth-child(2) .project-img{background:#00e0a4}
-[data-theme="neo-brutalism"] .project:nth-child(3) .project-img{background:#ff8a3d}
-/* Pricing: the popular plan is the one that shouts. */
-[data-theme="neo-brutalism"] .price.featured{border-color:#111;background:#111;color:#fff;box-shadow:10px 10px 0 var(--accent);transform:scale(1.02);z-index:1}
-[data-theme="neo-brutalism"] .price.featured:hover{transform:scale(1.02) translate(-4px,-4px);box-shadow:14px 14px 0 var(--accent)}
-[data-theme="neo-brutalism"] .price.featured p,[data-theme="neo-brutalism"] .price.featured .amount small,[data-theme="neo-brutalism"] .price.featured .features li{color:#e8e8e8}
-[data-theme="neo-brutalism"] .price.featured .features li{border-bottom:2px solid #3d3d3d}
-[data-theme="neo-brutalism"] .price.featured .features li::before{color:#00ffa3}
-[data-theme="neo-brutalism"] .price.featured .btn.primary{background:#ffd400;color:#111;border-color:#fff}
-[data-theme="neo-brutalism"] .amount{font-weight:900}
-[data-theme="neo-brutalism"] .pop{background:#ff5c00;color:#fff;border:3px solid #111;border-radius:0;font-weight:900;transform:rotate(3deg)}
-[data-theme="neo-brutalism"] .btn,[data-theme="neo-brutalism"] .navcta{box-shadow:4px 4px 0 #111;border-width:3px;font-weight:800;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background-color var(--dur) var(--ease)}
-[data-theme="neo-brutalism"] .btn:hover,[data-theme="neo-brutalism"] .navcta:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 #111}
-[data-theme="neo-brutalism"] .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #111}
-/* Process steps alternate height so the row reads as a rhythm. */
-[data-theme="neo-brutalism"] .steps{gap:20px;align-items:start}
-[data-theme="neo-brutalism"] .step:nth-child(1){background:#fff}
-[data-theme="neo-brutalism"] .step:nth-child(2){background:#ffd400;transform:translateY(18px)}
-[data-theme="neo-brutalism"] .step:nth-child(3){background:#fff}
-[data-theme="neo-brutalism"] .step:nth-child(4){background:#00e0a4;transform:translateY(18px)}
-[data-theme="neo-brutalism"] .step:nth-child(2):hover,[data-theme="neo-brutalism"] .step:nth-child(4):hover{transform:translateY(18px) translate(-4px,-4px);box-shadow:10px 10px 0 #111}
-[data-theme="neo-brutalism"] .step:nth-child(2):active,[data-theme="neo-brutalism"] .step:nth-child(4):active{transform:translateY(20px);box-shadow:2px 2px 0 #111}
-[data-theme="neo-brutalism"] .num{font-weight:900;color:#111}
-[data-theme="neo-brutalism"] .cta{border:3px solid #111;box-shadow:12px 12px 0 #111;background:#fff}
-[data-theme="neo-brutalism"] .kicker{background:#ffd400;border:2px solid #111;padding:4px 10px;display:inline-block;font-weight:900}
-[data-theme="neo-brutalism"] .theme-toggle{box-shadow:var(--tt-sh);border-radius:6px;font-weight:800;animation:none}
-[data-theme="neo-brutalism"] .tt-disc{border-radius:50%;border:2px solid #111}
-[data-theme="neo-brutalism"] .theme-menu{border:3px solid #111;box-shadow:8px 8px 0 #111;border-radius:6px}
-/* Motion is a fast mechanical snap, never a fade-and-drift.
-   This block uses `translate`, not `transform`, because every
-   neo surface already owns `transform` for its physical offset and
-   press states - sharing one property would make the two systems
-   overwrite each other the moment an element finished revealing. */
-html.fc-reveal[data-theme="neo-brutalism"] [data-rv]{opacity:0;translate:-22px 0;transition:opacity var(--dur) var(--ease),translate var(--dur) var(--ease);transition-delay:var(--rd,0s)}
-html.fc-reveal[data-theme="neo-brutalism"] [data-rv].is-in{opacity:1;translate:0 0}
-[data-theme="neo-brutalism"] .grid .card:nth-child(2),[data-theme="neo-brutalism"] .portfolio .project:nth-child(2),[data-theme="neo-brutalism"] .pricing .price:nth-child(2){--rd:.06s}
-[data-theme="neo-brutalism"] .grid .card:nth-child(3),[data-theme="neo-brutalism"] .portfolio .project:nth-child(3),[data-theme="neo-brutalism"] .pricing .price:nth-child(3){--rd:.12s}
-[data-theme="neo-brutalism"] .steps .step:nth-child(2){--rd:.06s}
-[data-theme="neo-brutalism"] .steps .step:nth-child(3){--rd:.12s}
-[data-theme="neo-brutalism"] .steps .step:nth-child(4){--rd:.18s}
-@keyframes neoIn{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
-html.fc-swap[data-theme="neo-brutalism"] .hero-panel{animation:neoIn .3s var(--ease) both}
-@media(max-width:800px){
-[data-theme="neo-brutalism"] .step:nth-child(2),[data-theme="neo-brutalism"] .step:nth-child(4){transform:none}
-[data-theme="neo-brutalism"] .step:nth-child(2):hover,[data-theme="neo-brutalism"] .step:nth-child(4):hover{transform:translate(-4px,-4px)}
-[data-theme="neo-brutalism"] .hero-panel{box-shadow:7px 7px 0 #111}
-[data-theme="neo-brutalism"] .price.featured{transform:none}
-[data-theme="neo-brutalism"] .price.featured:hover{transform:translate(-4px,-4px)}
-}
-
-[data-theme="dark-tech"]{--bg:#05070d;--card:#0a0f18;--card2:#0e1521;--step:#0a0f18;--line:#1b2634;--stroke:#243244;--stroke-hi:#31465e;--link:#9fb4cc;--accent:#00e5ff;--accent2:#7c4dff;--green:#00ffa3;--icon-bg:rgba(0,229,255,.12);--icon-fg:#00e5ff;--pop:#00e5ff;--pop-fg:#04121a;--pbtn:linear-gradient(135deg,#00e5ff,#7c4dff);--pbtn-fg:#04121a;--pbtn-h:linear-gradient(135deg,#5cf0ff,#9d80ff);--h1g:linear-gradient(90deg,#eaf6ff,#00e5ff);--glow:rgba(0,229,255,.18);--feat-bs:0 0 0 1px rgba(0,229,255,.3);--r:12px;--r-sm:8px;--r-lg:16px;--sh:0 0 0 1px rgba(0,229,255,.08),0 14px 40px rgba(0,0,0,.6);--tt-sh:0 0 22px rgba(0,229,255,.28);--proj1:linear-gradient(135deg,#0b1220,#1b2a5c);--proj2:linear-gradient(135deg,#0b1220,#0d3b4a);--proj3:linear-gradient(135deg,#0b1220,#2a1a4a);--mock:#070b12;--mock-bd:#1b2634;--mock-ln:#1f2b3a;--mock-tx:#5f7a94;--cta:linear-gradient(135deg,#0a0f18,#111a3a);--cta-ln:#243244;--bg-img:linear-gradient(rgba(0,229,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.05) 1px,transparent 1px)}
-[data-theme="dark-tech"] body{background-size:46px 46px}
-[data-theme="dark-tech"] .card:hover{border-color:#00e5ff;box-shadow:0 0 0 1px rgba(0,229,255,.4),0 0 26px rgba(0,229,255,.18)}
-[data-theme="dark-tech"] .glow{filter:blur(110px);background:radial-gradient(circle,rgba(0,229,255,.3),transparent 62%)}
-[data-theme="dark-tech"] .kicker{color:#00e5ff}
-[data-theme="dark-tech"] .mock-top{color:#00e5ff;opacity:.75}
-
-[data-theme="editorial"]{--bg:#f8f5ef;--text:#14110d;--muted:#6b6459;--line:#d8d1c4;--stroke:#c4bba9;--stroke-hi:#14110d;--navline:#14110d;--link:#4a443b;--pbtn:#14110d;--pbtn-h:#000;--pbtn-fg:#f8f5ef;--sec:#14110d;--sec-bg:#efe9dd;--badge:#6b6459;--badge-bg:transparent;--card:transparent;--card2:#efe9dd;--step:transparent;--num:#8a8274;--feat:#2b2620;--feat-ln:#ded7c9;--dim:#8a8274;--foot:#8a8274;--tt-sh:0 6px 18px rgba(60,50,35,.1);--accent:#8c2f1c;--accent2:#8c2f1c;--green:#2f6b3a;--icon-bg:transparent;--icon-fg:#8c2f1c;--pop:#8c2f1c;--h1g:linear-gradient(90deg,#14110d,#8c2f1c);--glow:rgba(140,47,28,.1);--feat-bs:none;--ffd:"Fraunces",Georgia,"Times New Roman","Iowan Old Style",serif;--r:0;--r-sm:0;--r-lg:0;--sh:none;--proj1:linear-gradient(135deg,#efe9dd,#e2d9c9);--proj2:linear-gradient(135deg,#eee9dd,#dfe4d8);--proj3:linear-gradient(135deg,#f0e8dc,#e6dcd0);--mock:#fdfbf7;--mock-bd:#d8d1c4;--mock-ln:#ddd6c8;--mock-tx:#8a8274;--cta:transparent;--cta-ln:#14110d}
-[data-theme="editorial"] .card{background:transparent;border:0;border-top:2px solid var(--text);border-radius:0;padding-top:18px}
-[data-theme="editorial"] .project{background:transparent;border:0;border-top:1px solid var(--text);border-radius:0}
-[data-theme="editorial"] .price{background:transparent;border:0;border-top:1px solid var(--text);border-radius:0}
-[data-theme="editorial"] .step{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0}
-[data-theme="editorial"] .cta{background:transparent;border:0;border-top:4px double var(--text);border-radius:0}
-[data-theme="editorial"] h1{font-family:var(--ffd);font-weight:400;font-style:italic;letter-spacing:-3px}
-[data-theme="editorial"] h2{font-family:var(--ffd);font-weight:400;font-style:italic}
-[data-theme="editorial"] .card:hover{border-color:#8c2f1c}
-[data-theme="editorial"] .kicker{font-family:var(--ff)}
-
-[data-theme="luxury"]{--bg:#0b0a09;--text:#f4ece0;--muted:#9a9086;--line:#262220;--stroke:#332d28;--stroke-hi:#5a5044;--navline:rgba(201,162,39,.18);--link:#b8ada0;--pbtn:linear-gradient(135deg,#e6c76a,#c9a227);--pbtn-h:linear-gradient(135deg,#f2da92,#d9b43c);--pbtn-fg:#0b0a09;--sec:#e8dcc4;--sec-bg:#1a1815;--badge:#b8ada0;--badge-bg:rgba(201,162,39,.06);--card:#121110;--card2:#181614;--step:#121110;--num:#8d8377;--feat:#ddd3c3;--feat-ln:#252220;--dim:#7d7469;--foot:#6f675d;--accent:#c9a227;--accent2:#e6c76a;--green:#c9a227;--icon-bg:rgba(201,162,39,.12);--icon-fg:#e6c76a;--pop:#c9a227;--pop-fg:#0b0a09;--h1g:linear-gradient(90deg,#f8f2e6,#c9a227);--glow:rgba(201,162,39,.14);--feat-bs:0 0 0 1px rgba(201,162,39,.22);--ffd:"Fraunces",Georgia,"Times New Roman",serif;--r:2px;--r-sm:2px;--r-lg:2px;--sh:0 12px 44px rgba(0,0,0,.55);--tt-sh:0 10px 34px rgba(0,0,0,.6);--proj1:linear-gradient(135deg,#141210,#2e2820);--proj2:linear-gradient(135deg,#141210,#222a22);--proj3:linear-gradient(135deg,#141210,#2a2018);--mock:#0f0e0c;--mock-bd:#332d28;--mock-ln:#2a2522;--mock-tx:#8d8377;--cta:linear-gradient(135deg,#131110,#1d1a16);--cta-ln:#3a332a}
-[data-theme="luxury"] .kicker{color:var(--accent2);letter-spacing:.36em}
-[data-theme="luxury"] h1{font-family:var(--ffd);font-weight:400;letter-spacing:-1.5px}
-[data-theme="luxury"] h2{font-family:var(--ffd);font-weight:400}
-[data-theme="luxury"] .logo{letter-spacing:4px;text-transform:uppercase;font-size:18px}
-[data-theme="luxury"] .trust{letter-spacing:.3em}
-[data-theme="luxury"] .card:hover{border-color:var(--accent)}
-[data-theme="luxury"] .amount{font-weight:400}
-
-[data-theme="creative"]{--bg:#fff7fd;--text:#2b1f2b;--muted:#6b5a6b;--line:#f4dcec;--stroke:#ecc0e0;--stroke-hi:#ff2e88;--navline:rgba(255,46,136,.16);--link:#6b5a6b;--pbtn:linear-gradient(135deg,#ff2e88,#ff8a3d);--pbtn-h:linear-gradient(135deg,#ff5ba3,#ffa76a);--pbtn-fg:#fff;--sec:#3a2b3a;--sec-bg:#ffeef8;--badge:#6b5a6b;--badge-bg:rgba(255,46,136,.07);--card:#fff;--card2:#ffeef8;--step:#fff7fd;--num:#9a86a0;--feat:#3a2b3a;--feat-ln:#f6e2f1;--dim:#9a86a0;--foot:#9a86a0;--tt-sh:0 8px 22px rgba(255,46,136,.16);--accent:#ff2e88;--accent2:#ff8a3d;--green:#00c48c;--icon-bg:#ffe3f1;--icon-fg:#ff2e88;--pop:#ff2e88;--h1g:linear-gradient(90deg,#ff2e88,#ff8a3d 45%,#7c4dff);--glow:rgba(255,46,136,.14);--feat-bs:0 0 0 1px rgba(255,46,136,.2);--r:20px;--r-sm:14px;--r-lg:26px;--sh:0 12px 30px rgba(255,46,136,.12);--proj1:linear-gradient(135deg,#ffe3f1,#ffd9c2);--proj2:linear-gradient(135deg,#dff7ef,#c9ecff);--proj3:linear-gradient(135deg,#ece2ff,#ffd9f1);--mock:#fff;--mock-bd:#f0d5e8;--mock-ln:#f0dbe9;--mock-tx:#9a86a0;--cta:linear-gradient(135deg,#fff0f8,#f4e9ff);--cta-ln:#f2cfe4}
-[data-theme="creative"] body{background-image:radial-gradient(circle at 8% 12%,rgba(255,46,136,.1),transparent 40%),radial-gradient(circle at 92% 18%,rgba(255,138,61,.12),transparent 42%),radial-gradient(circle at 45% 92%,rgba(124,77,255,.1),transparent 45%)}
-[data-theme="creative"] .card{transform:rotate(var(--tilt));transition:transform .25s,box-shadow .25s,border-color .2s}
-[data-theme="creative"] .card{--tilt:-1.5deg}
-[data-theme="creative"] .card:nth-child(2n){--tilt:1.5deg}
-[data-theme="creative"] .card:hover{transform:rotate(0deg) translateY(-6px);box-shadow:0 18px 40px rgba(255,46,136,.2)}
-[data-theme="creative"] .badge{border-radius:99px;font-weight:700}
-[data-theme="creative"] h1{font-weight:800}
-
-[data-theme="immersive"]{--bg:#0a0714;--text:#f5f0ff;--muted:#b3a5d6;--line:rgba(167,139,250,.24);--stroke:rgba(167,139,250,.36);--stroke-hi:rgba(167,139,250,.7);--navline:rgba(167,139,250,.2);--link:#c9bcf0;--pbtn:linear-gradient(135deg,#a855f7,#22d3ee);--pbtn-h:linear-gradient(135deg,#c084fc,#67e8f9);--pbtn-fg:#0a0714;--sec:#e9e2ff;--sec-bg:rgba(70,45,125,.55);--badge:#c9bcf0;--badge-bg:rgba(168,85,247,.14);--card:rgba(38,22,72,.55);--card2:rgba(52,32,98,.5);--step:rgba(38,22,72,.5);--num:#9b8bc4;--feat:#ded5f7;--feat-ln:rgba(167,139,250,.18);--dim:#8b7cb0;--foot:#7a6c9c;--tt-sh:0 12px 32px rgba(0,0,0,.55);--accent:#a855f7;--accent2:#22d3ee;--green:#34d399;--icon-bg:rgba(168,85,247,.18);--icon-fg:#c4a5ff;--pop:#a855f7;--h1g:linear-gradient(90deg,#fff,#22d3ee);--glow:rgba(168,85,247,.3);--feat-bs:0 0 0 1px rgba(34,211,238,.28);--r:20px;--r-sm:14px;--r-lg:26px;--sh:0 24px 60px rgba(0,0,0,.55);--proj1:linear-gradient(135deg,rgba(168,85,247,.35),rgba(34,211,238,.3));--proj2:linear-gradient(135deg,rgba(34,211,238,.3),rgba(52,211,153,.3));--proj3:linear-gradient(135deg,rgba(236,72,153,.32),rgba(168,85,247,.3));--mock:rgba(12,8,24,.6);--mock-bd:rgba(167,139,250,.3);--mock-ln:rgba(167,139,250,.28);--mock-tx:#9b8bc4;--cta:linear-gradient(135deg,rgba(52,32,98,.7),rgba(20,12,40,.6));--cta-ln:rgba(167,139,250,.35);--bg-img:radial-gradient(circle at 20% 15%,rgba(168,85,247,.2),transparent 45%),radial-gradient(circle at 82% 25%,rgba(34,211,238,.16),transparent 45%)}
-[data-theme="immersive"] body{perspective:1400px}
-[data-theme="immersive"] .glow{filter:blur(120px);background:radial-gradient(circle,rgba(34,211,238,.35),transparent 62%)}
-[data-theme="immersive"] .card,[data-theme="immersive"] .project,[data-theme="immersive"] .price,[data-theme="immersive"] .step{transform-style:preserve-3d}
-[data-theme="immersive"] .card:hover{transform:rotateX(9deg) rotateY(-9deg) translateZ(34px) scale(1.03);border-color:rgba(34,211,238,.6);box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 40px rgba(34,211,238,.18)}
-[data-theme="immersive"] .price.featured{border-color:rgba(34,211,238,.6)}
-[data-theme="immersive"] .theme-toggle,[data-theme="immersive"] .theme-menu{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-
-[data-theme="terminal"]{--bg:#080c08;--text:#c8f7c8;--muted:#7bb37f;--line:#1f3320;--stroke:#2c4a2d;--stroke-hi:#3f6a41;--navline:#1f3320;--link:#9fd9a4;--pbtn:#39ff5f;--pbtn-h:#7dff95;--pbtn-fg:#04140a;--sec:#9fd9a4;--sec-bg:#111a10;--badge:#9fd9a4;--badge-bg:rgba(57,255,95,.07);--card:#0b120b;--card2:#101a10;--step:#0b120b;--num:#5f9a63;--feat:#b6e8ba;--feat-ln:#1f3320;--dim:#5f9a63;--foot:#548a58;--tt-sh:0 0 0 1px rgba(57,255,95,.35);--accent:#39ff5f;--accent2:#8dff5f;--green:#39ff5f;--icon-bg:rgba(57,255,95,.1);--icon-fg:#39ff5f;--pop:#39ff5f;--pop-fg:#04140a;--h1g:linear-gradient(90deg,#39ff5f,#8dff5f);--glow:rgba(57,255,95,.1);--feat-bs:0 0 0 1px rgba(57,255,95,.3);--ff:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--ffd:var(--ff);--ffm:var(--ff);--r:0;--r-sm:0;--r-lg:0;--sh:none;--proj1:linear-gradient(135deg,#0b120b,#123012);--proj2:linear-gradient(135deg,#0b120b,#0f2a1c);--proj3:linear-gradient(135deg,#0b120b,#1d2a10);--mock:#060a06;--mock-bd:#2c4a2d;--mock-ln:#203a21;--mock-tx:#5f9a63;--cta:linear-gradient(135deg,#0b120b,#0e1a0e);--cta-ln:#2c4a2d;--bg-img:repeating-linear-gradient(0deg,rgba(57,255,95,.04) 0 1px,transparent 1px 3px)}
-[data-theme="terminal"] .card,[data-theme="terminal"] .project,[data-theme="terminal"] .price,[data-theme="terminal"] .step{background:transparent;border:1px dashed var(--stroke)}
-[data-theme="terminal"] .card:hover,[data-theme="terminal"] .project:hover,[data-theme="terminal"] .price:hover{border-color:#39ff5f;border-style:solid}
-[data-theme="terminal"] .kicker:before{content:"> "}
-[data-theme="terminal"] .logo:before{content:"~/ "}
-[data-theme="terminal"] .num:before{content:"$ "}
-[data-theme="terminal"] .trust:before{content:"# "}
-[data-theme="terminal"] .theme-toggle{border-style:dashed;background:transparent}
-[data-theme="terminal"] .theme-menu{border-style:dashed;background:#080c08}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--ff);background-color:var(--bg);background-image:var(--bg-img);background-attachment:fixed;color:var(--text);line-height:1.5;transition:background-color .3s,color .3s}
-a{text-decoration:none;color:inherit}
-.container{width:min(1120px,92%);margin:auto}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:var(--bw) solid var(--navline)}
-.logo{font-size:21px;font-weight:800;letter-spacing:-.7px;transition:color .3s}.logo span{color:var(--accent2)}
-.navlinks{display:flex;gap:28px;color:var(--link);font-size:14px}.navlinks a:hover{color:var(--text)}
-.navcta{padding:10px 16px;border:var(--bw) solid var(--stroke);border-radius:var(--r-sm);font-size:14px;transition:background .2s,transform .2s}.navcta:hover{background:var(--card2);transform:translateY(-2px)}
-.hero{padding:104px 0 70px;text-align:center;position:relative}
-.hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.glow{position:absolute;width:500px;height:500px;border-radius:50%;background:var(--glow);filter:blur(100px);top:-240px;left:50%;transform:translateX(-50%);transition:background .3s}
-.hero .container{position:relative;z-index:1}
-.theme-wrap{position:absolute;top:16px;left:0;z-index:20}
-.theme-toggle{position:relative;display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;border:var(--bw) solid var(--stroke);background:var(--card2);color:var(--text);font-family:var(--ff);font-size:13px;font-weight:700;cursor:pointer;box-shadow:var(--tt-sh);animation:ttFloat 3.6s ease-in-out infinite;transition:background .2s,border-color .2s}
-.theme-toggle:hover{border-color:var(--stroke-hi);background:var(--card)}
-.theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.tt-label{white-space:nowrap}
-.tt-disc{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--pop-fg);transition:transform .5s cubic-bezier(.4,1.6,.5,1)}
-.theme-toggle:hover .tt-disc{transform:rotate(180deg) scale(1.12)}
-.tt-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
-.tt-grid i{width:5px;height:5px;border-radius:50%;background:currentColor;display:block}
-.tt-grid i:nth-child(2){opacity:.55}.tt-grid i:nth-child(3){opacity:.55}.tt-grid i:nth-child(4){opacity:.25}
-@keyframes ttFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-.theme-menu{position:absolute;top:calc(100% + 10px);left:0;width:252px;max-height:min(430px,58vh);overflow-y:auto;overscroll-behavior:contain;background:var(--card);border:var(--bw) solid var(--line);border-radius:var(--r-sm);box-shadow:var(--sh);padding:6px;opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top left;transition:opacity .2s,transform .2s,visibility .2s,background .3s}
-.theme-wrap.open .theme-menu{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
-.tm-head{padding:8px 10px 7px;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--feat-ln);margin-bottom:5px}
-.tm-item{display:flex;align-items:center;gap:11px;width:100%;padding:9px 10px;border:0;border-radius:var(--r-sm);background:transparent;color:var(--text);font-family:var(--ff);font-size:13px;font-weight:600;text-align:left;cursor:pointer;transition:background .15s,color .15s}
-.tm-item:hover{background:var(--card2);color:var(--accent2)}
-.tm-item:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.tm-sw{display:flex;flex:0 0 auto;width:34px;height:22px;border-radius:6px;overflow:hidden;border:1px solid var(--line);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-.tm-sw i{flex:1;display:block}
-.tm-sw i:nth-child(1){background:var(--s1)}.tm-sw i:nth-child(2){background:var(--s2)}.tm-sw i:nth-child(3){background:var(--s3)}
-.tm-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tm-check{flex:0 0 auto;color:var(--green);font-weight:900;font-size:13px;opacity:0}
-.tm-item.active{background:var(--card2);color:var(--accent2)}
-.tm-item.active .tm-check{opacity:1}
-@media(prefers-reduced-motion:reduce){.theme-toggle{animation:none}}
-.badge{display:inline-flex;padding:7px 12px;border:var(--bw) solid var(--line);border-radius:999px;color:var(--badge);font-size:13px;background:var(--badge-bg);margin-bottom:24px;transition:background .3s,color .3s,border-color .3s}
-h1{font-family:var(--ffd);font-size:clamp(45px,7vw,82px);line-height:.98;letter-spacing:-4px;max-width:900px;margin:auto}
-h1 em{font-style:normal;background:var(--h1g);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{max-width:650px;margin:25px auto 30px;color:var(--muted);font-size:18px}
-.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.btn{padding:14px 21px;border-radius:var(--r-sm);font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .2s,box-shadow .2s}
-.btn:hover{transform:translateY(-2px)}
-.primary{background:var(--pbtn);color:var(--pbtn-fg)}.primary:hover{background:var(--pbtn-h)}
-.secondary{border:var(--bw) solid var(--stroke);color:var(--sec)}.secondary:hover{background:var(--sec-bg)}
-.trust{margin-top:60px;color:var(--dim);font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
-section{padding:82px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px}
-.kicker{color:var(--accent2);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:9px}
-h2{font-family:var(--ffd);font-size:clamp(30px,4vw,46px);letter-spacing:-2px;line-height:1.05}
-.section-head p{max-width:430px;color:var(--muted);font-size:15px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--card);border:var(--bw) solid var(--line);border-radius:var(--r);padding:25px;box-shadow:var(--sh);transition:border-color .2s,transform .25s,box-shadow .25s,background .3s}
-.card:hover{border-color:var(--stroke-hi);transform:translateY(-2px)}
-.icon{width:43px;height:43px;border-radius:var(--r-sm);background:var(--icon-bg);color:var(--icon-fg);display:grid;place-items:center;font-size:20px;margin-bottom:22px;transition:background .3s,color .3s}
-.card h3{font-size:19px;margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
-.portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.project{border:var(--bw) solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card);box-shadow:var(--sh);transition:background .3s,border-color .2s,transform .25s,box-shadow .25s}
-.project:hover{transform:translateY(-2px);border-color:var(--stroke-hi)}
-.project-img{height:245px;padding:18px;display:flex;align-items:end;background:var(--proj1)}
-.project:nth-child(2) .project-img{background:var(--proj2)}
-.project:nth-child(3) .project-img{background:var(--proj3)}
-.mock{width:100%;height:100%;border-radius:var(--r-sm);background:var(--mock);border:1px solid var(--mock-bd);padding:13px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s,border-color .3s}
-.mock-top{display:flex;justify-content:space-between;font-size:8px;color:var(--mock-tx)}.mock-title{font-size:23px;font-weight:800;line-height:1.05;max-width:160px}.mock-line{height:5px;width:55%;background:var(--mock-ln);border-radius:5px;transition:background .3s}
-.project-info{padding:20px}.project-info h3{margin-bottom:5px}.project-info p{font-size:13px;color:var(--muted)}
-.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-.price{background:var(--card);border:var(--bw) solid var(--line);border-radius:var(--r);padding:27px;position:relative;box-shadow:var(--sh);transition:background .3s,border-color .2s,transform .25s,box-shadow .25s}
-.price:hover{transform:translateY(-2px)}
-.price.featured{border-color:var(--accent);box-shadow:var(--feat-bs)}
-.pop{position:absolute;right:17px;top:17px;background:var(--pop);color:var(--pop-fg);padding:5px 9px;border-radius:99px;font-size:10px;font-weight:800;letter-spacing:.5px}
-.price h3{font-size:18px}.amount{font-size:38px;font-weight:850;letter-spacing:-2px;margin:14px 0 4px}.amount small{font-size:13px;color:var(--muted);font-weight:500;letter-spacing:0}
-.price>p{font-size:13px;color:var(--muted);min-height:42px}
-.features{list-style:none;margin:24px 0}.features li{font-size:13px;color:var(--feat);padding:8px 0;border-bottom:1px solid var(--feat-ln)}.features li:before{content:"✓";color:var(--green);margin-right:9px;font-weight:800}
-.price .btn{width:100%;justify-content:center}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step{padding:22px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--step);box-shadow:var(--sh);transition:background .3s,border-color .2s,transform .25s,box-shadow .25s}.step:hover{transform:translateY(-2px);border-color:var(--stroke-hi)}
-.num{font-size:12px;color:var(--num);margin-bottom:25px}.step h3{font-size:16px;margin-bottom:7px}.step p{font-size:13px;color:var(--muted)}
-.cta{background:var(--cta);border:var(--bw) solid var(--cta-ln);border-radius:var(--r-lg);padding:55px;text-align:center;box-shadow:var(--sh);transition:background .3s,border-color .3s}.cta h2{max-width:650px;margin:auto}.cta p{color:var(--muted);margin:15px auto 25px;max-width:550px}
-footer{border-top:var(--bw) solid var(--line);padding:30px 0;color:var(--foot);font-size:12px;display:flex;justify-content:space-between}
-/* Decorative layer used by the Glassmorphism environment. Inert in every
-   other theme: no rules match it outside [data-theme="glassmorphism"]. */
-.glass-env{display:none}
-@media(max-width:800px){.navlinks{display:none}.grid,.portfolio,.pricing{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:12px}h1{letter-spacing:-2.5px}.hero{padding-top:96px}.cta{padding:38px 22px}[data-theme="bento"] .grid{grid-template-columns:1fr}[data-theme="bento"] .card:first-child{grid-column:auto}}
-@media(max-width:500px){.steps{grid-template-columns:1fr}.navcta{display:none}.hero p{font-size:16px}.theme-menu{width:210px}}
-
-/* ============================================================
-   THEME 01 - MINIMAL PRO
-   "Purposeful restraint". The reference point for the whole set:
-   if a theme cannot justify an element, it deletes it.
-
-   Design decisions
-     - One family, one accent (ink). Colour is a tool here, not
-       decoration, so the palette stays on the cool neutral ramp
-       already used by :root and only the ink is truly black.
-     - Layout is asymmetric. The hero is left-aligned against a
-       hairline engineering grid instead of being centred, and
-       section heads sit on a two-column rule rather than floating.
-     - Depth comes from hairlines, not shadows. Cards, steps and
-       projects form ruled rows separated by single-pixel borders;
-       no lift, no blur, no radius to speak of (4px max).
-     - Motion is short and small: 10px of travel, half a second.
-       Nothing overshoots and nothing bounces.
-
-   Because :root already carries this theme's palette, this block
-   only states what makes it *minimal* rather than merely plain.
-   ============================================================ */
-[data-theme="minimal-pro"]{
---ff:"Inter",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
---ffd:var(--ff);--ffm:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
---bg:#f6f7f9;--sec-bg:#eceef2;--text:#0b0d11;--muted:#5b6270;--dim:#787f8d;--foot:#787f8d;--num:#0b0d11;
---line:#dde1e8;--stroke:#d2d7e0;--stroke-hi:#a9b1bf;--navline:#e5e8ed;--link:#5b6270;
---card:#fff;--card2:#f3f5f8;--step:transparent;--feat:#1f2530;--feat-ln:#e8ebf0;
---badge:#5b6270;--badge-bg:transparent;--icon-bg:transparent;--icon-fg:#0b0d11;
---pop:#0b0d11;--pop-fg:#fff;--accent:#0b0d11;--accent2:#0b0d11;--pbtn:#0b0d11;--pbtn-h:#252b36;--pbtn-fg:#fff;
---h1g:linear-gradient(180deg,#0b0d11,#3a4150);
---r:4px;--r-sm:3px;--r-lg:4px;--sh:none;--glow:transparent;
---sp:1.5rem;--gap:clamp(1rem,2vw,1.25rem);
---dur:.5s;--dur-s:.28s;--ease:cubic-bezier(.16,1,.3,1);
---lift-y:-2px;--lift:translate3d(0,-2px,0);
---shadow-1:0 1px 1px rgba(11,13,17,.03);--shadow-2:0 14px 30px -22px rgba(11,13,17,.32);
---proj1:#eef0f4;--proj2:#eceef2;--proj3:#eef0f4;
---cta:linear-gradient(180deg,#0b0d11,#181c24);--cta-ln:#0b0d11
-}
-/* Hero: a single focal point, left aligned on a hairline grid. */
-[data-theme="minimal-pro"] header{position:sticky;top:0;z-index:80;background:var(--bg);border-bottom:1px solid var(--navline)}
-[data-theme="minimal-pro"] .hero{padding:118px 0 84px;text-align:left}
-[data-theme="minimal-pro"] .hero-bg{background-image:linear-gradient(90deg,var(--line) 1px,transparent 1px),linear-gradient(180deg,var(--line) 1px,transparent 1px);background-size:104px 104px;background-position:center top;-webkit-mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,.35) 52%,transparent 84%);mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,.35) 52%,transparent 84%)}
-[data-theme="minimal-pro"] .glow{display:none}
-[data-theme="minimal-pro"] h1{margin:0;max-width:16ch;letter-spacing:-.038em;line-height:1.01}
-[data-theme="minimal-pro"] .hero p{margin:26px 0 32px;max-width:54ch;font-size:17px}
-[data-theme="minimal-pro"] .hero .buttons{justify-content:flex-start}
-[data-theme="minimal-pro"] .badge{border-radius:2px;padding:6px 11px;font-family:var(--ffm);font-size:11px;letter-spacing:.04em}
-[data-theme="minimal-pro"] .trust{margin-top:52px;font-family:var(--ffm);font-size:11px;letter-spacing:.05em;color:var(--dim)}
-/* Nav reads as an index, not a bar. */
-[data-theme="minimal-pro"] .navlinks{gap:26px;font-size:13px;font-weight:500}
-[data-theme="minimal-pro"] .navlinks a{position:relative;padding:5px 0}
-[data-theme="minimal-pro"] .navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;scale:0 1;transform-origin:left;transition:scale .42s var(--ease)}
-[data-theme="minimal-pro"] .navlinks a:hover::after{scale:1 1}
-[data-theme="minimal-pro"] .navcta{border-radius:3px;font-weight:600;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
-[data-theme="minimal-pro"] .navcta:hover{transform:none;background:var(--accent);color:#fff;border-color:var(--accent)}
-/* Section heads sit on a rule, text left, commentary right. */
-[data-theme="minimal-pro"] .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,26rem);gap:56px;align-items:start;padding-bottom:26px;margin-bottom:0;border-bottom:1px solid var(--line)}
-[data-theme="minimal-pro"] .section-head p{margin-top:6px;max-width:46ch}
-[data-theme="minimal-pro"] h2{letter-spacing:-.032em}
-[data-theme="minimal-pro"] .kicker{font-family:var(--ffm);font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--dim)}
-/* Buttons invert instead of lifting. */
-[data-theme="minimal-pro"] .btn{border-radius:3px;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
-[data-theme="minimal-pro"] .btn:hover{transform:none}
-[data-theme="minimal-pro"] .secondary:hover{background:#0b0d11;color:#fff;border-color:#0b0d11}
-/* Cards become one ruled row; the vertical hairlines do the work. */
-[data-theme="minimal-pro"] .grid{gap:0}
-[data-theme="minimal-pro"] .card{padding:30px 30px 34px 0;border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none;transition:border-color .4s var(--ease)}
-[data-theme="minimal-pro"] .card+.card{border-left:1px solid var(--line);padding-left:30px}
-[data-theme="minimal-pro"] .card:hover{border-color:var(--stroke-hi);transform:none}
-[data-theme="minimal-pro"] .card:hover{border-top-color:var(--text)}
-[data-theme="minimal-pro"] .icon{width:38px;height:38px;border:1px solid var(--line);border-radius:3px;font-size:17px;transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
-[data-theme="minimal-pro"] .card:hover .icon{background:var(--accent);color:#fff;border-color:var(--accent)}
-/* Portfolio: frames, no fill. */
-[data-theme="minimal-pro"] .project{border:0;border-radius:0;background:transparent;box-shadow:none;transition:border-color .4s var(--ease)}
-[data-theme="minimal-pro"] .project:hover{transform:none}
-[data-theme="minimal-pro"] .project-img{height:264px;padding:20px;border-bottom:1px solid var(--line);background:var(--sec-bg)}
-[data-theme="minimal-pro"] .mock{border:1px solid var(--line);border-radius:3px;background:var(--card);transition:border-color .4s var(--ease),transform .7s var(--ease)}
-[data-theme="minimal-pro"] .project:hover .mock{transform:translateY(-4px);border-color:var(--stroke-hi)}
-[data-theme="minimal-pro"] .mock-title{font-size:22px;font-weight:600;letter-spacing:-.03em}
-[data-theme="minimal-pro"] .mock-top{font-family:var(--ffm);font-size:9px;letter-spacing:.06em}
-[data-theme="minimal-pro"] .project-info{padding:22px 0 4px}
-/* Pricing: the featured plan is simply inverted. No glow, no lift. */
-[data-theme="minimal-pro"] .price{padding:34px 30px;border-radius:0;background:var(--card);box-shadow:none;transition:border-color .4s var(--ease)}
-[data-theme="minimal-pro"] .price:hover{transform:none;border-color:var(--stroke-hi)}
-[data-theme="minimal-pro"] .price.featured{background:var(--accent);border-color:var(--accent);box-shadow:none;color:#fff}
-[data-theme="minimal-pro"] .price.featured:hover{border-color:var(--accent)}
-[data-theme="minimal-pro"] .price.featured>p,[data-theme="minimal-pro"] .price.featured .amount small,[data-theme="minimal-pro"] .price.featured .features li{color:rgba(255,255,255,.66)}
-[data-theme="minimal-pro"] .price.featured .features li{border-bottom-color:rgba(255,255,255,.13)}
-[data-theme="minimal-pro"] .price.featured .btn.primary{background:#fff;color:#0b0d11}
-[data-theme="minimal-pro"] .price.featured .btn.primary:hover{background:#eceef2}
-[data-theme="minimal-pro"] .price.featured .features li::before{color:#7ee3a8}
-[data-theme="minimal-pro"] .pop{background:rgba(255,255,255,.13);color:#fff;border-radius:2px;font-family:var(--ffm);font-size:9px;letter-spacing:.08em}
-[data-theme="minimal-pro"] .amount{font-weight:700;letter-spacing:-.03em}
-/* Process: a numbered rail with a connecting hairline. */
-[data-theme="minimal-pro"] .steps{gap:0}
-[data-theme="minimal-pro"] .step{padding:24px 26px 0 0;border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none;transition:border-color .4s var(--ease)}
-[data-theme="minimal-pro"] .step+.step{border-left:1px solid var(--line);padding-left:26px}
-[data-theme="minimal-pro"] .step:hover{transform:none;border-color:var(--stroke-hi)}
-[data-theme="minimal-pro"] .num{font-family:var(--ffm);font-size:11px;letter-spacing:.06em;color:var(--text);margin-bottom:20px}
-/* Closing band goes solid ink, full bleed of the container. */
-[data-theme="minimal-pro"] .cta{padding:76px 56px;border:0;border-radius:0;background:var(--cta);color:#fff}
-[data-theme="minimal-pro"] .cta h2{color:#fff;max-width:20ch}
-[data-theme="minimal-pro"] .cta p{color:rgba(255,255,255,.62)}
-[data-theme="minimal-pro"] .cta .kicker{color:rgba(255,255,255,.44)}
-[data-theme="minimal-pro"] .cta .btn.primary{background:#fff;color:#0b0d11}
-[data-theme="minimal-pro"] .cta .btn.primary:hover{background:#e9ecf1}
-[data-theme="minimal-pro"] .cta .btn.secondary{border-color:rgba(255,255,255,.28);color:#fff}
-[data-theme="minimal-pro"] .cta .btn.secondary:hover{background:#fff;color:#0b0d11;border-color:#fff}
-[data-theme="minimal-pro"] footer{padding:34px 0;border-top:1px solid var(--line);color:var(--foot)}
-/* The switcher stops floating here: nothing drifts in this theme. */
-[data-theme="minimal-pro"] .theme-toggle{animation:none;border-radius:3px}
-[data-theme="minimal-pro"] .tt-disc{border-radius:3px}
-[data-theme="minimal-pro"] .theme-menu{border-radius:4px}
-/* Motion language: short travel, quick fade, nothing overshoots. */
-html.fc-reveal[data-theme="minimal-pro"] [data-rv]{opacity:0;translate:0 10px;transition:opacity var(--dur) var(--ease),translate var(--dur) var(--ease);transition-delay:var(--rd,0s)}
-html.fc-reveal[data-theme="minimal-pro"] [data-rv].is-in{opacity:1;translate:0 0}
-[data-theme="minimal-pro"] .grid .card:nth-child(2),[data-theme="minimal-pro"] .portfolio .project:nth-child(2),[data-theme="minimal-pro"] .pricing .price:nth-child(2){--rd:.06s}
-[data-theme="minimal-pro"] .grid .card:nth-child(3),[data-theme="minimal-pro"] .portfolio .project:nth-child(3),[data-theme="minimal-pro"] .pricing .price:nth-child(3){--rd:.12s}
-[data-theme="minimal-pro"] .steps .step:nth-child(2){--rd:.06s}
-[data-theme="minimal-pro"] .steps .step:nth-child(3){--rd:.12s}
-[data-theme="minimal-pro"] .steps .step:nth-child(4){--rd:.18s}
-/* Arrival on theme switch: one quiet line, no stagger theatre. */
-@keyframes mpIn{from{opacity:0;translate:0 12px}}
-html.fc-swap[data-theme="minimal-pro"] h1{animation:mpIn .62s var(--ease) both}
-@media(max-width:1024px){
-[data-theme="minimal-pro"] .section-head{grid-template-columns:1fr;gap:22px;padding-bottom:22px}
-[data-theme="minimal-pro"] h1{max-width:none}
-}
-@media(max-width:800px){
-[data-theme="minimal-pro"] .hero{padding:86px 0 62px}
-[data-theme="minimal-pro"] .hero-bg{background-size:64px 64px}
-[data-theme="minimal-pro"] .card,[data-theme="minimal-pro"] .step{padding:26px 0}
-[data-theme="minimal-pro"] .card+.card{border-left:0;padding-left:0;border-top:1px solid var(--line)}
-[data-theme="minimal-pro"] .cta{padding:46px 24px}
-[data-theme="minimal-pro"] .project-img{height:220px;padding:14px}
-/* Steps sit two-up here, so only the row-leading steps get the rule. */
-[data-theme="minimal-pro"] .step{padding:26px 0}
-[data-theme="minimal-pro"] .step:nth-child(odd){border-top:1px solid var(--line);border-left:0;padding-left:0}
-[data-theme="minimal-pro"] .step:nth-child(even){border-top:0;border-left:1px solid var(--line);padding-left:26px}
-}
-@media(max-width:500px){
-[data-theme="minimal-pro"] .step:nth-child(even){border-left:0;padding-left:0;border-top:1px solid var(--line)}
-}
-
-/* ============================================================
-GLASSMORPHISM - dark "liquid glass" implementation.
-   Scoped entirely to [data-theme="glassmorphism"]; no other theme
-   is referenced or affected anywhere in this block.
-
-   Three rules define the look:
-      1. BLUR BUDGET. Blur is expensive and it flattens the ambient
-         light, so it is spent in exactly two places: the nav and the
-         hero panel. Both are driven by single tokens (--nav-blur,
-         --nav-blur-up, --hero-blur). Set those three to `none` and the
-         whole theme returns to a fully unblurred state - no other
-         rule needs editing.
-      2. TRANSPARENCY LEVELS. .glass-1..4 map to --g1..--g4, which
-         step from 3% to 8% white film, so "glassy" means genuinely
-         see-through rather than milky.
-      3. NO BLUR ANYWHERE ELSE. Cards, steps, projects, prices and
-         the CTA stay sharp, so the orbs read as light *behind* the
-         frosted chrome rather than smearing through every panel.
-
-   Depth stack (back to front):
-     ambient orbs -> grain -> frosted chrome (nav / hero) -> cards
-     -> controls -> text
-
-   Property discipline - these are independent CSS properties, so
-   the motion systems never overwrite each other:
-     transform = authored animation (drift, entrance, hover lift)
-     translate  = pointer parallax
-     rotate     = cursor tilt
-   ============================================================ */
-
-/* --- 1. reusable glass levels ------------------------------- */
-[data-theme="glassmorphism"] .glass-1{--g-bg:var(--g1-bg);--g-bd:var(--g1-bd);--g-sh:var(--g1-sh)}
-[data-theme="glassmorphism"] .glass-2{--g-bg:var(--g2-bg);--g-bd:var(--g2-bd);--g-sh:var(--g2-sh)}
-[data-theme="glassmorphism"] .glass-3{--g-bg:var(--g3-bg);--g-bd:var(--g3-bd);--g-sh:var(--g3-sh)}
-[data-theme="glassmorphism"] .glass-4{--g-bg:var(--g4-bg);--g-bd:var(--g4-bd);--g-sh:var(--g4-sh)}
-
-/* --- 2. the glass surface -----------------------------------
-   Three layers, no blur: a very thin tinted film + a directional
-   light veil (background), a lit top edge and refracted bottom
-   edge plus ambient occlusion (inset shadow), and a deep soft
-   drop shadow. Nothing blurs what sits behind the panel, so the
-   background reads straight through the glass.
-   The cursor light uses z-index:-1 — the host is a stacking
-   context, so it sits above its own background but below text. */
-[data-theme="glassmorphism"] [data-glass]{
-  position:relative;overflow:hidden;
-  background-color:var(--g-bg,var(--g2-bg));
-  background-image:linear-gradient(155deg,var(--g-veil-top),rgba(255,255,255,0) 46%,var(--g-veil-bot));
-  border:1px solid var(--g-bd,var(--g2-bd));
-  box-shadow:var(--g-sh,var(--g2-sh)),inset 0 1px 0 var(--g-hi),inset 0 -1px 0 var(--g-edge),inset 0 -30px 44px -38px var(--g-ao);
-  transition:background-color .4s,border-color .4s,box-shadow .4s,transform .45s cubic-bezier(.22,1,.36,1)
-}
-[data-theme="glassmorphism"] [data-glass]:hover{border-color:rgba(255,255,255,.34);box-shadow:0 30px 64px -26px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.42),inset 0 -1px 0 var(--g-edge),inset 0 -30px 44px -38px var(--g-ao)}
-[data-theme="glassmorphism"] [data-tilt]{rotate:var(--tilt,0deg);transition:rotate .5s cubic-bezier(.22,1,.36,1)}
-
-/* cursor-following light — the reflection that tracks the pointer */
-[data-theme="glassmorphism"] [data-lit]::before{
-  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;
-  background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),var(--g-cursor),rgba(255,255,255,.02) 45%,rgba(255,255,255,0) 70%);
-  opacity:0;transition:opacity .5s cubic-bezier(.22,1,.36,1)
-}
-[data-theme="glassmorphism"] [data-lit]:hover::before{opacity:1}
-
-/* --- 3. animated environment -------------------------------
-   Each section gets its own light sources, so the glass never
-   looks like one repeated card pattern. Drift is transform-based
-   and very slow; parallax rides on `translate`. */
-/* --- 1. environment: one continuous material -------------------
-   This used to give every <section> its own .glass-env carrying its
-   own colour pair - blue/purple in the hero, blue/pink in the work
-   section, cyan/green in pricing, and so on - plus a white sheen
-   repeated at the top of each section. Scrolling therefore crossed a
-   visible seam wherever one section's blob met the next section's,
-   which is exactly what made the page read as separate parts.
-
-   There is now one environment layer, fixed to the viewport, so the
-   whole page is lit by the same material at every scroll position
-   and the glass panels always have something to refract.
-
-   Two details do the real work here:
-     - Every stop fades to its OWN hue at zero alpha, never to the
-       `transparent` keyword. `transparent` is transparent *black*,
-       so overlapping gradients interpolate down through grey and
-       leave a muddy halo - that halo is what read as hard edges.
-     - The drifting orbs are sized in vmax and parked off-screen, so
-       only their soft falloff is ever visible. A circle whose rim
-       fits inside the viewport is a visible disc, which is another
-       way the old layers announced their own boundaries. */
-[data-theme="glassmorphism"] body{background:#060a14}
-[data-theme="glassmorphism"] main,[data-theme="glassmorphism"] footer{position:relative;z-index:1}
-[data-theme="glassmorphism"] section{position:relative}
-[data-theme="glassmorphism"] .glass-env{
-  position:fixed;inset:0;z-index:0;display:block;overflow:hidden;pointer-events:none;--eo:var(--m1);
-  background:
-    radial-gradient(125% 100% at 14% -12%,rgb(var(--m1)/.46),rgb(var(--m1)/0) 57%),
-    radial-gradient(115% 88% at 88% 2%,rgb(var(--m2)/.4),rgb(var(--m2)/0) 55%),
-    radial-gradient(130% 105% at 82% 96%,rgb(var(--m3)/.38),rgb(var(--m3)/0) 58%),
-    radial-gradient(105% 82% at 2% 84%,rgb(var(--m4)/.34),rgb(var(--m4)/0) 56%),
-    radial-gradient(120% 95% at 50% 52%,rgb(var(--m5)/.2),rgb(var(--m5)/0) 68%)
-}
-/* a single soft top-light for the whole page, replacing the sheen
-   that used to restart inside every section */
-[data-theme="glassmorphism"] .glass-env::after{
-  content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(120% 70% at 50% -10%,rgb(255 255 255/.07),rgb(255 255 255/0) 60%),
-    linear-gradient(180deg,rgb(255 255 255/.035),rgb(255 255 255/0) 34%)
-}
-[data-theme="glassmorphism"] .glass-env i{
-  position:absolute;display:block;border-radius:50%;opacity:var(--env-a);
-  background:radial-gradient(circle at 42% 38%,rgb(var(--eo)/.5),rgb(var(--eo)/0) 66%);
-  translate:calc(var(--px,0)*var(--pd,10)*1px) calc(var(--py,0)*var(--pd,10)*1px);
-  transition:translate 1.1s cubic-bezier(.22,1,.36,1)
-}
-[data-theme="glassmorphism"] .ge-o1{width:118vmax;height:118vmax;left:-42vmax;top:-58vmax;--pd:14;animation:gDriftA 26s ease-in-out infinite alternate}
-[data-theme="glassmorphism"] .ge-o2{width:104vmax;height:104vmax;right:-46vmax;top:-34vmax;--pd:20;--eo:var(--m2);animation:gDriftB 32s ease-in-out infinite alternate}
-[data-theme="glassmorphism"] .ge-o3{width:96vmax;height:96vmax;left:14vmax;bottom:-62vmax;--pd:26;--eo:var(--m3);animation:gDriftC 38s ease-in-out infinite alternate}
-@keyframes gDriftA{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(5%,6%,0) scale(1.06)}}
-@keyframes gDriftB{from{transform:translate3d(0,0,0) scale(1.04)}to{transform:translate3d(-5%,7%,0) scale(.96)}}
-@keyframes gDriftC{from{transform:translate3d(0,0,0) scale(.99)}to{transform:translate3d(6%,-4%,0) scale(1.08)}}
-/* the section orbs replace the old single hero glow */
-[data-theme="glassmorphism"] .hero-bg{display:none}
-/* film grain — the detail that stops it looking like vector glass */
-[data-theme="glassmorphism"] body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px}
-/* materialise when the theme is selected */
-html.fc-swap[data-theme="glassmorphism"] .glass-env i{animation-name:gDriftA,gSettle;animation-duration:26s,.8s;animation-iteration-count:infinite,1}
-html.fc-swap[data-theme="glassmorphism"] .ge-o2{animation-duration:32s,.8s}
-html.fc-swap[data-theme="glassmorphism"] .ge-o3{animation-duration:38s,.8s}
-@keyframes gSettle{from{opacity:0}}
-
-/* --- 4. hero: the surface closest to the viewer -------------- */
-[data-theme="glassmorphism"] .hero-panel{margin-top:10px;padding:clamp(28px,4.2vw,52px) clamp(18px,3.6vw,54px) clamp(24px,3.2vw,38px);border-radius:34px;text-align:center;translate:calc(var(--px,0)*5px) calc(var(--py,0)*4px);-webkit-backdrop-filter:var(--hero-blur);backdrop-filter:var(--hero-blur);transition:translate 1.1s cubic-bezier(.22,1,.36,1);animation:gEnter .9s cubic-bezier(.22,1,.36,1) both}
-[data-theme="glassmorphism"] .hero-panel>*{animation:gEnter .8s cubic-bezier(.22,1,.36,1) both;animation-delay:var(--hd,0s)}
-[data-theme="glassmorphism"] .hero-panel>*:nth-child(1){--hd:.06s}
-[data-theme="glassmorphism"] .hero-panel>*:nth-child(2){--hd:.14s}
-[data-theme="glassmorphism"] .hero-panel>*:nth-child(3){--hd:.22s}
-[data-theme="glassmorphism"] .hero-panel>*:nth-child(4){--hd:.3s}
-[data-theme="glassmorphism"] .hero-panel>*:nth-child(5){--hd:.38s}
-@keyframes gEnter{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-[data-theme="glassmorphism"] .hero-panel .badge{background-color:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22)}
-
-/* --- 5. navbar: floating glass that firms up on scroll ------- */
-[data-theme="glassmorphism"] header{position:sticky;top:0;z-index:30;padding:16px 0;pointer-events:none}
-[data-theme="glassmorphism"] nav{pointer-events:auto;height:64px;padding:0 10px 0 22px;overflow:hidden;border:1px solid var(--g2-bd);border-radius:999px;background-color:rgba(255,255,255,.04);background-image:linear-gradient(155deg,rgba(255,255,255,.09),rgba(255,255,255,.01) 50%,rgba(255,255,255,.04));box-shadow:var(--g2-sh),inset 0 1px 0 var(--g-hi);-webkit-backdrop-filter:var(--nav-blur);backdrop-filter:var(--nav-blur);transition:background-color .5s,box-shadow .5s,border-color .5s,-webkit-backdrop-filter .5s,backdrop-filter .5s}
-[data-theme="glassmorphism"] nav.scrolled,[data-theme="glassmorphism"].fc-scrolled nav{background-color:rgba(255,255,255,.075);border-color:rgba(255,255,255,.2);box-shadow:0 22px 50px -22px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.4);-webkit-backdrop-filter:var(--nav-blur-up);backdrop-filter:var(--nav-blur-up)}
-
-/* --- 6. controls: physical glass ----------------------------- */
-[data-theme="glassmorphism"] .btn{position:relative;overflow:hidden;background-color:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#eef2ff;box-shadow:0 8px 22px -12px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s,background-color .3s,border-color .3s}
-[data-theme="glassmorphism"] .btn:hover{transform:translateY(-2px);background-color:rgba(255,255,255,.15);border-color:rgba(255,255,255,.34);box-shadow:0 16px 34px -14px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.42)}
-[data-theme="glassmorphism"] .btn:active{transform:translateY(0) scale(.985);background-color:rgba(255,255,255,.05);box-shadow:0 4px 12px -8px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.16)}
-[data-theme="glassmorphism"] .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-[data-theme="glassmorphism"] .primary{background-color:rgba(255,255,255,.13);color:#eef2ff}
-[data-theme="glassmorphism"] .primary:hover{background-color:rgba(255,255,255,.22)}
-[data-theme="glassmorphism"] .secondary{background-color:rgba(255,255,255,.045);color:#eef2ff}
-[data-theme="glassmorphism"] .secondary:hover{background-color:rgba(255,255,255,.12)}
-[data-theme="glassmorphism"] .navcta{display:inline-flex;align-items:center;background-color:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:#eef2ff;box-shadow:inset 0 1px 0 rgba(255,255,255,.22);transition:transform .3s cubic-bezier(.22,1,.36,1),background-color .3s,box-shadow .3s}
-[data-theme="glassmorphism"] .navcta:hover{background-color:rgba(255,255,255,.17);transform:translateY(-1px);box-shadow:0 10px 24px -12px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.4)}
-[data-theme="glassmorphism"] .navcta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-/* theme switcher — same component, upgraded material */
-[data-theme="glassmorphism"] .theme-toggle{background-color:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);box-shadow:var(--tt-sh),inset 0 1px 0 rgba(255,255,255,.24)}
-[data-theme="glassmorphism"] .theme-toggle:hover{background-color:rgba(255,255,255,.14);border-color:rgba(255,255,255,.32)}
-[data-theme="glassmorphism"] .tt-disc{background:linear-gradient(140deg,rgba(255,255,255,.26),rgba(255,255,255,.06));color:#0b1020;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 10px -4px rgba(0,0,0,.7)}
-[data-theme="glassmorphism"] .theme-menu{background-color:rgba(10,14,28,.86);border-color:rgba(255,255,255,.16);box-shadow:0 30px 70px -26px rgba(0,0,0,.9),inset 0 1px 0 var(--g-hi)}
-[data-theme="glassmorphism"] .theme-menu::-webkit-scrollbar{width:8px}
-[data-theme="glassmorphism"] .theme-menu::-webkit-scrollbar-thumb{background:rgba(255,255,255,.28);border-radius:99px;border:2px solid transparent;background-clip:content-box}
-[data-theme="glassmorphism"] .tm-head{color:var(--dim);border-bottom-color:rgba(255,255,255,.1)}
-[data-theme="glassmorphism"] .tm-sw{border-color:rgba(255,255,255,.3);box-shadow:0 2px 8px -2px rgba(0,0,0,.6)}
-[data-theme="glassmorphism"] .tm-item:hover{background-color:rgba(255,255,255,.09);color:#eef2ff}
-[data-theme="glassmorphism"] .tm-item.active{background-color:rgba(255,255,255,.14);color:#eef2ff}
-[data-theme="glassmorphism"] .tm-check{color:#34d399}
-
-/* --- 7. content components, each at its own glass level ------ */
-[data-theme="glassmorphism"] .icon{background-color:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.24);color:#a8bcff}
-[data-theme="glassmorphism"] .card:hover,[data-theme="glassmorphism"] .price:hover,[data-theme="glassmorphism"] .project:hover,[data-theme="glassmorphism"] .step:hover{transform:translateY(-4px)}
-[data-theme="glassmorphism"] .project-img{position:relative;overflow:hidden}
-[data-theme="glassmorphism"] .project-img::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0) 38%,rgba(255,255,255,.08));opacity:0;transition:opacity .6s}
-[data-theme="glassmorphism"] .project:hover .project-img::after{opacity:1}
-[data-theme="glassmorphism"] .mock{background-color:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.15);box-shadow:0 20px 44px -20px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.24);transition:transform .9s cubic-bezier(.22,1,.36,1),background-color .3s,border-color .3s}
-[data-theme="glassmorphism"] .project:hover .mock{transform:scale(1.05)}
-[data-theme="glassmorphism"] .project-info{transition:background-color .5s}
-[data-theme="glassmorphism"] .project:hover .project-info{background-color:rgba(255,255,255,.035)}
-[data-theme="glassmorphism"] .price.featured{border-color:rgba(255,255,255,.28);box-shadow:0 34px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.16),inset 0 1px 0 rgba(255,255,255,.4)}
-[data-theme="glassmorphism"] .pop{background-color:rgba(63,95,214,.9);color:#fff;border:1px solid rgba(255,255,255,.24);box-shadow:0 6px 16px -8px rgba(0,0,0,.8)}
-/* process: transparency climbs from step 1 -> 4, so the row reads as depth */
-[data-theme="glassmorphism"] .step:nth-child(1){--g-bg:rgba(255,255,255,.03);--g-bd:rgba(255,255,255,.09)}
-[data-theme="glassmorphism"] .step:nth-child(2){--g-bg:rgba(255,255,255,.04);--g-bd:rgba(255,255,255,.11)}
-[data-theme="glassmorphism"] .step:nth-child(3){--g-bg:rgba(255,255,255,.05);--g-bd:rgba(255,255,255,.13)}
-[data-theme="glassmorphism"] .step:nth-child(4){--g-bg:rgba(255,255,255,.06);--g-bd:rgba(255,255,255,.15)}
-[data-theme="glassmorphism"] .cta{border-radius:36px;padding:clamp(46px,6vw,72px) clamp(20px,4vw,60px);box-shadow:0 50px 110px -40px rgba(0,0,0,.8),inset 0 1px 0 var(--g-hi)}
-[data-theme="glassmorphism"] footer{isolation:isolate;padding:26px 0;border-top:1px solid rgba(255,255,255,.1);color:var(--foot)}
-[data-theme="glassmorphism"] footer::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:18px 18px 0 0;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012))}
-
-/* --- 8. scroll reveal ---------------------------------------
-   The observer is shared by every theme and only ever adds
-   .is-in. What an element does on the way in is theme-specific,
-   so this block defines glass' language: a long, soft rise.
-   Gated on html.fc-reveal, which the runtime adds only when it
-   is safe to hide content — so with JS off nothing is hidden. */
-html.fc-reveal[data-theme="glassmorphism"] [data-rv]{opacity:0;translate:0 26px;transition:opacity .85s cubic-bezier(.22,1,.36,1),translate .85s cubic-bezier(.22,1,.36,1);transition-delay:var(--rd,0s)}
-html.fc-reveal[data-theme="glassmorphism"] [data-rv].is-in{opacity:1;translate:0 0}
-[data-theme="glassmorphism"] .steps .step:nth-child(1){--rd:.05s}
-[data-theme="glassmorphism"] .steps .step:nth-child(2){--rd:.14s}
-[data-theme="glassmorphism"] .steps .step:nth-child(3){--rd:.23s}
-[data-theme="glassmorphism"] .steps .step:nth-child(4){--rd:.32s}
-[data-theme="glassmorphism"] .grid .card:nth-child(2),[data-theme="glassmorphism"] .portfolio .project:nth-child(2),[data-theme="glassmorphism"] .pricing .price:nth-child(2){--rd:.09s}
-[data-theme="glassmorphism"] .grid .card:nth-child(3),[data-theme="glassmorphism"] .portfolio .project:nth-child(3),[data-theme="glassmorphism"] .pricing .price:nth-child(3){--rd:.18s}
-
-/* --- 9. responsive: calmer ambient on smaller screens -------- */
-@media(max-width:1024px){[data-theme="glassmorphism"]{--env-a:.5}}
-@media(max-width:768px){
-[data-theme="glassmorphism"]{--env-a:.42;--r:18px;--r-lg:26px}
-[data-theme="glassmorphism"] .glass-env i{opacity:calc(var(--env-a)*.92)}
-[data-theme="glassmorphism"] .hero-panel{border-radius:26px;translate:none}
-[data-theme="glassmorphism"] .cta{border-radius:26px}
-[data-theme="glassmorphism"] header{padding:12px 0}
-}
-@media(max-width:480px){[data-theme="glassmorphism"]{--env-a:.34}[data-theme="glassmorphism"] .glass-env .ge-o3{display:none}}
-
-/* --- 10. reduced motion: keep it calm, never blank ----------- */
-@media(prefers-reduced-motion:reduce){
-[data-theme="glassmorphism"] .glass-env i,[data-theme="glassmorphism"] .hero-panel,[data-theme="glassmorphism"] .hero-panel>*{animation:none!important}
-[data-theme="glassmorphism"] .glass-env i,[data-theme="glassmorphism"] .hero-panel{translate:none!important}
-[data-theme="glassmorphism"] [data-tilt]{rotate:none!important}
-[data-theme="glassmorphism"] [data-glass] *{transition-duration:.01ms!important}
-html.fc-reveal[data-theme="glassmorphism"] [data-rv]{opacity:1;translate:0 0;transition:none}
-}
-</style>
+</script>
 </head>
+
 <body>
-<div class="splash" aria-hidden="true">
-<div class="splash-in">
-<div class="splash-mark">WYNEX</div>
-<div class="splash-rule"></div>
-<p class="splash-tag">Portfolio Websites That Get You Noticed</p>
-</div>
-</div>
-<div class="glass-env" aria-hidden="true"><i class="ge-o1"></i><i class="ge-o2"></i><i class="ge-o3"></i></div>
-<header>
-<nav class="container">
-<a class="logo" href="#">WY<span>NEX</span></a>
-<div class="navlinks"><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#process">Process</a></div>
-<a class="navcta" href="#contact">Get yours →</a>
-</nav>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============================ 1. NAVIGATION ============================ -->
+<header class="site-head" id="top">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="WYNEX — home">
+      <span class="logo-mark" aria-hidden="true">W</span>
+      <span class="logo-word">WYNEX</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="#demos">Examples</a></li>
+        <li><a href="#who">Who it&rsquo;s for</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#ownership">Ownership</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- EDIT: WhatsApp number -->
+      <a class="btn btn-primary btn-sm nav-cta"
+         href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%27d%20like%20to%20get%20a%20website%20built.%20Here%27s%20what%20I%20do%3A%20"
+         target="_blank" rel="noopener">Get My Website</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" type="button"
+            aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="nav-toggle-text">Menu</span>
+    </button>
+  </div>
 </header>
 
-<main>
+<main id="main">
+
+<!-- ============================= 2. HERO ============================= -->
 <section class="hero">
-<div class="hero-bg" aria-hidden="true"><div class="glow"></div></div>
-<div class="container">
-<div class="theme-wrap" id="themeWrap">
-<button class="theme-toggle" id="themeToggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change theme" title="Change theme"><span class="tt-disc" aria-hidden="true"><span class="tt-grid"><i></i><i></i><i></i><i></i></span></span><span class="tt-label">Change theme</span></button>
-<div class="theme-menu" id="themeMenu" role="listbox" aria-label="Choose a theme">
-<div class="tm-head">Themes</div>
-<button class="tm-item" type="button" role="option" data-set-theme="minimal-pro" style="--s1:#111827;--s2:#ffffff;--s3:#9ca3af"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">Minimal Pro</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-<button class="tm-item" type="button" role="option" data-set-theme="glassmorphism" style="--s1:#6b46f5;--s2:#38bdf8;--s3:#ffffff"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">Glassmorphism</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-<button class="tm-item" type="button" role="option" data-set-theme="bento" style="--s1:#2563eb;--s2:#0ea5e9;--s3:#eff6ff"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">Bento</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-<button class="tm-item" type="button" role="option" data-set-theme="neo-brutalism" style="--s1:#111111;--s2:#ffd400;--s3:#ff5c00"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">Neo-Brutalism</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-<button class="tm-item" type="button" role="option" data-set-theme="dark-tech" style="--s1:#00e5ff;--s2:#7c4dff;--s3:#05070d"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">Dark Tech</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-<button class="tm-item" type="button" role="option" data-set-theme="editorial" style="--s1:#14110d;--s2:#8c2f1c;--s3:#f8f5ef"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">Editorial</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-<button class="tm-item" type="button" role="option" data-set-theme="luxury" style="--s1:#c9a227;--s2:#0b0a09;--s3:#e6c76a"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">Luxury</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-<button class="tm-item" type="button" role="option" data-set-theme="creative" style="--s1:#ff2e88;--s2:#ff8a3d;--s3:#fff7fd"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">Creative / Experimental</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-<button class="tm-item" type="button" role="option" data-set-theme="immersive" style="--s1:#a855f7;--s2:#22d3ee;--s3:#0a0714"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">3D / Immersive</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-<button class="tm-item" type="button" role="option" data-set-theme="terminal" style="--s1:#39ff5f;--s2:#080c08;--s3:#8dff5f"><span class="tm-sw" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-name">Terminal / Developer</span><span class="tm-check" aria-hidden="true">&#10003;</span></button>
-</div>
-</div>
-<div class="hero-panel glass-4" data-glass data-lit data-tilt>
-<div class="badge">✦ Custom-built • Mobile-ready • Fast</div>
-<h1>Your work deserves a <em>better portfolio.</em></h1>
-<p>Professional portfolio websites for students, creators, freelancers and professionals — designed to make a strong first impression.</p>
-<div class="buttons">
-<a class="btn primary" href="#pricing">See packages →</a>
-<a class="btn secondary" href="#work">View examples</a>
-</div>
-<div class="trust">Built for people who want to look professional online</div>
-</div>
-</div>
+  <div class="wrap hero-inner">
+    <p class="pill"><span class="dot" aria-hidden="true"></span>Based in Kerala · Serving clients across India</p>
+
+    <h1>Your work deserves a website that looks as good as your work.</h1>
+
+    <p class="lead">Custom portfolio websites for students, creators, freelancers and professionals — designed around you and delivered in 48 hours.</p>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%20want%20a%20website%20for%20my%20work.%20I%20do%20%5Byour%20field%5D%20and%20I%27m%20interested%20in%20the%20%5BStarter%20%2F%20Professional%20%2F%20Premium%5D%20package." target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->Get My Website <span aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="#demos">View Live Examples</a>
+    </div>
+
+    <ul class="facts" aria-label="Key facts">
+      <li><strong>₹1,999</strong><span>Starting price</span></li>
+      <li><strong>48 hours</strong><span>Targeted delivery</span></li>
+      <li><strong>50% advance</strong><span>Rest after delivery</span></li>
+      <li><strong>UPI accepted</strong><span>Simple, direct payment</span></li>
+    </ul>
+  </div>
 </section>
 
-<section>
-<div class="container">
-<div class="section-head" data-rv><div><div class="kicker">What you get</div><h2>More than a template.</h2></div><p>Your website is tailored around your work, personality and goals — not just filled with generic sections.</p></div>
-<div class="grid">
-<div class="card glass-2" data-rv data-glass data-lit data-tilt><div class="icon">✦</div><h3>Custom design</h3><p>A clean visual style built around your profession, personal brand and the kind of impression you want to create.</p></div>
-<div class="card glass-2" data-rv data-glass data-lit data-tilt><div class="icon">↗</div><h3>Works everywhere</h3><p>Responsive layouts that look sharp on phones, tablets and desktop screens.</p></div>
-<div class="card glass-2" data-rv data-glass data-lit data-tilt><div class="icon">⚡</div><h3>Fast & shareable</h3><p>Optimized for quick loading and a simple link you can put on your CV, Instagram, LinkedIn or WhatsApp.</p></div>
-</div>
-</div>
+<!-- ================= 3. TRUST SIGNALS (no fake claims) ================= -->
+<section class="trust-strip" aria-label="How WYNEX works">
+  <div class="wrap trust-strip-inner">
+    <p class="trust-strip-label">One person. Direct communication. No middlemen.</p>
+    <ul class="trust-items">
+      <li><strong>Custom-built</strong><span>Designed around you — not a template</span></li>
+      <li><strong>Your domain</strong><span>Purchased in your own name</span></li>
+      <li><strong>Clear pricing</strong><span>Know the price before starting</span></li>
+      <li><strong>Direct contact</strong><span>You talk to the person building it</span></li>
+    </ul>
+  </div>
 </section>
 
-<section id="work">
-<div class="container">
-<div class="section-head" data-rv><div><div class="kicker">Examples</div><h2>Built for different people.</h2></div><p>These are demo concepts. Replace them with your real client projects as your portfolio grows.</p></div>
-<div class="portfolio">
-<div class="project glass-2" data-rv data-glass data-lit data-tilt><div class="project-img"><div class="mock"><div class="mock-top"><span>DEV / 2026</span><span>01</span></div><div class="mock-title">Software<br>Developer.</div><div class="mock-line"></div></div></div><div class="project-info"><h3>Developer Portfolio</h3><p>Projects, skills, experience & contact.</p></div></div>
-<div class="project glass-2" data-rv data-glass data-lit data-tilt><div class="project-img"><div class="mock"><div class="mock-top"><span>CREATIVE</span><span>02</span></div><div class="mock-title">Design is<br>how it feels.</div><div class="mock-line"></div></div></div><div class="project-info"><h3>Creative Portfolio</h3><p>For designers, artists & creators.</p></div></div>
-<div class="project glass-2" data-rv data-glass data-lit data-tilt><div class="project-img"><div class="mock"><div class="mock-top"><span>PERSONAL BRAND</span><span>03</span></div><div class="mock-title">Make your<br>name known.</div><div class="mock-line"></div></div></div><div class="project-info"><h3>Personal Brand</h3><p>For freelancers, professionals & founders.</p></div></div>
-</div>
-</div>
+<!-- ================= 4. LIVE DEMOS / SHOWCASE ================= -->
+<section class="section" id="demos">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <p class="kicker">Live examples</p>
+        <h2>What could <em>your</em> website look like?</h2>
+      </div>
+      <p class="sec-head-note">One real live site built by WYNEX, plus concept directions showing how different fields could look. Open the live one on your phone — that speed and feel is what you&rsquo;re buying.</p>
+    </header>
+
+    <ul class="demos demos-featured">
+      <li class="demo demo-live">
+        <a href="https://adeela.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo website by WYNEX — opens in a new tab">
+          <span class="demo-thumb demo-thumb-live" aria-hidden="true">
+            <span class="demo-badge-live">Live demo</span>
+            <img src="assets/img/demo-personal.svg" width="800" height="600" loading="lazy" decoding="async" alt="">
+          </span>
+          <span class="demo-body">
+            <span class="demo-title">Personal portfolio — live</span>
+            <span class="demo-desc">A real website built by WYNEX, live on the web right now. Open it on your phone to feel the speed and layout.</span>
+            <span class="demo-tags"><i>Live site</i><i>Mobile-first</i><i>Built by WYNEX</i></span>
+          </span>
+          <span class="demo-go">Open live site <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="demo">
+        <a href="#" data-demo-placeholder aria-label="Student and developer portfolio concept — preview coming soon">
+          <span class="demo-thumb" aria-hidden="true">
+            <span class="demo-badge">Concept</span>
+            <img src="assets/img/demo-developer.svg" width="800" height="600" loading="lazy" decoding="async" alt="">
+          </span>
+          <span class="demo-body">
+            <span class="demo-title">Student / Developer</span>
+            <span class="demo-desc">Skills, projects and links laid out for students and engineers. Stand out beyond your resume.</span>
+            <span class="demo-tags"><i>Concept</i><i>Projects</i><i>Skills</i></span>
+          </span>
+          <span class="demo-go">Preview soon <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="demo">
+        <a href="#" data-demo-placeholder aria-label="Designer and photographer portfolio concept — preview coming soon">
+          <span class="demo-thumb" aria-hidden="true">
+            <span class="demo-badge">Concept</span>
+            <img src="assets/img/demo-creative.svg" width="800" height="600" loading="lazy" decoding="async" alt="">
+          </span>
+          <span class="demo-body">
+            <span class="demo-title">Designer / Photographer</span>
+            <span class="demo-desc">Image-forward layout with full galleries for visual work. Made to look as good as your work does.</span>
+            <span class="demo-tags"><i>Concept</i><i>Gallery</i><i>Case studies</i></span>
+          </span>
+          <span class="demo-go">Preview soon <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="demo">
+        <a href="#" data-demo-placeholder aria-label="Freelancer and small business website concept — preview coming soon">
+          <span class="demo-thumb" aria-hidden="true">
+            <span class="demo-badge">Concept</span>
+            <img src="assets/img/demo-personal.svg" width="800" height="600" loading="lazy" decoding="async" alt="">
+          </span>
+          <span class="demo-body">
+            <span class="demo-title">Freelancer / Small business</span>
+            <span class="demo-desc">Story-led page with services and a clear contact step. One place for customers to trust and reach you.</span>
+            <span class="demo-tags"><i>Concept</i><i>Services</i><i>Contact</i></span>
+          </span>
+          <span class="demo-go">Preview soon <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+    </ul>
+    <p class="fine">Concepts are sample directions, not client projects. The live demo above is a real site built by WYNEX.</p>
+    <div class="btn-row demo-cta">
+      <a class="btn btn-primary" href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%20saw%20your%20examples.%20I%27d%20like%20something%20like%20this%20for%20my%20work." target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->Let&rsquo;s build mine <span aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="#pricing">See pricing</a>
+    </div>
+  </div>
 </section>
 
-<section id="pricing">
-<div class="container">
-<div class="section-head" data-rv><div><div class="kicker">Simple pricing</div><h2>Pick what you need.</h2></div><p>Starting prices. Final pricing can change depending on pages, content and custom features.</p></div>
-<div class="pricing">
-<div class="price glass-2" data-rv data-glass data-lit data-tilt><h3>Starter</h3><div class="amount">₹1,499 <small>/ one-time</small></div><p>Everything you need for a clean personal presence.</p><ul class="features"><li>One-page portfolio</li><li>Mobile responsive</li><li>About + skills + projects</li><li>WhatsApp / contact CTA</li><li>Basic deployment</li></ul><a class="btn secondary" href="#contact">Start a project</a></div>
-<div class="price featured glass-3" data-rv data-glass data-lit data-tilt><div class="pop">POPULAR</div><h3>Professional</h3><div class="amount">₹3,499 <small>/ one-time</small></div><p>A stronger portfolio for clients, recruiters and personal branding.</p><ul class="features"><li>Custom visual direction</li><li>Multi-section layout</li><li>Projects / case studies</li><li>Animations & interactions</li><li>Deployment + basic SEO</li></ul><a class="btn primary" href="#contact">Start a project</a></div>
-<div class="price glass-2" data-rv data-glass data-lit data-tilt><h3>Premium</h3><div class="amount">₹6,999 <small>/ one-time</small></div><p>A highly customized site with a more distinctive experience.</p><ul class="features"><li>Fully custom design</li><li>Multiple pages</li><li>Advanced interactions</li><li>SEO setup</li><li>Domain/deployment assistance</li></ul><a class="btn secondary" href="#contact">Request a quote</a></div>
-</div>
-</div>
+<!-- ================= 5. WHO WYNEX IS FOR ================= -->
+<section class="section section-alt" id="who">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <p class="kicker">Who it&rsquo;s for</p>
+        <h2>Is this for you?</h2>
+      </div>
+      <p class="sec-head-note">If your work lives scattered across Instagram, resumes and chat threads — you need one place that shows it properly.</p>
+    </header>
+
+    <ul class="cards who-grid">
+      <li class="card">
+        <h3>Students</h3>
+        <p>Stand out beyond your resume. Send one link with placements, internships and projects.</p>
+      </li>
+      <li class="card">
+        <h3>Creators</h3>
+        <p>Turn your work into a professional home online — not just posts that disappear in a feed.</p>
+      </li>
+      <li class="card">
+        <h3>Freelancers</h3>
+        <p>Give potential clients one place to understand what you do, see proof, and contact you.</p>
+      </li>
+      <li class="card">
+        <h3>Designers &amp; Developers</h3>
+        <p>Show projects, process and skills the way your field expects — clean, fast, technical.</p>
+      </li>
+      <li class="card">
+        <h3>Photographers</h3>
+        <p>A fast, image-first gallery that looks great when someone opens it from their phone.</p>
+      </li>
+      <li class="card">
+        <h3>Professionals &amp; Small businesses</h3>
+        <p>Build a stronger presence. Give customers a simple place to learn, trust and contact you.</p>
+      </li>
+    </ul>
+  </div>
 </section>
 
-<section id="process">
-<div class="container">
-<div class="section-head" data-rv><div><div class="kicker">How it works</div><h2>From idea to live link.</h2></div></div>
-<div class="steps">
-<div class="step glass-1" data-rv data-glass data-lit data-tilt><div class="num">01 / DISCOVER</div><h3>You send your details</h3><p>Your bio, work, links, photos and the style you like.</p></div>
-<div class="step glass-1" data-rv data-glass data-lit data-tilt><div class="num">02 / DESIGN</div><h3>We shape the look</h3><p>Your content is turned into a clear, professional layout.</p></div>
-<div class="step glass-1" data-rv data-glass data-lit data-tilt><div class="num">03 / BUILD</div><h3>Your site gets built</h3><p>Responsive, polished and optimized for real devices.</p></div>
-<div class="step glass-1" data-rv data-glass data-lit data-tilt><div class="num">04 / LAUNCH</div><h3>You get the link</h3><p>Share it with recruiters, clients, friends or anyone else.</p></div>
-</div>
-</div>
+<!-- ================= 6. WHY CUSTOM WEBSITE ================= -->
+<section class="section" id="why">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <p class="kicker">Why WYNEX</p>
+        <h2>Custom, not copy-pasted.</h2>
+      </div>
+      <p class="sec-head-note">No generic agency claims. Just practical differences you&rsquo;ll actually feel.</p>
+    </header>
+
+    <ul class="cards">
+      <li class="card">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h5M8 16h8"/></svg>
+        </span>
+        <h3>Custom, not copy-pasted</h3>
+        <p>Your website is designed around your identity, work and goals — not assembled from a shared template.</p>
+      </li>
+      <li class="card">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
+        </span>
+        <h3>Mobile-first</h3>
+        <p>Most people will open your site from Instagram, WhatsApp or their phone. That&rsquo;s the screen we design for first.</p>
+      </li>
+      <li class="card">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>
+        </span>
+        <h3>Your domain</h3>
+        <p>Your domain is purchased in your own name. WYNEX never takes ownership of it.</p>
+      </li>
+      <li class="card">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z"/></svg>
+        </span>
+        <h3>Fast delivery</h3>
+        <p>Your first version is targeted for delivery within 48 hours of receiving your content and advance.</p>
+      </li>
+      <li class="card">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-2.9-.4-4.1-1L3 20l1-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+        </span>
+        <h3>Direct communication</h3>
+        <p>You deal directly with the person building your website. No account managers, no middlemen, no confusion.</p>
+      </li>
+      <li class="card">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/><path d="M6 14.5h4"/></svg>
+        </span>
+        <h3>Transparent pricing</h3>
+        <p>Know the package price before starting. 50% to start, 50% after delivery. UPI accepted.</p>
+      </li>
+    </ul>
+  </div>
 </section>
 
-<section id="contact">
-<div class="container">
-<div class="cta glass-4" data-rv data-glass data-lit>
-<div class="kicker">Ready when you are</div>
-<h2>Let's turn your work into a website.</h2>
-<p>Send your name, profession and what you want on your portfolio. We'll discuss the design and price before anything starts.</p>
-<div class="buttons">
-<a class="btn primary" href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%27m%20interested%20in%20a%20portfolio%20website.">Chat on WhatsApp ↗</a>
-<a class="btn secondary" href="mailto:ajlanabduljlaeel@gmail.com">Email us</a>
-</div>
-</div>
-</div>
+<!-- ================= 7. WHAT YOU GET ================= -->
+<section class="section section-alt" id="includes">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <p class="kicker">What you get</p>
+        <h2>Exactly what you&rsquo;re buying.</h2>
+      </div>
+      <p class="sec-head-note">Every build includes these. Higher packages add more pages, deeper customisation and richer interactions — never hidden basics.</p>
+    </header>
+
+    <ul class="deliver">
+      <li>Responsive design — looks right on phone, tablet and desktop</li>
+      <li>Custom visual direction — layout, type and colour around your work</li>
+      <li>Portfolio / project sections for your best work</li>
+      <li>About section that tells your story</li>
+      <li>Contact section with a clear next step</li>
+      <li>WhatsApp click-to-chat button</li>
+      <li>Basic SEO setup — titles, descriptions, link preview</li>
+      <li>Mobile optimisation and fast loading</li>
+      <li>Social links — Instagram, LinkedIn, GitHub, wherever you are</li>
+      <li>Domain connection assistance</li>
+      <li>Revision support — two rounds included</li>
+      <li>Deployment assistance — we take it live with you</li>
+    </ul>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20tell%20me%20what%27s%20included%20in%20each%20package." target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->Ask About a Package</a>
+      <a class="btn btn-ghost" href="#pricing">Compare packages</a>
+    </div>
+  </div>
 </section>
+
+<!-- ================= 8. HOW IT WORKS ================= -->
+<section class="section" id="process">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <p class="kicker">How it works</p>
+        <h2>Simple, safe, step by step.</h2>
+      </div>
+      <p class="sec-head-note">You always know what happens next — and you never pay the full amount before seeing anything.</p>
+    </header>
+
+    <ol class="steps steps-8">
+      <li class="step">
+        <p class="step-n">01</p>
+        <h3>Tell us about yourself</h3>
+        <p>A short chat about your work, links and what you want the site to do.</p>
+      </li>
+      <li class="step">
+        <p class="step-n">02</p>
+        <h3>Choose your package</h3>
+        <p>Starter, Professional, Premium or a custom quote. Fixed price, in writing.</p>
+      </li>
+      <li class="step">
+        <p class="step-n">03</p>
+        <h3>Pay 50% advance</h3>
+        <p>UPI payment confirms your slot and starts the work.</p>
+      </li>
+      <li class="step">
+        <p class="step-n">04</p>
+        <h3>We design and build</h3>
+        <p>Layout, build and setup — targeted within 48 hours of receiving everything.</p>
+      </li>
+      <li class="step">
+        <p class="step-n">05</p>
+        <h3>You review it</h3>
+        <p>A preview link you can open on your own phone and share with friends.</p>
+      </li>
+      <li class="step">
+        <p class="step-n">06</p>
+        <h3>Revisions</h3>
+        <p>Two rounds included. We adjust until it feels like yours.</p>
+      </li>
+      <li class="step">
+        <p class="step-n">07</p>
+        <h3>Pay remaining 50%</h3>
+        <p>Only after you approve the site and it&rsquo;s ready to go live.</p>
+      </li>
+      <li class="step">
+        <p class="step-n">08</p>
+        <h3>Website goes live</h3>
+        <p>Domain connected, tested on mobile, handed over with a walkthrough.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= 9. PRICING ================= -->
+<section class="section section-alt" id="pricing">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <p class="kicker">Pricing</p>
+        <h2>Four options. Pick in 10 seconds.</h2>
+      </div>
+      <p class="sec-head-note">The difference is simple: more pages, more customisation, more polish. Domain registration is charged by the registrar at cost — never marked up.</p>
+    </header>
+
+    <ul class="plans">
+
+      <!-- ---------- STARTER ---------- -->
+      <li class="plan">
+        <p class="plan-name">Starter</p>
+        <p class="amount"><span class="cur">₹</span>1,999</p>
+        <p class="plan-for">One clean page for a first portfolio: students, one role, a few projects.</p>
+        <ul class="feats">
+          <li>One-page site</li>
+          <li>Mobile responsive</li>
+          <li>About, skills &amp; projects</li>
+          <li>WhatsApp button</li>
+          <li>Basic SEO + deployment</li>
+          <li class="off">Domain <strong>not included</strong> (yours, at cost)</li>
+        </ul>
+        <!-- EDIT: UPI ID and amount -->
+        <a class="btn btn-primary btn-block"
+           href="upi://pay?pa=ajlanwynex@upi&amp;pn=WYNEX&amp;am=1999&amp;cu=INR&amp;tn=Starter%20portfolio%20booking%20-%2050%25%20advance"
+           data-upi-copy="ajlanwynex@upi" rel="nofollow">Book with UPI</a>
+        <a class="btn btn-ghost btn-block"
+           href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%27d%20like%20the%20Starter%20package%20(%E2%82%B91%2C999)." target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->Ask on WhatsApp</a>
+      </li>
+
+      <!-- ---------- PROFESSIONAL ---------- -->
+      <li class="plan plan-featured">
+        <p class="flag">Recommended</p>
+        <p class="plan-name">Professional</p>
+        <p class="amount"><span class="cur">₹</span>4,999</p>
+        <p class="plan-for">For work that needs to be looked at properly. Most clients pick this.</p>
+        <ul class="feats">
+          <li>Custom visual direction</li>
+          <li>Multi-section + case study pages</li>
+          <li>Scroll &amp; hover animations</li>
+          <li>Full SEO setup + link preview</li>
+          <li>Deployment + domain setup help</li>
+          <li class="off">Domain <strong>not included</strong> (yours, at cost)</li>
+        </ul>
+        <!-- EDIT: UPI ID and amount -->
+        <a class="btn btn-primary btn-block"
+           href="upi://pay?pa=ajlanwynex@upi&amp;pn=WYNEX&amp;am=4999&amp;cu=INR&amp;tn=Professional%20portfolio%20booking%20-%2050%25%20advance"
+           data-upi-copy="ajlanwynex@upi" rel="nofollow">Book with UPI</a>
+        <a class="btn btn-ghost btn-block"
+           href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%27d%20like%20the%20Professional%20package%20(%E2%82%B94%2C999)." target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->Ask on WhatsApp</a>
+      </li>
+
+      <!-- ---------- PREMIUM ---------- -->
+      <li class="plan">
+        <p class="plan-name">Premium</p>
+        <p class="amount"><span class="cur">₹</span>9,999</p>
+        <p class="plan-for">A full personal site — work, about, services, journal, contact.</p>
+        <ul class="feats">
+          <li>Fully custom, multi-page build</li>
+          <li>Advanced interactions</li>
+          <li>Priority support during build</li>
+          <li>Full SEO + performance pass</li>
+          <li>Domain setup help included</li>
+          <li class="off">Domain <strong>not included</strong> (yours, at cost)</li>
+        </ul>
+        <!-- EDIT: UPI ID and amount -->
+        <a class="btn btn-primary btn-block"
+           href="upi://pay?pa=ajlanwynex@upi&amp;pn=WYNEX&amp;am=9999&amp;cu=INR&amp;tn=Premium%20portfolio%20booking%20-%2050%25%20advance"
+           data-upi-copy="ajlanwynex@upi" rel="nofollow">Book with UPI</a>
+        <a class="btn btn-ghost btn-block"
+           href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%27d%20like%20the%20Premium%20package%20(%E2%82%B99%2C999)." target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->Ask on WhatsApp</a>
+      </li>
+
+      <!-- ---------- CUSTOM ---------- -->
+      <li class="plan plan-quote">
+        <p class="plan-name">Custom</p>
+        <p class="amount amount-alt">Let&rsquo;s discuss</p>
+        <p class="plan-for">For anything that doesn&rsquo;t fit above — multi-page sites, extra features, tight deadlines.</p>
+        <ul class="feats">
+          <li>Written scope before work starts</li>
+          <li>Fixed quote, no surprises</li>
+          <li>Same terms: 50% + 50%</li>
+        </ul>
+        <a class="btn btn-solid btn-block"
+           href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%27d%20like%20a%20custom%20quote.%20Here%27s%20what%20I%20need%3A%20" target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->Get Custom Quote</a>
+        <a class="btn btn-ghost btn-block"
+           href="#contact">Or use the contact form</a>
+      </li>
+    </ul>
+
+    <p class="note">
+      <strong>50% to start · 50% after delivery.</strong> UPI accepted.<br>
+      <strong>Domain:</strong> purchased by you in your own name. <strong>Hosting:</strong> set up on your Cloudflare account — or on WYNEX hosting under a written agreement.
+    </p>
+  </div>
+</section>
+
+<!-- ================= 10. DOMAIN + HOSTING OWNERSHIP ================= -->
+<section class="section" id="ownership">
+  <div class="wrap ownership">
+    <div class="ownership-text">
+      <p class="kicker">Domain &amp; hosting</p>
+      <h2>Your domain belongs to you.</h2>
+      <p>Your website address — like <span class="mono">yourname.com</span> — is bought in <strong>your name</strong>, on your account. WYNEX never owns it, never holds it, and never asks for your passwords.</p>
+      <dl class="own-list">
+        <div>
+          <dt>You buy the domain</dt>
+          <dd>We guide you through it step by step. It costs whatever the registrar charges — we add nothing on top.</dd>
+        </div>
+        <div>
+          <dt>Hosting on your account (preferred)</dt>
+          <dd>We set the site up on your own free Cloudflare Pages account. You stay the owner and can move it anytime.</dd>
+        </div>
+        <div>
+          <dt>Or hosted by WYNEX (if needed)</dt>
+          <dd>If you don&rsquo;t have an account, we can host it for you under a simple written agreement covering cost, access and exit.</dd>
+        </div>
+      </dl>
+      <a class="btn btn-ghost" href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20can%20you%20explain%20the%20domain%20and%20hosting%20part%20for%20my%20site%3F" target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->Ask about domain &amp; hosting</a>
+    </div>
+    <aside class="own-card" aria-label="Ownership promise">
+      <p class="own-card-title">The promise, in plain words</p>
+      <ul>
+        <li><strong>You</strong> own the domain.</li>
+        <li><strong>You</strong> own the website files after final payment.</li>
+        <li><strong>You</strong> can move hosts whenever you like.</li>
+        <li><strong>We</strong> help you do all of it.</li>
+      </ul>
+      <p class="fine">No lock-in. No hostage domain. No jargon.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= 11. TRUST / TRANSPARENCY ================= -->
+<section class="section section-alt" id="trust">
+  <div class="wrap wrap-narrow trust">
+    <p class="kicker">Trust &amp; transparency</p>
+    <h2>New brand. Serious about the work.</h2>
+    <p class="trust-lead">WYNEX is an independent web-design service based in Kerala, serving clients across India. No fake reviews, no invented client counts, no awards we didn&rsquo;t win. Here&rsquo;s what you actually get instead:</p>
+    <ul class="trust-list">
+      <li><strong>Direct communication</strong> — you talk to the person building your site.</li>
+      <li><strong>Clear pricing</strong> — ₹1,999 / ₹4,999 / ₹9,999, known before starting.</li>
+      <li><strong>Client-owned domain</strong> — bought in your name, always yours.</li>
+      <li><strong>Simple payments</strong> — UPI, 50% to start, 50% after delivery.</li>
+      <li><strong>No middlemen</strong> — no agency layers, no confusing process.</li>
+      <li><strong>Written scope</strong> — what&rsquo;s included, when it&rsquo;s due, in writing.</li>
+    </ul>
+    <p class="fine">Early-stage means every project matters. Your site is the portfolio.</p>
+  </div>
+</section>
+
+<!-- ================= 12. FAQ ================= -->
+<section class="section" id="faq">
+  <div class="wrap wrap-narrow">
+    <header class="sec-head sec-head-stack">
+      <p class="kicker">FAQ</p>
+      <h2>Questions that remove doubt.</h2>
+      <p class="sec-head-note">If your question isn&rsquo;t here, WhatsApp is the fastest way to get an answer.</p>
+    </header>
+
+    <div class="faq">
+      <details class="qa">
+        <summary><span>Do I need to buy a domain?</span></summary>
+        <div class="qa-body"><p>Yes, but it&rsquo;s simple and cheap — usually a few hundred rupees a year. We guide you through buying it, and it stays in your name. The domain cost goes to the registrar, not to WYNEX, and isn&rsquo;t included in the package prices.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>Who owns my domain?</span></summary>
+        <div class="qa-body"><p>You do — 100%. It&rsquo;s purchased on your account in your name. WYNEX never takes ownership and never asks for your registrar password.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>Where will my website be hosted?</span></summary>
+        <div class="qa-body"><p>Preferably on your own free Cloudflare Pages account — we set it up with you so you stay the owner. If you don&rsquo;t have one, we can host it on WYNEX hosting under a written agreement covering cost and exit. You can move it anytime.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>How long does it take?</span></summary>
+        <div class="qa-body"><p>Starter sites are targeted within 48 hours of receiving your content and the 50% advance. Professional takes around 3–5 days, Premium around 5–7 days. The clock starts when we have everything we need from you.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>How does payment work?</span></summary>
+        <div class="qa-body"><p>By UPI: 50% advance confirms your slot and starts the work, 50% is due when the site is delivered and live. No full upfront payment, no hidden charges.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>Can I request changes?</span></summary>
+        <div class="qa-body"><p>Yes. Two rounds of revisions are included in every package, tracked over WhatsApp or email so both sides can see where things stand. Further changes are quoted before starting — never billed afterwards without your approval.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>What if I don&rsquo;t know what I want my website to look like?</span></summary>
+        <div class="qa-body"><p>That&rsquo;s normal — most clients don&rsquo;t. Send your work, a few links you like (or dislike), and your field. We propose a visual direction for approval before building anything.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>Can you help me write the content?</span></summary>
+        <div class="qa-body"><p>Yes. Send rough points — your background, work, links — and we&rsquo;ll shape them into clean About, project and contact sections. You approve every word before it goes live.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>Will my website work on mobile?</span></summary>
+        <div class="qa-body"><p>Yes — it&rsquo;s designed phone-first, because most visitors will open it from Instagram, WhatsApp or LinkedIn on their phone. We test on small phones, tablets and desktops before handover.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>Can I use my website on my CV, LinkedIn and Instagram?</span></summary>
+        <div class="qa-body"><p>That&rsquo;s exactly what it&rsquo;s for. One short link works everywhere — CV header, LinkedIn profile, Instagram bio, WhatsApp status, email signature. We also set up the link preview so it looks good when shared.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>Can I contact you after the website is delivered?</span></summary>
+        <div class="qa-body"><p>Yes. Seven days of free support for bugs and small fixes after launch, over WhatsApp or email. After that, changes are a small one-off quote. Your domain stays yours either way.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary><span>What is your refund policy?</span></summary>
+        <div class="qa-body"><p>If we miss the agreed delivery date and you haven&rsquo;t approved a design, you get a full refund of what you paid. Once design is approved and building has started, we refund the advance minus completed work, with the breakdown shown to you. Full wording is in the <a href="terms.html">Terms</a> and the policy section below.</p></div>
+      </details>
+    </div>
+
+    <div class="policies policies-compact" id="policies">
+      <article class="policy">
+        <h3>Refund policy</h3>
+        <p>If we cannot deliver by the agreed date and no design is approved, full refund — usually within 5 working days. After design approval, refund minus completed work, with breakdown shown first.</p>
+      </article>
+      <article class="policy">
+        <h3>Revision policy</h3>
+        <p>Two rounds included per package, tracked in writing. Further rounds or direction changes are quoted before starting — never billed silently.</p>
+      </article>
+    </div>
+    <p class="fine">Domain and hosting charges paid to third parties are non-refundable once those providers bill them.</p>
+  </div>
+</section>
+
+<!-- ================= 13. FINAL CTA + CONTACT ================= -->
+<section class="cta-final" id="contact">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <p class="kicker">Contact</p>
+        <h2>Ready to give your work a place online?</h2>
+      </div>
+      <p class="sec-head-note">Tell us what you&rsquo;re building. We&rsquo;ll figure out the website.</p>
+    </header>
+
+    <div class="contact">
+      <div class="cta-box">
+        <p class="cta-box-title">Fastest way: WhatsApp</p>
+        <p class="cta-box-text">Send your field, the work you want to show, and your timeline. You&rsquo;ll get a reply and a fixed quote — usually within a day.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%27m%20ready.%20Here%27s%20what%20I%20do%20and%20what%20I%20need%3A%20" target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->Start on WhatsApp <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#demos">View Examples</a>
+        </div>
+        <p class="cta-locale">Based in Kerala · Serving clients across India</p>
+        <ul class="channels channels-inline">
+          <li>
+            <p class="ch-label">UPI</p>
+            <p class="ch-value mono" id="upiId">ajlanwynex@upi</p><!-- EDIT: UPI ID -->
+            <button class="btn btn-mini" type="button" data-copy="ajlanwynex@upi" data-copied="Copied">Copy UPI ID</button>
+          </li>
+          <li>
+            <p class="ch-label">Instagram</p>
+            <p class="ch-value mono">@wynex.studio</p><!-- EDIT: Instagram handle -->
+            <a class="btn btn-mini" href="https://instagram.com/wynex.studio" target="_blank" rel="noopener"><!-- EDIT: Instagram handle -->Send a DM</a>
+          </li>
+          <li>
+            <p class="ch-label">Email</p>
+            <p class="ch-value mono break">ajlanabduljlaeel@gmail.com</p><!-- EDIT: Email address -->
+            <a class="btn btn-mini" href="mailto:ajlanabduljlaeel@gmail.com?subject=Portfolio%20website%20enquiry"><!-- EDIT: Email address -->Send an email</a>
+          </li>
+        </ul>
+      </div>
+
+      <form class="form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="e.g. Riya Sharma">
+          <p class="err" data-err-for="f-name"></p>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          <p class="err" data-err-for="f-email"></p>
+        </div>
+        <div class="field">
+          <label for="f-what">What do you need?</label>
+          <select id="f-what" name="need">
+            <option value="Starter — ₹1,999">Starter — ₹1,999</option>
+            <option value="Professional — ₹4,999" selected>Professional — ₹4,999</option>
+            <option value="Premium — ₹9,999">Premium — ₹9,999</option>
+            <option value="Custom quote">Custom quote</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Project details</label>
+          <textarea id="f-msg" name="message" rows="5" required
+            placeholder="Your field, the work you want to show, links, and your deadline."></textarea>
+          <p class="err" data-err-for="f-msg"></p>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Send enquiry</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite">
+          No backend here — submitting opens a pre-filled email in your mail app. Prefer WhatsApp? Use the button above.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer class="container" data-rv>
-<span>© 2026 WYNEX. All rights reserved.</span>
-<span>Professional portfolios, made simple.</span>
+<!-- ============================ 14. FOOTER ============================ -->
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <p class="foot-copy">© <span id="year">2026</span> WYNEX. All rights reserved.</p>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://wa.me/916238712579" target="_blank" rel="noopener"><!-- EDIT: WhatsApp number -->WhatsApp</a>
+      <a href="mailto:ajlanabduljlaeel@gmail.com"><!-- EDIT: Email address -->Email</a>
+    </nav>
+    <p class="foot-note">Based in Kerala · Serving clients across India. Domain always in the client&rsquo;s name.</p>
+  </div>
 </footer>
-<script>
-/* Splash cleanup. The curtain is animated entirely in CSS and already
-   reaches visibility:hidden on its own, so this only removes the node and
-   lets an impatient visitor tap or press a key to lift it early. */
-(function(){
-var s=document.querySelector('.splash');if(!s)return;
-var gone=false;
-function drop(){if(gone)return;gone=true;s.parentNode&&s.parentNode.removeChild(s)}
-function skip(){s.style.animation='none';s.style.opacity='0';s.style.visibility='hidden';drop()}
-/* animationend bubbles up from the child wordmark/rule, so match the
-   curtain's own animation by name rather than clearing on the first event. */
-s.addEventListener('animationend',function(e){if(e.animationName==='splashOut')drop()});
-s.addEventListener('pointerdown',skip,{once:true});
-s.addEventListener('keydown',skip,{once:true});
-setTimeout(drop,2600);
-})();
-</script>
-<script>
-(function(){
-var r=document.documentElement,w=document.getElementById('themeWrap'),b=document.getElementById('themeToggle'),m=document.getElementById('themeMenu');
-var items=[].slice.call(m.querySelectorAll('[data-set-theme]'));
-function set(t){
-r.setAttribute('data-theme',t);
-items.forEach(function(i){var on=i.getAttribute('data-set-theme')===t;i.classList.toggle('active',on);i.setAttribute('aria-selected',on?'true':'false')});
-try{localStorage.setItem('fc-theme',t)}catch(e){}
-}
-function open(){w.classList.add('open');b.setAttribute('aria-expanded','true')}
-function close(){w.classList.remove('open');b.setAttribute('aria-expanded','false')}
-items.forEach(function(i){i.addEventListener('click',function(){set(i.getAttribute('data-set-theme'));close()})});
-b.addEventListener('click',function(e){e.stopPropagation();if(w.classList.contains('open')){close()}else{open()}});
-m.addEventListener('click',function(e){e.stopPropagation()});
-document.addEventListener('click',close);
-document.addEventListener('keydown',function(e){if(e.key==='Escape'||e.key==='Esc'){close();b.focus()}});
-var cur=r.getAttribute('data-theme');
-if(!items.some(function(i){return i.getAttribute('data-set-theme')===cur})){cur='minimal-pro'}
-set(cur);
-})();
 
-/* ------------------------------------------------------------
-   Glassmorphism environment layer.
-   /* ------------------------------------------------------------
-   Shared runtime. Deliberately theme-agnostic: it publishes
-   hooks, and each theme decides what they mean in CSS. There is
-   no "if theme === X" logic anywhere.
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/916238712579?text=Hi%20WYNEX%2C%20I%27d%20like%20to%20discuss%20a%20portfolio%20website." target="_blank" rel="noopener" aria-label="Chat with WYNEX on WhatsApp"><!-- EDIT: WhatsApp number -->
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4Zm-3.2 3.9c-.2 0-.4 0-.6.3-.2.2-.7.7-.7 1.7s.7 2 .8 2.1c.1.1 1.4 2.3 3.5 3.1 1.8.7 2.1.6 2.5.5.4 0 1.2-.5 1.4-1 .2-.5.2-.9.1-1l-.4-.2-1.6-.8c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a5.6 5.6 0 0 1-1.7-1 6.2 6.2 0 0 1-1.1-1.4c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.4 7c-.1-.2-.3-.3-.6-.1Z"/></svg>
+  <span>Let&rsquo;s Talk</span>
+</a>
 
-     html.fc-reveal          reveal engine is armed (skipped when
-                             JS is off or reduced motion is on)
-     [data-rv].is-in         element has entered the viewport
-     html --px / --py        pointer position, -0.5 .. 0.5
-     [data-lit] --mx / --my  pointer position inside that element
-     [data-tilt] --tilt      horizontal tilt from pointer x
+<!-- Toast for copy / form feedback -->
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-   Everything is rAF-throttled, touches only the hovered element,
-   and prefers transform/opacity so the compositor does the work.
-   ------------------------------------------------------------ */
-(function(){
-var r=document.documentElement;
-var calm=matchMedia('(prefers-reduced-motion:reduce)');
-var fine=matchMedia('(hover:hover) and (pointer:fine)');
-var pend=[],io=null,raf=0,sraf=0,ex=0,ey=0,tg=null,cur=null,rect=null;
-var rv=document.querySelectorAll('[data-rv]');
-
-function interactive(){return fine.matches&&!calm.matches}
-
-function release(el){if(el){el.style.removeProperty('--mx');el.style.removeProperty('--my');el.style.removeProperty('--tilt')}}
-
-function clearPointer(){
-  release(cur);cur=null;rect=null;tg=null;
-  r.style.setProperty('--px','0');r.style.setProperty('--py','0');
-}
-
-function paint(){
-  raf=0;
-  if(!interactive())return;
-  var vw=innerWidth||1,vh=innerHeight||1;
-  r.style.setProperty('--px',(ex/vw-.5).toFixed(4));
-  r.style.setProperty('--py',(ey/vh-.5).toFixed(4));
-  var el=null;
-  if(tg&&tg.closest)el=tg.closest('[data-lit]');
-  if(el!==cur){release(cur);cur=el;rect=null;
-    if(cur){rect=cur.getBoundingClientRect();cur.style.setProperty('--mx','50%');cur.style.setProperty('--my','50%')}}
-  if(cur&&rect){
-    var u=Math.min(1,Math.max(0,(ex-rect.left)/(rect.width||1)));
-    var v=Math.min(1,Math.max(0,(ey-rect.top)/(rect.height||1)));
-    cur.style.setProperty('--mx',(u*100).toFixed(1)+'%');
-    cur.style.setProperty('--my',(v*100).toFixed(1)+'%');
-    if(cur.hasAttribute('data-tilt'))cur.style.setProperty('--tilt',((u-.5)*3.4).toFixed(2)+'deg');
-  }
-}
-
-function onMove(e){
-  if(!interactive())return;
-  ex=e.clientX;ey=e.clientY;tg=e.target||null;
-  if(!raf)raf=requestAnimationFrame(paint);
-}
-
-function mark(e){e.classList.add('is-in');var k=pend.indexOf(e);if(k>-1)pend.splice(k,1)}
-
-/* Safety net: reveals anything already on screen that the observer
-   has not reported yet, so visible content is never stuck hidden. */
-function sweep(){
-  if(!pend.length)return;
-  var vh=innerHeight||0,keep=[];
-  for(var i=0;i<pend.length;i++){
-    var b=pend[i].getBoundingClientRect();
-    if(b.top<vh&&b.bottom>0)mark(pend[i]);else keep.push(pend[i]);
-  }
-  pend=keep;
-}
-
-function onScroll(){
-  sraf=0;
-  /* Neutral scroll flag: themes that use a sticky, stateful header
-     read html.fc-scrolled instead of each binding their own listener. */
-  r.classList.toggle('fc-scrolled',(window.scrollY||0)>10);
-  sweep();
-}
-function queueScroll(){if(!sraf)sraf=requestAnimationFrame(onScroll)}
-
-function bindReveal(){
-  /* No JS, or reduced motion: content is never hidden in the first place. */
-  if(calm.matches||!rv.length)return;
-  r.classList.add('fc-reveal');
-  pend=[].slice.call(rv);
-  if('IntersectionObserver' in window){
-    io=new IntersectionObserver(function(es){
-      for(var i=0;i<es.length;i++)if(es[i].isIntersecting)mark(es[i].target);
-    },{rootMargin:'0px',threshold:.12});
-    for(var j=0;j<pend.length;j++)io.observe(pend[j]);
-  }
-  sweep();
-}
-
-document.addEventListener('pointermove',onMove,{passive:true});
-document.addEventListener('pointerleave',clearPointer,{passive:true});
-window.addEventListener('scroll',queueScroll,{passive:true});
-window.addEventListener('blur',clearPointer);
-
-/* A theme switch is a design moment, not a repaint. For ~700ms the
-   document carries html.fc-swap so the incoming theme can stage its
-   own arrival. Cleared on a timer and re-armed on the next change,
-   so it can never be left stuck on. */
-var swapT=0;
-new MutationObserver(function(){
-  r.classList.remove('fc-swap');
-  if(swapT)clearTimeout(swapT);
-  r.classList.add('fc-swap');
-  swapT=setTimeout(function(){r.classList.remove('fc-swap')},720);
-}).observe(r,{attributes:true,attributeFilter:['data-theme']});
-
-bindReveal();
-onScroll();
-})();
-</script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

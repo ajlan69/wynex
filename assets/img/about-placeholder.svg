@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200" role="img" aria-label="Photo placeholder">
+  <rect width="1200" height="1200" fill="#eceef2"/>
+  <g fill="none" stroke="#c3c9d4" stroke-width="3">
+    <circle cx="600" cy="470" r="150"/>
+    <path d="M330 960c0-150 121-271 270-271s270 121 270 271"/>
+  </g>
+  <g font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" text-anchor="middle">
+    <text x="600" y="1065" fill="#8b93a2" font-size="30" letter-spacing="6">PHOTO PLACEHOLDER</text>
+    <text x="600" y="1112" fill="#a8b0bd" font-size="24" letter-spacing="3">REPLACE assets/img/about-placeholder.svg</text>
+  </g>
+</svg>
