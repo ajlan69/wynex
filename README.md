@@ -16,9 +16,14 @@ sitemap.xml             three URLs: home, terms, privacy
 assets/css/style.css    design tokens + all components
 assets/js/main.js       nav, scroll reveal, copy-UPI, contact form, footer year
 assets/favicon.svg      favicon
-assets/og-image.svg     social preview (replace with a 1200×630 PNG)
-assets/img/             placeholder art — all safe to replace
+assets/og-image.svg     social preview (replace with a 1200x630 PNG)
+assets/img/demo-live-480.webp    real screenshot of the live demo, mobile width
+assets/img/demo-live-960.webp    real screenshot of the live demo, desktop width
 ```
+
+Section ids are stable and worth knowing before editing: `#examples` (live demo
+plus six concept directions), `#themes`, `#who`, `#why`, `#includes`,
+`#process`, `#pricing`, `#ownership`, `#trust`, `#faq`, `#contact`.
 
 ## Before you publish: edit these
 
@@ -34,17 +39,18 @@ Four values appear in several places. Each occurrence in the HTML carries an
 
 Also replace:
 
-- The three `href="#"` concept links in `#demos` → your real demo URLs when
-  they go live (keep the `Concept` badge until then; never label a concept
-  as a client project).
-- `assets/img/avatar-1..3.svg` and `assets/img/about-placeholder.svg` are
-  currently unused (no fake testimonials on the page). Only re-add them
-  with real client photos and real quotes.
-- `assets/og-image.svg` → a 1200×630 PNG (most platforms ignore SVG previews),
+- The concept cards in `#examples` are deliberate, hand-built CSS previews
+  labelled `Concept`, not client work. Each card is a WhatsApp link with a
+  concept-specific message, so nothing is a dead `href="#"`. If you build any
+  of them for real, keep the `Concept` label until it is a paid client project,
+  then replace the card with a real link. Never present a concept as client
+  work.
+- `assets/og-image.svg` → a 1200x630 PNG (most platforms ignore SVG previews),
   and update the `og:image` URL.
 
-Pricing amounts live in the `upi://` links as `am=1999`, `am=4999`, `am=9999`.
-Change all three together with the visible price.
+Pricing amounts live in the `upi://` links as the 50% advance: `am=999.50`,
+`am=2499.50`, `am=4999.50`. Change all three together with the visible price,
+and keep the two in agreement with `terms.html`.
 
 ## Payments
 
@@ -58,7 +64,8 @@ On Android this opens the UPI app with the amount filled in. On desktop there
 is usually no handler, so the script copies the UPI ID to the clipboard and
 shows a toast. The click is never cancelled, so nothing breaks on mobile.
 
-**50% advance confirms the slot, 50% is due when the site is delivered.**
+**50% advance starts the work, 50% is due when the site is delivered.** The page
+never says the advance "confirms a slot", because no slots are held.
 
 ## Contact form
 
@@ -99,9 +106,16 @@ Nothing needs compiling, so both hosts work in "static, no build" mode.
 - Every image has `width`/`height` and `loading="lazy"` (except the About
   photo, which sits near the top of its section).
 - The FAQ uses native `<details>`, so it opens and closes with JavaScript
-  disabled.
+  disabled. The secondary package features, eight extra FAQ questions and the
+  policies are collapsed by default behind a labelled `<summary>`.
 - Reveal animations are opt-in: the script adds `html.js-reveal` before hiding
-  anything, so content is never invisible if JS fails.
+  anything, so content is never invisible if JS fails. Three further guarantees
+  in `initReveal()`: content inside a *closed* `<details>` is never hidden (it
+  has no box, so it could never intersect and would stay blank when opened), a
+  scroll-position sweep catches anything `IntersectionObserver` misses during a
+  fast flick-scroll, and each revealed element drops its `data-reveal` attribute
+  once the animation window has passed, so visibility never depends on a
+  transition actually running.
 - Dark mode follows `prefers-color-scheme`; both palettes are defined in CSS
   variables.
 - Skip link, visible focus rings, `aria-expanded` on the menu, `aria-current`
@@ -109,3 +123,16 @@ Nothing needs compiling, so both hosts work in "static, no build" mode.
 - No "100% guaranteed", no invented client counts, no fabricated testimonials
   presented as real. No fake urgency ("slots left", countdowns). Concepts are
   labelled as concepts; the only live demo links to the real built site.
+- Delivery is always framed as a *target* per package (Starter about 48 hours,
+  Professional 3–5 days, Premium 5–7 days, Custom agreed in writing) and starts
+  once content and the advance are in. Nothing on the page promises every
+  package in 48 hours.
+
+## Still to confirm before publishing
+
+- The four contact values in the table above are placeholders until you have
+  checked them against your real accounts.
+- The 50% advance amounts in the `upi://` links (`999.50`, `2499.50`, `4999.50`)
+  assume those are the advances you want.
+- `sitemap.xml` and `robots.txt` point at `https://ajlan69.github.io/wynex/`.
+  Update them if you move to a custom domain or Cloudflare Pages.

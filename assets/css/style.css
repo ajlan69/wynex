@@ -242,10 +242,11 @@ a{color:inherit;text-decoration:none}
 .btn-ghost{--btn-bg:transparent;--btn-fg:var(--ink-2)}
 .btn-ghost:hover{--btn-bg:var(--card-2);--btn-bd:var(--line-2)}
 
-.btn-sm{padding:.55rem .9rem;font-size:.875rem}
+.btn-sm{padding:.55rem .9rem;font-size:.875rem;min-height:2.5rem}
 .btn-mini{
   padding:.45rem .75rem;
   font-size:.8125rem;
+  min-height:2.5rem;
   border-radius:var(--r-sm);
   background:var(--card);
   border:1px solid var(--line-2);
@@ -285,7 +286,7 @@ a{color:inherit;text-decoration:none}
   display:flex;align-items:center;gap:1.5rem;
 }
 
-.logo{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;letter-spacing:-.01em}
+.logo{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;letter-spacing:-.01em;padding:.5rem 0}
 .logo-mark{
   display:grid;place-items:center;
   width:26px;height:26px;
@@ -427,6 +428,9 @@ body.nav-open{overflow:hidden}
 }
 .sub-h + *{margin-top:1.4rem}
 
+/* short lead-in above a grid of cards */
+.fine-lead{margin:-.6rem 0 1.4rem;font-size:.9375rem}
+
 /* --- featured live site --- */
 .showcase{
   display:grid;
@@ -489,11 +493,25 @@ body.nav-open{overflow:hidden}
   transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
 }
 .concept:hover{transform:translateY(-3px);border-color:var(--line-2);box-shadow:var(--sh-2)}
+/* the whole card is one tap target that opens a WhatsApp chat */
+.concept-hit{
+  display:flex;flex-direction:column;height:100%;
+  color:inherit;text-decoration:none;
+}
+.concept-hit:focus-visible{outline:none;box-shadow:inset 0 0 0 2px var(--accent)}
 .concept-body{display:flex;flex-direction:column;gap:.4rem;padding:1.1rem 1.2rem 1.25rem;flex:1}
 .concept-body h4{
   font-family:var(--ffd);font-size:1.125rem;font-weight:600;letter-spacing:-.015em;
 }
-.concept-body p:last-child{font-size:.875rem;color:var(--muted)}
+.concept-desc{display:block;font-size:.875rem;color:var(--muted)}
+.concept-cue{
+  display:inline-flex;align-items:center;gap:.35rem;
+  margin-top:auto;padding-top:.85rem;
+  font-family:var(--ffm);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent-ink);
+  transition:gap var(--dur) var(--ease);
+}
+.concept:hover .concept-cue{gap:.6rem}
 .tag{
   font-family:var(--ffm);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
   color:var(--dim);
@@ -562,7 +580,7 @@ body.nav-open{overflow:hidden}
 .pv-code i:last-child{width:55%}
 
 .pv--student{--pv-accent:#2f4bd8}
-.pv--creator{--pv-accent:#c2417a}
+.pv--photo{--pv-accent:#0e7490}
 .pv--freelancer{--pv-accent:#0f7a6a}
 .pv--designer{--pv-accent:#7c3aed}
 .pv--developer{--pv-accent:#1faa55}
@@ -614,6 +632,18 @@ body.nav-open{overflow:hidden}
 
 .plan-for{margin-top:.75rem;font-size:.875rem;color:var(--muted);min-height:3rem}
 
+/* honest per-package timeline, so "48 hours" is never read as "every package" */
+.plan-time{
+  display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;
+  margin-top:.9rem;padding:.5rem .7rem;
+  background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-sm);
+  font-size:.8125rem;color:var(--ink-2);
+}
+.plan-time-k{
+  font-family:var(--ffm);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--dim);
+}
+
 .feats{margin:1.4rem 0 1.6rem;display:grid;gap:.05rem;flex:1}
 .feats li{
   position:relative;
@@ -631,6 +661,57 @@ body.nav-open{overflow:hidden}
 .feats li.off::before{content:"—";color:var(--dim)}
 .feats li.off strong{color:var(--warn);font-weight:600}
 .plan .btn + .btn{margin-top:.55rem}
+
+/* ------------ progressive disclosure: shared "more" pattern ------------ */
+.more{
+  margin:-.6rem 0 1.3rem;
+  border-top:1px solid var(--line);
+}
+.more > summary{
+  display:flex;align-items:center;gap:.45rem;
+  padding:.7rem 0;
+  font-family:var(--ffm);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent-ink);cursor:pointer;list-style:none;
+}
+.more > summary::-webkit-details-marker{display:none}
+.more > summary::after{
+  content:"+";margin-left:auto;font-size:1rem;line-height:1;
+  color:var(--dim);transition:transform var(--dur) var(--ease);
+}
+.more[open] > summary::after{transform:rotate(45deg)}
+.more > summary:hover{color:var(--accent)}
+
+/* inside a plan card the extra rows keep the same tick styling */
+.feats-more{margin:.2rem 0 .2rem;display:grid;gap:.05rem;flex:none}
+.feats-more li{padding:.45rem 0 .45rem 1.4rem;font-size:.8125rem}
+
+/* same pattern, but reading as normal page copy */
+.more-plain{
+  margin:1.6rem 0;
+  border:1px solid var(--line);border-radius:var(--r);
+  background:var(--card);box-shadow:var(--sh-1);
+  padding:0 1.3rem;
+}
+.more-plain > summary{padding:.95rem 0;color:var(--ink-2)}
+.more-body{padding:0 0 1.1rem}
+.more-body > p{font-size:.9375rem;color:var(--muted);margin-bottom:.7rem}
+.more-body ul{display:grid;gap:.45rem;font-size:.9375rem;color:var(--muted);padding-left:1.1rem}
+.more-body li{padding-left:.15rem}
+
+/* FAQ: the long tail sits behind one summary row */
+.faq-more{margin-top:.6rem}
+.faq-more > summary{
+  font-family:var(--ffd);font-size:.9375rem;font-weight:600;
+  text-transform:none;letter-spacing:-.01em;
+  justify-content:flex-start;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:.85rem 1.1rem;box-shadow:var(--sh-1);
+}
+.faq-more > summary::after{margin-left:auto}
+.faq-more[open] > summary{border-radius:var(--r) var(--r) 0 0;box-shadow:none;border-bottom-color:transparent}
+.faq-more-body{display:grid;gap:.6rem;padding-top:.6rem}
+.more-body .policy + .policy{margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+.more-body .policy h3{font-size:1rem;margin-bottom:.4rem}
 
 /* ------------------------------------------------------ 11. Testimonials */
 .quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
@@ -896,7 +977,7 @@ body.nav-open{overflow:hidden}
 .trust .fine{margin-top:1.2rem}
 
 /* --------------------------------- 16h. Compact policies inside FAQ */
-.policies-compact{margin-top:2rem}
+.more-body .policy:first-child{margin-top:0}
 
 /* --------------------------------- 16i. Design directions */
 .themes{
@@ -1011,8 +1092,8 @@ body.nav-open{overflow:hidden}
   color:var(--dim);
 }
 .foot-inner{display:grid;gap:.7rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:1.25rem;font-weight:500}
-.foot-links a{color:var(--ink-2);border-bottom:1px solid transparent;transition:border-color var(--dur) var(--ease),color var(--dur) var(--ease)}
+.foot-links{display:flex;flex-wrap:wrap;gap:.25rem 1rem;font-weight:500}
+.foot-links a{color:var(--ink-2);border-bottom:1px solid transparent;padding:.55rem 0;transition:border-color var(--dur) var(--ease),color var(--dur) var(--ease)}
 .foot-links a:hover{color:var(--ink);border-color:currentColor}
 
 .toast{

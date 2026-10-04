@@ -24,6 +24,32 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Elements waiting to be revealed. Filled by initReveal() further down. */
+  var revealItems = [];
+
+  /* Show a revealed element. The reveal is an animation, not a prerequisite:
+     once the animation window has passed we drop the data-reveal attribute
+     entirely, so [data-reveal] { opacity: 0 } stops matching and the element is
+     visible even if the browser never advanced the transition (throttled or
+     off-screen animation frames). Correctness never depends on the animation. */
+  function revealShow(el) {
+    el.classList.add('is-in');
+    window.setTimeout(function () { el.removeAttribute('data-reveal'); }, 1000);
+  }
+
+  /* Safety net for the reveal animation. IntersectionObserver can miss
+     elements during a fast flick-scroll on a phone; anything that has entered
+     the viewport gets shown here, so no section can ever stay blank. */
+  function revealSweep() {
+    if (!revealItems.length) return;
+    var limit = (window.innerHeight || 800) * 0.92;
+    for (var i = 0; i < revealItems.length; i++) {
+      var el = revealItems[i];
+      if (el.classList.contains('is-in') || !el.hasAttribute('data-reveal')) continue;
+      if (el.getBoundingClientRect().top < limit) revealShow(el);
+    }
+  }
+
   /* ------------------------------------------------------------- 1. toast */
   var toastEl = $('#toast');
   var toastTimer;
@@ -115,6 +141,8 @@
         a.classList.toggle('is-current', on);
         if (on) { a.setAttribute('aria-current', 'true'); } else { a.removeAttribute('aria-current'); }
       });
+
+      revealSweep();
     });
   }
 
@@ -176,13 +204,18 @@
   function initReveal() {
     if (reduceMotion || !('IntersectionObserver' in window)) return;
 
-    var items = [];
+    revealItems = [];
+    var items = revealItems;
     GROUPS.forEach(function (selectors) {
       var group = [];
       selectors.forEach(function (sel) { group = group.concat($$(sel)); });
       /* de-dupe: an element matched by two selectors is revealed once */
       group = group.filter(function (el, i) { return group.indexOf(el) === i; });
       group.forEach(function (el, i) {
+        /* Never hide content that lives inside a collapsed <details>: it has no
+           box while closed, so it would never intersect — and would stay blank
+           after the visitor opens it. Closed disclosures reveal immediately. */
+        if (el.closest('details:not([open])')) return;
         el.setAttribute('data-reveal', '');
         el.style.setProperty('--rd', Math.min(i * 0.07, 0.35).toFixed(2) + 's');
         items.push(el);
@@ -194,12 +227,14 @@
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-in');
+        revealShow(entry.target);
         io.unobserve(entry.target);
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
 
     items.forEach(function (el) { io.observe(el); });
+    revealSweep();
+    window.addEventListener('load', revealSweep);
   }
 
   initReveal();
@@ -291,19 +326,7 @@
     });
   }
 
-  /* ------------------------------------------------------ 7. placeholder
-     Demo links are "#" until real URLs are added. Saying so is better than a
-     dead link that silently scrolls to the top.                         */
-  $$('[data-demo-placeholder]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      if (link.getAttribute('href') === '#' || !link.getAttribute('href')) {
-        e.preventDefault();
-        toast('Demo link coming soon — ask us on WhatsApp to see a preview');
-      }
-    });
-  });
-
-  /* ------------------------------------------------------------ 8. footer */
+  /* ------------------------------------------------------------ 7. footer */
   var year = $('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();
