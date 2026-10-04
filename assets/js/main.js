@@ -158,18 +158,19 @@
 
   /* ------------------------------------------------------ 5. scroll reveal */
   var GROUPS = [
-    ['.hero .pill', '.hero h1', '.hero .lead', '.hero .btn-row', '.hero .facts'],
-    ['.trust-strip .trust-strip-label', '.trust-strip .trust-items li'],
-    ['#demos .sec-head', '#demos .demo', '#demos .demo-cta'],
+    ['.hero .pill', '.hero h1', '.hero .lead', '.hero .btn-row', '.hero .hero-micro'],
+    ['.trustbar .trustbar-list li'],
+    ['#examples .sec-head', '#examples .showcase', '#examples .sub-h', '#examples .concept', '#examples .fine', '#examples .btn-row'],
+    ['#themes .sec-head', '#themes .theme', '#themes .themes-cta'],
     ['#who .sec-head', '#who .card'],
-    ['#why .sec-head', '#why .card'],
+    ['#why .sec-head', '#why .benefits > li'],
     ['#includes .sec-head', '#includes .deliver li', '#includes .btn-row'],
+    ['#process .sec-head', '#process .step'],
     ['#pricing .sec-head', '#pricing .plan', '#pricing .note'],
     ['#ownership .ownership-text > *', '#ownership .own-card'],
     ['#trust .trust > *'],
     ['#faq .sec-head', '#faq .qa', '#faq .policy'],
-    ['#process .sec-head', '#process .step'],
-    ['#contact .sec-head', '#contact .cta-box > *', '#contact .form'],
+    ['#contact .sec-head', '#contact .cta-box > *', '#contact .form']
   ];
 
   function initReveal() {
