@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="Placeholder for your UPI QR code">
+  <!-- TODO: replace this file with a real UPI QR code image (any QR generator,
+       or your UPI app's "receive" screen). Keep the filename or update the src in
+       index.html. Square, at least 512x512, PNG or WebP, under ~20 KB. -->
+  <rect width="320" height="320" fill="#f7f8fa"/>
+  <rect x="8" y="8" width="304" height="304" rx="18" fill="none" stroke="#c9cfd9" stroke-width="3" stroke-dasharray="12 9"/>
+  <g fill="none" stroke="#b3bbc8" stroke-width="7">
+    <path d="M46 84V46h38"/>
+    <path d="M274 46h-38"/>
+  </g>
+  <g fill="none" stroke="#b3bbc8" stroke-width="7">
+    <path d="M236 84V46h38"/>
+    <path d="M84 46h38"/>
+  </g>
+  <g fill="none" stroke="#c9cfd9" stroke-width="5">
+    <path d="M46 236v38h38"/>
+    <path d="M274 274h-38"/>
+  </g>
+  <text x="160" y="152" text-anchor="middle" font-family="Inter,Segoe UI,system-ui,sans-serif" font-size="26" font-weight="700" fill="#5b6272">UPI QR</text>
+  <text x="160" y="182" text-anchor="middle" font-family="Inter,Segoe UI,system-ui,sans-serif" font-size="17" fill="#7b8393">placeholder</text>
+  <text x="160" y="216" text-anchor="middle" font-family="JetBrains Mono,Consolas,monospace" font-size="16" fill="#7b8393">ajlanwynex@upi</text>
+</svg>

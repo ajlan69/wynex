@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CityCare Clinic — General & Dental, Thrissur | Demo</title>
+<meta name="description" content="Family clinic in Thrissur. Doctor timings, treatments and WhatsApp appointments. WYNEX demo.">
+<link rel="canonical" href="https://ajlan69.github.io/wynex/demos/clinic/">
+<meta name="theme-color" content="#EFF6F6">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CityCare Clinic — General & Dental, Thrissur">
+<meta property="og:description" content="Doctor timings and WhatsApp appointments. WYNEX demo for clinics.">
+<meta property="og:url" content="https://ajlan69.github.io/wynex/demos/clinic/">
+<meta property="og:image" content="https://ajlan69.github.io/wynex/assets/img/demo-clinic.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230E7490'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='white'%3E+%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#F4F8F8;--card:#fff;--ink:#0B2B33;--muted:#53707A;--line:rgba(11,43,51,.12);--teal:#0E7490;--teal-dark:#0B5A70;--teal-soft:#DDF0F4;--green:#15803D;--sans:'Inter',system-ui,sans-serif;--ease:cubic-bezier(.22,1,.36,1);--r:16px;--gut:clamp(20px,4vw,40px);--max:1060px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:min(var(--max),100% - var(--gut)*2);margin-inline:auto}
+.alert{display:flex;gap:10px;align-items:center;justify-content:center;background:var(--ink);color:#fff;font-size:.82rem;padding:9px 16px;text-align:center}
+.alert b{color:#7DE3F4}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}.cross{width:34px;height:34px;border-radius:10px;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:1.2rem;font-weight:700}
+.links{display:flex;gap:2px;font-size:.86rem;color:var(--muted)}.links a{padding:8px 12px;border-radius:8px}.links a:hover{background:#fff;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:.88rem;border:1px solid transparent;transition:.25s var(--ease)}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--teal-dark);transform:translateY(-1px)}
+.btn-white{background:#fff;border-color:var(--line);color:var(--ink)}.btn-white:hover{border-color:var(--teal);color:var(--teal)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,40px);align-items:stretch;padding:26px 0 8px}
+.hero-copy{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,3.5vw,34px)}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);background:var(--teal-soft);border-radius:100px;padding:6px 12px}
+.badge i{width:7px;height:7px;border-radius:50%;background:#22c55e}
+h1{font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.1;letter-spacing:-.025em;margin-top:12px}
+h1 span{color:var(--teal)}
+.hero-copy p{color:var(--muted);margin-top:10px;font-size:.95rem}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.proof{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}.proof b{display:block;font-size:1.05rem;color:var(--ink)}
+.appt{background:var(--ink);color:#fff;border-radius:20px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:12px}
+.appt h2{font-size:1.15rem;letter-spacing:-.01em}.appt p{font-size:.85rem;opacity:.7}
+.appt label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.6;font-weight:600}
+.appt select,.appt input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:10px;color:#fff;padding:11px 12px;width:100%;font:inherit;font-size:.9rem}
+.appt select option{color:#111}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.card h3{font-size:.98rem;margin:10px 0 6px}.card p{font-size:.86rem;color:var(--muted)}
+.ico{width:40px;height:40px;border-radius:12px;background:var(--teal-soft);display:grid;place-items:center;font-size:1.15rem}
+.doc{display:flex;gap:14px;align-items:center}.ava{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;flex:none}
+h2.sec{font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.02em;margin-top:34px}
+.sub{color:var(--muted);font-size:.9rem;margin-top:4px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+table{width:100%;border-collapse:collapse;font-size:.88rem}td{padding:9px 0;border-top:1px solid var(--line)}td:last-child{text-align:right;font-weight:600}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:8px;font-size:.9rem}
+.faq summary{font-weight:600;cursor:pointer}.faq p{color:var(--muted);margin-top:6px;font-size:.86rem}
+footer{padding:28px 0 90px;color:var(--muted);font-size:.78rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:860px){.hero,.split{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.links{display:none}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<p class="alert">Emergency? Call <b><a href="tel:+910000000000" style="color:inherit">+91 00000 00000</a></b> · Token system 9am – 8pm</p>
+<div class="wrap">
+<nav class="nav"><span class="brand"><span class="cross">+</span> CityCare Clinic</span><div class="links"><a href="#doctors">Doctors</a><a href="#timings">Timings</a><a href="#faq">FAQ</a></div><a class="btn btn-teal" href="#book">Book visit</a></nav>
+<header class="hero">
+<div class="hero-copy"><span class="badge"><i></i>Walk-ins + appointments</span><h1>Family doctor, <span>without the waiting hall.</span></h1><p>General, dental and child care under one roof in Thrissur. Check timings, take a token on WhatsApp, walk in at your slot.</p><div class="cta"><a class="btn btn-teal" href="#book">Get a token →</a><a class="btn btn-white" href="#timings">Today's timings</a></div><div class="proof"><span><b>15+ yrs</b>serving Thrissur</span><span><b>~20 min</b>avg. wait with token</span><span><b>₹300</b>consultation</span></div></div>
+<form class="appt" id="book" onsubmit="return bookToken(event)"><h2>Book in 20 seconds</h2><p>No app. No signup. We reply with your token number.</p><div><label for="dept">Department</label><select id="dept"><option>General Medicine</option><option>Dental</option><option>Paediatrics</option><option>Skin</option></select></div><div><label for="day">When</label><select id="day"><option>Today</option><option>Tomorrow</option><option>Day after</option></select></div><div><label for="name">Your name</label><input id="name" required placeholder="e.g. Remya S"></div><button class="btn btn-teal" type="submit">Request token on WhatsApp</button><p style="font-size:.75rem">Or call reception: +91 00000 00000 · 9am–8pm</p></form>
+</header>
+<h2 class="sec" id="doctors">Doctors you will actually meet</h2><p class="sub">Same doctors every week. No rotation surprises.</p>
+<div class="grid3">
+<div class="card doc"><span class="ava" style="background:#0E7490">DR</span><div><h3 style="margin:0">Dr. Ramesh Menon</h3><p>MBBS, MD · General · 15 yrs</p><p style="color:var(--teal);font-weight:600">Mon–Sat · 10–1, 5–8</p></div></div>
+<div class="card doc"><span class="ava" style="background:#7C3AED">DS</span><div><h3 style="margin:0">Dr. Sneha Pillai</h3><p>BDS · Dental · 9 yrs</p><p style="color:var(--teal);font-weight:600">Mon–Sat · 11–2, 4–7</p></div></div>
+<div class="card doc"><span class="ava" style="background:#15803D">PK</span><div><h3 style="margin:0">Dr. Priya Krishnan</h3><p>MD Paeds · Child care</p><p style="color:var(--teal);font-weight:600">Tue, Thu, Sat · 5–8</p></div></div>
+</div>
+<div class="split" id="timings">
+<div class="card"><h3>Today's OPD</h3><table><tr><td>General</td><td>10–1 · 5–8</td></tr><tr><td>Dental</td><td>11–2 · 4–7</td></tr><tr><td>Lab + Pharmacy</td><td>9–8</td></tr><tr><td>Sunday</td><td>10–12 (general only)</td></tr></table></div>
+<div class="card"><h3>How a visit works</h3><p>1. Token on WhatsApp → 2. Walk in 10 min early → 3. Consult (₹300) → 4. Medicines downstairs. Reports on WhatsApp next day.</p><div class="cta"><a class="btn btn-white" href="https://maps.google.com/?q=Thrissur" target="_blank" rel="noopener">Get directions</a></div></div>
+</div>
+<h2 class="sec" id="faq">Quick answers</h2>
+<div class="faq"><details open><summary>Do I need an appointment?</summary><p>No. Walk in any time — but a WhatsApp token cuts waiting to ~20 minutes.</p></details><details><summary>What are the charges?</summary><p>₹300 general, ₹400 specialist. Procedures quoted in writing before treatment.</p></details><details><summary>Do you do home visits?</summary><p>Yes, within 5 km for elderly patients. Call before 12 noon.</p></details></div>
+<footer><span>© 2026 CityCare Clinic · Demo persona for illustration</span><span>Demo by WYNEX · Tokens via WhatsApp</span></footer>
+</div>
+<script>
+function bookToken(e){e.preventDefault();var d=document.getElementById('dept').value,day=document.getElementById('day').value,n=document.getElementById('name').value.trim()||'Patient';var m='Hi CityCare! I need a token. '+d+' | '+day+' | Name: '+n;window.open('https://wa.me/910000000000?text='+encodeURIComponent(m),'_blank');return false;}
+</script>
+<!-- Made by WYNEX — backlink badge (keep on every demo) -->
+<a class="wynex-badge" href="../../#examples" aria-label="Back to WYNEX demos">Made by WYNEX <span aria-hidden="true">→</span></a>
+<style>.wynex-badge{position:fixed;right:16px;bottom:16px;z-index:9000;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:100px;background:rgba(12,14,19,.88);color:#fff;font:500 12px/1.4 Inter,system-ui,sans-serif;text-decoration:none;border:1px solid rgba(255,255,255,.14)}</style>
+</body>
+</html>

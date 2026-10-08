@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshKart Daily — Grocery Store, Ernakulam | Demo</title>
+<meta name="description" content="Neighbourhood grocery store in Ernakulam. Products, prices and WhatsApp + UPI ordering. WYNEX demo.">
+<link rel="canonical" href="https://ajlan69.github.io/wynex/demos/shop/">
+<meta name="theme-color" content="#F2F7EF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FreshKart Daily — Grocery Store, Ernakulam">
+<meta property="og:description" content="Products and WhatsApp + UPI ordering, no commission. WYNEX demo for local shops.">
+<meta property="og:url" content="https://ajlan69.github.io/wynex/demos/shop/">
+<meta property="og:image" content="https://ajlan69.github.io/wynex/assets/img/demo-shop.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2316A34A'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16'%3E🛒%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#F2F7EF;--card:#fff;--ink:#14210F;--muted:#5C6E55;--line:rgba(20,33,15,.12);--green:#16A34A;--green-dark:#15803D;--green-soft:#DCFCE7;--amber:#F59E0B;--sans:'Inter',system-ui,sans-serif;--ease:cubic-bezier(.22,1,.36,1);--r:16px;--gut:clamp(18px,4vw,36px);--max:1020px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:min(var(--max),100% - var(--gut)*2);margin-inline:auto}
+.strip{background:var(--ink);color:#D9F5E2;font-size:.78rem;text-align:center;padding:9px 14px}
+.strip b{color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;position:sticky;top:0;background:rgba(242,247,239,.9);backdrop-filter:blur(12px);z-index:20}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}.logo{width:36px;height:36px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-size:1.2rem}
+.search{flex:1;max-width:340px;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 15px;font-size:.86rem;color:var(--muted)}
+.search input{border:0;outline:0;background:none;font:inherit;flex:1;color:var(--ink)}
+.cartbtn{font:inherit;font-weight:700;font-size:.85rem;background:var(--ink);color:#fff;border:0;border-radius:100px;padding:11px 18px;cursor:pointer}
+.hero{background:linear-gradient(135deg,#14210F,#1E5B2E);color:#fff;border-radius:22px;padding:clamp(22px,4vw,36px);display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;margin-top:12px;overflow:hidden;position:relative}
+.hero::after{content:'🥬';position:absolute;right:18px;bottom:-18px;font-size:7rem;opacity:.2}
+.hero h1{font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.05;letter-spacing:-.03em}
+.hero h1 span{color:#86EFAC}
+.hero p{opacity:.75;font-size:.9rem;margin-top:8px}
+.hero .cta{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:700;font-size:.86rem;border-radius:100px;padding:12px 20px;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-light{background:#fff;color:#14210F}.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:16px 0 4px;scrollbar-width:none}
+.chips button{flex:none;font:inherit;font-size:.8rem;font-weight:600;padding:8px 15px;border-radius:100px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer}
+.chips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;gap:8px}
+.emoji{height:86px;border-radius:12px;display:grid;place-items:center;font-size:2.4rem;background:var(--green-soft)}
+.prod:nth-child(2n) .emoji{background:#FEF3C7}.prod:nth-child(3n) .emoji{background:#DBEAFE}
+.prod h3{font-size:.86rem;line-height:1.35}.prod small{font-size:.75rem;color:var(--muted)}
+.pr{display:flex;align-items:center;justify-content:space-between;margin-top:auto}.pr b{font-size:.95rem}
+.stepper{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:100px;padding:4px 6px}
+.stepper button{width:28px;height:28px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-weight:700;cursor:pointer;font-size:.95rem}
+.stepper button:last-child{background:var(--green)}
+.stepper span{font-weight:700;min-width:18px;text-align:center}
+.addone{font:inherit;font-size:.78rem;font-weight:700;border:1px solid var(--green);color:var(--green-dark);background:#fff;border-radius:100px;padding:8px 14px;cursor:pointer}
+.bar{position:sticky;bottom:12px;margin-top:16px;background:var(--ink);color:#fff;border-radius:18px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.order{font:inherit;font-weight:700;background:var(--green);color:#fff;border:0;border-radius:12px;padding:13px 20px;cursor:pointer;font-size:.88rem}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.trust div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:15px;font-size:.82rem;color:var(--muted)}
+.trust b{display:block;color:var(--ink);font-size:.88rem;margin-bottom:2px}
+footer{padding:24px 0 110px;color:var(--muted);font-size:.76rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:860px){.grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr}.search{display:none}}
+@media(max-width:560px){.grid{grid-template-columns:repeat(2,1fr)}.trust{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<p class="strip">Free delivery above <b>₹499</b> within 4 km · UPI on delivery · Open 7am – 10pm</p>
+<div class="wrap">
+<nav class="nav"><span class="brand"><span class="logo">🛒</span> FreshKart Daily</span><label class="search">🔍 <input id="q" placeholder="Search atta, milk, soap…" oninput="filter()"></label><button class="cartbtn" onclick="send()">Cart · <span id="cc">0</span></button></nav>
+<header class="hero"><div><h1>Your street shop, <span>now on WhatsApp.</span></h1><p>No apps, no commission. Order below — we pack it and a boy brings it home in ~45 minutes.</p><div class="cta"><button class="btn btn-light" onclick="document.getElementById('grid').scrollIntoView({behavior:'smooth'})">Shop now →</button><a class="btn btn-ghost" href="tel:+910000000000">Call the shop</a></div></div><div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:18px;font-size:.85rem"><b>Today's deal</b><br>10% off cleaning essentials.<br>Code on WhatsApp: <b>FRESH10</b><br><br>⭐ 4.7 · 1,200+ families</div></header>
+<nav class="chips"><button class="on" data-f="all">All</button><button data-f="staple">Staples</button><button data-f="dairy">Dairy</button><button data-f="fresh">Veg &amp; fruit</button><button data-f="home">Home</button></nav>
+<div class="grid" id="grid">
+<div class="prod" data-c="staple" data-n="Aashirvaad Atta 10kg"><span class="emoji">🌾</span><h3>Aashirvaad Atta 10kg</h3><small>Staple · 10 kg</small><div class="pr"><b>₹485</b><button class="addone" onclick="ch('Aashirvaad Atta 10kg',485,1,this)">Add +</button></div></div>
+<div class="prod" data-c="staple" data-n="Ponni Rice 5kg"><span class="emoji">🍚</span><h3>Ponni Rice 5kg</h3><small>Staple · 5 kg</small><div class="pr"><b>₹340</b><button class="addone" onclick="ch('Ponni Rice 5kg',340,1,this)">Add +</button></div></div>
+<div class="prod" data-c="dairy" data-n="Milma Milk 500ml"><span class="emoji">🥛</span><h3>Milma Milk 500ml</h3><small>Dairy · daily 6am</small><div class="pr"><b>₹28</b><button class="addone" onclick="ch('Milma Milk 500ml',28,1,this)">Add +</button></div></div>
+<div class="prod" data-c="dairy" data-n="Curd Cup 400g"><span class="emoji">🍶</span><h3>Curd Cup 400g</h3><small>Dairy</small><div class="pr"><b>₹45</b><button class="addone" onclick="ch('Curd Cup 400g',45,1,this)">Add +</button></div></div>
+<div class="prod" data-c="fresh" data-n="Tomato 1kg"><span class="emoji">🍅</span><h3>Tomato 1kg</h3><small>Fresh · today</small><div class="pr"><b>₹36</b><button class="addone" onclick="ch('Tomato 1kg',36,1,this)">Add +</button></div></div>
+<div class="prod" data-c="fresh" data-n="Banana Nendran 1kg"><span class="emoji">🍌</span><h3>Banana Nendran 1kg</h3><small>Fresh</small><div class="pr"><b>₹68</b><button class="addone" onclick="ch('Banana Nendran 1kg',68,1,this)">Add +</button></div></div>
+<div class="prod" data-c="home" data-n="Surf Excel 1kg"><span class="emoji">🧼</span><h3>Surf Excel 1kg</h3><small>Home</small><div class="pr"><b>₹118</b><button class="addone" onclick="ch('Surf Excel 1kg',118,1,this)">Add +</button></div></div>
+<div class="prod" data-c="home" data-n="Tata Salt 1kg"><span class="emoji">🧂</span><h3>Tata Salt 1kg</h3><small>Staple</small><div class="pr"><b>₹28</b><button class="addone" onclick="ch('Tata Salt 1kg',28,1,this)">Add +</button></div></div>
+</div>
+<div class="bar"><div><b id="tot">0 items · ₹0</b><div style="font-size:.75rem;opacity:.7">Pay by UPI on delivery · No minimum</div></div><button class="order" onclick="send()">Order on WhatsApp →</button></div>
+<div class="trust"><div><b>⏱ 45-min delivery</b>Within 4 km, 7am–9pm. Live status on WhatsApp.</div><div><b>💸 No commission prices</b>Shelf price = site price. Monthly list? Send once, repeat.</div><div><b>📍 Ernakulam</b>Convent Rd. Call +91 00000 00000 for bulk/rice bags.</div></div>
+<footer><span>© 2026 FreshKart Daily · Demo persona for illustration</span><span>Demo by WYNEX · Orders via WhatsApp + UPI</span></footer>
+</div>
+<script>
+var cart={};
+function ch(n,p,d,btn){cart[n]=cart[n]||{q:0,p:p};cart[n].q+=d;if(cart[n].q<=0)delete cart[n];render();}
+function render(){var n=0,t=0;for(var k in cart){n+=cart[k].q;t+=cart[k].q*cart[k].p}document.getElementById('cc').textContent=n;document.getElementById('tot').textContent=n+' item'+(n===1?'':'s')+' · ₹'+t;}
+function send(){var k=Object.keys(cart);if(!k.length){alert('Cart is empty — add atta, milk or veggies first.');return}var lines=k.map(function(x){return '• '+x+' × '+cart[x].q+' (₹'+cart[x].q*cart[x].p+')'});var t=k.reduce(function(s,x){return s+cart[x].q*cart[x].p},0);window.open('https://wa.me/910000000000?text='+encodeURIComponent('Hi FreshKart! My order:\n'+lines.join('\n')+'\nTotal: ₹'+t+'\nName: \nAddress: '),'_blank');}
+function filter(){var q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('.prod').forEach(function(p){p.style.display=p.dataset.n.toLowerCase().includes(q)?'flex':'none'})}
+document.querySelectorAll('.chips button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.chips button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');var f=b.dataset.f;document.querySelectorAll('.prod').forEach(function(p){p.style.display=(f==='all'||p.dataset.c===f)?'flex':'none'})})});
+</script>
+<!-- Made by WYNEX — backlink badge (keep on every demo) -->
+<a class="wynex-badge" href="../../#examples" aria-label="Back to WYNEX demos">Made by WYNEX <span aria-hidden="true">→</span></a>
+<style>.wynex-badge{position:fixed;right:16px;bottom:16px;z-index:9000;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:100px;background:rgba(20,33,15,.92);color:#fff;font:500 12px/1.4 Inter,system-ui,sans-serif;text-decoration:none}</style>
+</body>
+</html>

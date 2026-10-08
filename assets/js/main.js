@@ -1,159 +1,58 @@
-/* ==========================================================================
-   WYNEX — main.js
-   Vanilla ES2019, no dependencies, ~5 KB. Every feature degrades gracefully:
-   with JavaScript disabled the page is still fully readable, navigable and
-   the FAQ accordions still work (native <details>).
-
-   To customise: change CONTACT below, or just edit the HTML — every link and
-   value on the page is plain markup and works without this file.
-   ========================================================================== */
+/* WYNEX — slim interactions. Vanilla, no deps. Works without JS (native details, plain links). */
 (function () {
   'use strict';
-
-  /* ------------------------------------------------------- contact details
-     Kept here only for the bits JS has to build itself (mailto body, copy
-     text). The visible links in the HTML are hand-written so they still work
-     if this file never loads.                                              */
-  var CONTACT = {
-    email: 'ajlanabduljlaeel@gmail.com',   /* EDIT */
-    upi: 'ajlanwynex@upi'                   /* EDIT */
-  };
-
-  var $  = function (sel, ctx) { return (ctx || document).querySelector(sel); };
-  var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
-
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Elements waiting to be revealed. Filled by initReveal() further down. */
-  var revealItems = [];
-
-  /* Show a revealed element. The reveal is an animation, not a prerequisite:
-     once the animation window has passed we drop the data-reveal attribute
-     entirely, so [data-reveal] { opacity: 0 } stops matching and the element is
-     visible even if the browser never advanced the transition (throttled or
-     off-screen animation frames). Correctness never depends on the animation. */
-  function revealShow(el) {
-    el.classList.add('is-in');
-    window.setTimeout(function () { el.removeAttribute('data-reveal'); }, 1000);
-  }
-
-  /* Safety net for the reveal animation. IntersectionObserver can miss
-     elements during a fast flick-scroll on a phone; anything that has entered
-     the viewport gets shown here, so no section can ever stay blank. */
-  function revealSweep() {
-    if (!revealItems.length) return;
-    var limit = (window.innerHeight || 800) * 0.92;
-    for (var i = 0; i < revealItems.length; i++) {
-      var el = revealItems[i];
-      if (el.classList.contains('is-in') || !el.hasAttribute('data-reveal')) continue;
-      if (el.getBoundingClientRect().top < limit) revealShow(el);
-    }
-  }
-
-  /* ------------------------------------------------------------- 1. toast */
-  var toastEl = $('#toast');
-  var toastTimer;
-
-  function toast(message) {
-    if (!toastEl) return;
-    toastEl.textContent = message;
-    toastEl.hidden = false;
-    window.clearTimeout(toastTimer);
-    toastTimer = window.setTimeout(function () { toastEl.hidden = true; }, 2800);
-  }
-
-  /* ------------------------------------------------- 2. clipboard helpers */
-  function copyText(text) {
-    if (navigator.clipboard && window.isSecureContext) {
-      return navigator.clipboard.writeText(text);
-    }
-    return new Promise(function (resolve, reject) {
-      var ta = document.createElement('textarea');
-      ta.value = text;
-      ta.setAttribute('readonly', '');
-      ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
-      document.body.appendChild(ta);
-      ta.select();
-      var ok = false;
-      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
-      document.body.removeChild(ta);
-      ok ? resolve() : reject(new Error('copy failed'));
+  /* theme: light default, toggle in hero, remembered */
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  function paintTheme(t) {
+    if (t === 'dark') document.documentElement.dataset.theme = 'dark';
+    else document.documentElement.removeAttribute('data-theme');
+    $$('[data-theme-set]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-theme-set') === t));
     });
+    if (themeMeta) themeMeta.setAttribute('content', t === 'dark' ? '#0d0d10' : '#faf9f5');
   }
-
-  /* "Copy UPI ID" buttons */
-  $$('[data-copy]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var value = btn.getAttribute('data-copy');
-      copyText(value).then(function () {
-        var original = btn.textContent;
-        btn.textContent = btn.getAttribute('data-copied') || 'Copied';
-        toast(value + ' copied to clipboard');
-        window.setTimeout(function () { btn.textContent = original; }, 1800);
-      })['catch'](function () {
-        toast('Copy failed — please note it down manually: ' + value);
-      });
+  var saved = null;
+  try { saved = localStorage.getItem('wynex-theme'); } catch (e) { saved = null; }
+  paintTheme(saved === 'dark' ? 'dark' : 'light');
+  $$('[data-theme-set]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.getAttribute('data-theme-set');
+      try { localStorage.setItem('wynex-theme', t); } catch (e) { /* private mode */ }
+      paintTheme(t);
     });
   });
 
-  /* "Book with UPI" deep links.
-     On Android these open the UPI app; on desktop the OS has no handler, so we
-     quietly put the UPI ID on the clipboard and say so. The click is never
-     cancelled, so mobile apps still open normally. */
-  $$('[data-upi-copy]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      var value = link.getAttribute('data-upi-copy');
-      copyText(value).then(function () {
-        toast('UPI ID copied — complete the payment in your UPI app');
-      })['catch'](function () { /* clipboard blocked: the link still works on mobile */ });
-    });
-  });
-
-  /* --------------------------------------------- 3. sticky header + active nav */
+  /* sticky header + active nav */
   var head = $('.site-head');
-  var navLinks = $$('.nav-list a');
-  var sections = navLinks
-    .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
-    .filter(Boolean);
+  var links = $$('.nav-list a');
+  var secs = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
   var ticking = false;
-
   function onScroll() {
-    if (ticking) return;
-    ticking = true;
+    if (ticking) return; ticking = true;
     window.requestAnimationFrame(function () {
       ticking = false;
-      var y = window.scrollY || window.pageYOffset;
-
+      var y = window.scrollY || 0;
       if (head) head.classList.toggle('is-stuck', y > 8);
-
-      /* the current section is the last one whose top has passed the header */
-      var line = y + (head ? head.offsetHeight : 64) + 24;
-      var current = null;
-      for (var i = 0; i < sections.length; i++) {
-        if (sections[i].offsetTop <= line) current = sections[i];
-      }
-      /* near the bottom of the page the last section wins even if it is short */
-      if (window.innerHeight + y >= document.body.scrollHeight - 2) {
-        current = sections[sections.length - 1] || null;
-      }
-      navLinks.forEach(function (a) {
-        var on = !!current && a.getAttribute('href') === '#' + current.id;
+      var line = y + (head ? head.offsetHeight : 64) + 24, cur = null, i;
+      for (i = 0; i < secs.length; i++) if (secs[i].offsetTop <= line) cur = secs[i];
+      if (window.innerHeight + y >= document.body.scrollHeight - 2) cur = secs[secs.length - 1] || null;
+      links.forEach(function (a) {
+        var on = !!cur && a.getAttribute('href') === '#' + cur.id;
         a.classList.toggle('is-current', on);
-        if (on) { a.setAttribute('aria-current', 'true'); } else { a.removeAttribute('aria-current'); }
+        on ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current');
       });
-
-      revealSweep();
     });
   }
-
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
 
-  /* -------------------------------------------------- 4. mobile navigation */
-  var toggle = $('#navToggle');
-  var nav = $('#nav');
-
+  /* mobile nav */
+  var toggle = $('#navToggle'), nav = $('#nav');
   function setNav(open) {
     if (!toggle || !nav) return;
     toggle.setAttribute('aria-expanded', String(open));
@@ -161,172 +60,36 @@
     nav.classList.toggle('is-open', open);
     document.body.classList.toggle('nav-open', open);
   }
-
   if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      setNav(toggle.getAttribute('aria-expanded') !== 'true');
-    });
-
-    /* close after choosing a destination */
-    $$('a', nav).forEach(function (a) {
-      a.addEventListener('click', function () { setNav(false); });
-    });
-
+    toggle.addEventListener('click', function () { setNav(toggle.getAttribute('aria-expanded') !== 'true'); });
+    $$('a', nav).forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-        setNav(false);
-        toggle.focus();
-      }
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setNav(false); toggle.focus(); }
     });
-
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 820) setNav(false);
-    });
+    window.addEventListener('resize', function () { if (window.innerWidth > 820) setNav(false); });
   }
 
-  /* ------------------------------------------------------ 5. scroll reveal */
-  var GROUPS = [
-    ['.hero .pill', '.hero h1', '.hero .lead', '.hero .btn-row', '.hero .hero-micro'],
-    ['.trustbar .trustbar-list li'],
-    ['#examples .sec-head', '#examples .showcase', '#examples .sub-h', '#examples .concept', '#examples .fine', '#examples .btn-row'],
-    ['#themes .sec-head', '#themes .theme', '#themes .themes-cta'],
-    ['#who .sec-head', '#who .card'],
-    ['#why .sec-head', '#why .benefits > li'],
-    ['#includes .sec-head', '#includes .deliver li', '#includes .btn-row'],
-    ['#process .sec-head', '#process .step'],
-    ['#pricing .sec-head', '#pricing .plan', '#pricing .note'],
-    ['#ownership .ownership-text > *', '#ownership .own-card'],
-    ['#trust .trust > *'],
-    ['#faq .sec-head', '#faq .qa', '#faq .policy'],
-    ['#contact .sec-head', '#contact .cta-box > *', '#contact .form']
-  ];
-
-  function initReveal() {
-    if (reduceMotion || !('IntersectionObserver' in window)) return;
-
-    revealItems = [];
-    var items = revealItems;
-    GROUPS.forEach(function (selectors) {
-      var group = [];
-      selectors.forEach(function (sel) { group = group.concat($$(sel)); });
-      /* de-dupe: an element matched by two selectors is revealed once */
-      group = group.filter(function (el, i) { return group.indexOf(el) === i; });
-      group.forEach(function (el, i) {
-        /* Never hide content that lives inside a collapsed <details>: it has no
-           box while closed, so it would never intersect — and would stay blank
-           after the visitor opens it. Closed disclosures reveal immediately. */
-        if (el.closest('details:not([open])')) return;
-        el.setAttribute('data-reveal', '');
-        el.style.setProperty('--rd', Math.min(i * 0.07, 0.35).toFixed(2) + 's');
-        items.push(el);
-      });
-    });
-
+  /* scroll reveal */
+  function show(el) {
+    el.classList.add('is-in');
+    window.setTimeout(function () { el.removeAttribute('data-reveal'); }, 900);
+  }
+  var items = [];
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    items = $$('[data-reveal]').filter(function (el) { return !el.closest('details:not([open])'); });
+    items.forEach(function (el, i) { el.style.setProperty('--rd', Math.min((i % 4) * 0.06, 0.2).toFixed(2) + 's'); });
     document.documentElement.classList.add('js-reveal');
-
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        revealShow(entry.target);
-        io.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { show(en.target); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
     items.forEach(function (el) { io.observe(el); });
-    revealSweep();
-    window.addEventListener('load', revealSweep);
-  }
-
-  initReveal();
-
-  /* --------------------------------------------------- 6. contact form
-     Static site, no backend: the form validates, then hands a pre-filled
-     message to the visitor's own mail app. Swap this block for a fetch() to
-     Formspree / Web3Forms / your own endpoint when you have one.          */
-  var form = $('#contactForm');
-
-  if (form) {
-    var note = $('#formNote');
-    var defaultNote = note ? note.textContent.trim() : '';
-
-    function fieldError(input, message) {
-      var field = input.closest('.field');
-      var slot = field ? $('.err', field) : null;
-      if (field) field.classList.toggle('has-err', !!message);
-      if (slot) slot.textContent = message || '';
-      input.setAttribute('aria-invalid', message ? 'true' : 'false');
-    }
-
-    function validate(input) {
-      var value = input.value.trim();
-      if (input.hasAttribute('required') && !value) {
-        fieldError(input, 'Please fill this in.');
-        return false;
-      }
-      if (input.type === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
-        fieldError(input, 'Please enter a valid email address.');
-        return false;
-      }
-      if (input.id === 'f-msg' && value && value.length < 10) {
-        fieldError(input, 'A little more detail helps us quote accurately (10+ characters).');
-        return false;
-      }
-      fieldError(input, '');
-      return true;
-    }
-
-    var checked = ['#f-name', '#f-email', '#f-msg'].map(function (s) { return $(s); }).filter(Boolean);
-
-    checked.forEach(function (input) {
-      input.addEventListener('blur', function () { validate(input); });
-      input.addEventListener('input', function () {
-        var field = input.closest('.field');
-        if (field && field.classList.contains('has-err')) validate(input);
-      });
-    });
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var ok = checked.map(validate).every(Boolean);
-      if (!ok) {
-        var firstBad = $('.field.has-err input, .field.has-err textarea', form);
-        if (firstBad) firstBad.focus();
-        if (note) {
-          note.textContent = 'Please fix the highlighted fields and try again.';
-          note.className = 'form-note is-bad';
-        }
-        return;
-      }
-
-      var data = new FormData(form);
-      var subject = 'Portfolio enquiry — ' + (data.get('need') || 'General') + ' — ' + (data.get('name') || '');
-      var body = [
-        'Name: ' + data.get('name'),
-        'Email: ' + data.get('email'),
-        'Interested in: ' + data.get('need'),
-        '',
-        'Project details:',
-        data.get('message'),
-        '',
-        '— Sent from the WYNEX website contact form'
-      ].join('\n');
-
-      if (note) {
-        note.textContent = 'Opening your email app with the message filled in. If nothing happens, email us at ' + CONTACT.email + '.';
-        note.className = 'form-note is-ok';
-      }
-      window.location.href = 'mailto:' + CONTACT.email +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-
-      window.setTimeout(function () {
-        if (note) { note.textContent = defaultNote; note.className = 'form-note'; }
-      }, 12000);
+    window.addEventListener('load', function () {
+      var lim = (window.innerHeight || 800) * 0.94;
+      items.forEach(function (el) { if (el.getBoundingClientRect().top < lim) show(el); });
     });
   }
 
-  /* ------------------------------------------------------------ 7. footer */
-  var year = $('#year');
-  if (year) year.textContent = String(new Date().getFullYear());
+  /* year */
+  var yr = $('#year');
+  if (yr) yr.textContent = String(new Date().getFullYear());
 })();

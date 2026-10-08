@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>root@cybersec:~$ portfolio</title>
+<meta name="description" content="Cybersecurity student portfolio — penetration testing, network defense and OSINT. Interactive terminal included. WYNEX demo.">
+<link rel="canonical" href="https://ajlan69.github.io/wynex/demos/student/">
+<meta name="theme-color" content="#0a0e0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="root@cybersec — Cybersecurity Student Portfolio">
+<meta property="og:description" content="Cybersecurity student portfolio with an interactive terminal. WYNEX demo for students & freshers.">
+<meta property="og:url" content="https://ajlan69.github.io/wynex/demos/student/">
+<meta property="og:image" content="https://ajlan69.github.io/wynex/assets/img/demo-student.svg">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0e0a;
+    --bg2: #0d110d;
+    --green: #00ff41;
+    --cyan: #00d9ff;
+    --magenta: #ff5fd7;
+    --yellow: #ffbd2e;
+    --red: #ff5f56;
+    --muted: #5a8c66;
+    --border: #00ff41;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--green);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0,255,65,0.03) 0px,
+      rgba(0,255,65,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+    z-index: 9998;
+  }
+  #matrix {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+  .mockup-banner {
+    background: var(--yellow);
+    color: #000;
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 100;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(10,14,10,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  nav .brand { color: var(--green); font-weight: bold; letter-spacing: 1px; }
+  nav .brand::before { content: "root@"; color: var(--muted); }
+  nav .brand::after { content: ":~$"; color: var(--muted); }
+  nav ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; }
+  nav a {
+    color: var(--green);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: var(--cyan); text-shadow: 0 0 8px var(--cyan); }
+  nav a::before { content: "./"; color: var(--muted); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 60px 24px; position: relative; z-index: 1; }
+  .hero { text-align: left; padding: 60px 0 40px; }
+  .hero .tag {
+    display: inline-block;
+    border: 1px solid var(--cyan);
+    padding: 4px 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--cyan);
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    color: var(--green);
+    text-shadow: 0 0 20px rgba(0,255,65,0.4);
+  }
+  .hero h1 .accent { color: var(--cyan); }
+  .hero .sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .hero .sub .prompt { color: var(--green); }
+  .hero p.desc {
+    max-width: 620px;
+    margin: 20px 0 30px;
+    font-size: 14px;
+    color: #b8e6c4;
+  }
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border: 1px solid var(--green);
+    background: transparent;
+    color: var(--green);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 3px;
+  }
+  .btn:hover {
+    background: var(--green);
+    color: var(--bg);
+    box-shadow: 0 0 20px rgba(0,255,65,0.5);
+  }
+  .btn.wa { border-color: #25d366; color: #25d366; }
+  .btn.wa:hover { background: #25d366; color: #000; box-shadow: 0 0 20px rgba(37,211,102,0.5); }
+  section { margin: 80px 0; }
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .sec-head .p { color: var(--green); }
+  .sec-head .path { color: var(--cyan); }
+  .sec-head .cmd { color: #fff; }
+  .sec-head h2 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: var(--green);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .sec-head h2::before { content: "# "; color: var(--muted); }
+  .grid { display: grid; gap: 16px; }
+  .grid.g2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .grid.g3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card {
+    background: var(--bg2);
+    border: 1px solid rgba(0,255,65,0.3);
+    padding: 20px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 24px; height: 2px;
+    background: var(--green);
+  }
+  .card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px; height: 24px;
+    background: var(--green);
+  }
+  .card:hover {
+    border-color: var(--green);
+    box-shadow: 0 0 25px rgba(0,255,65,0.15);
+    transform: translateY(-3px);
+  }
+  .card h3 { color: var(--cyan); font-size: 15px; margin-bottom: 8px; letter-spacing: 1px; }
+  .card p, .card li { color: #b8e6c4; font-size: 13px; }
+  .card .meta { color: var(--muted); font-size: 11px; margin-top: 10px; letter-spacing: 1px; }
+  .skill { margin-bottom: 12px; font-size: 13px; }
+  .skill .name { display: flex; justify-content: space-between; color: var(--green); margin-bottom: 4px; }
+  .skill .bar {
+    height: 8px;
+    background: #1a221a;
+    border: 1px solid rgba(0,255,65,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .skill .bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--cyan));
+    width: 0;
+    transition: width 1.2s ease-out;
+  }
+  .terminal-widget {
+    background: #050805;
+    border: 1px solid var(--green);
+    border-radius: 6px;
+    box-shadow: 0 0 40px rgba(0,255,65,0.15), inset 0 0 80px rgba(0,255,65,0.03);
+    overflow: hidden;
+  }
+  .terminal-widget .tb {
+    background: #111611;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--green);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .terminal-widget .tb .dots { display: flex; gap: 6px; }
+  .terminal-widget .tb .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .dot.r { background: #ff5f56; }
+  .dot.y { background: #ffbd2e; }
+  .dot.g { background: #27c93f; }
+  .terminal-widget .tb .t { margin-left: auto; letter-spacing: 1px; }
+  .term-body {
+    padding: 16px;
+    height: 380px;
+    overflow-y: auto;
+    font-size: 13px;
+    line-height: 1.55;
+    scroll-behavior: smooth;
+  }
+  .term-body::-webkit-scrollbar { width: 8px; }
+  .term-body::-webkit-scrollbar-track { background: #0a0e0a; }
+  .term-body::-webkit-scrollbar-thumb { background: rgba(0,255,65,0.4); border-radius: 4px; }
+  .term-line { white-space: pre-wrap; word-break: break-word; }
+  .term-line .p1 { color: var(--green); }
+  .term-line .p2 { color: var(--cyan); }
+  .term-line .muted { color: var(--muted); }
+  .term-line .ok { color: var(--green); }
+  .term-line .warn { color: var(--yellow); }
+  .term-line .err { color: var(--red); }
+  .term-line .cyan { color: var(--cyan); }
+  .term-line .mag { color: var(--magenta); }
+  .term-line a { color: var(--cyan); text-decoration: underline; }
+  .term-input-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border-top: 1px solid rgba(0,255,65,0.25);
+    background: rgba(0,255,65,0.02);
+  }
+  .term-input-line .ps1 { color: var(--green); font-size: 13px; white-space: nowrap; }
+  .term-input-line .ps1 .muted { color: var(--muted); }
+  .term-input-line .ps1 .path { color: var(--cyan); }
+  .term-input-line input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    caret-color: var(--green);
+    min-width: 0;
+  }
+  .term-tips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 16px;
+    border-top: 1px dashed rgba(0,255,65,0.2);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .term-tips .tip {
+    border: 1px solid rgba(0,255,65,0.3);
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .term-tips .tip:hover { background: rgba(0,255,65,0.1); color: var(--green); }
+  .contact-box {
+    border: 1px solid var(--green);
+    padding: 30px;
+    border-radius: 4px;
+    background: var(--bg2);
+    text-align: center;
+  }
+  .contact-box h3 { color: var(--cyan); margin-bottom: 14px; letter-spacing: 2px; }
+  .contact-box .links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+  footer {
+    border-top: 1px solid rgba(0,255,65,0.3);
+    padding: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    position: relative;
+    z-index: 1;
+  }
+  footer .blink { animation: blink 1.2s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .sound-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bg2);
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 8px 14px;
+    font-family: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    z-index: 100;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+  .sound-btn:hover { background: var(--green); color: var(--bg); }
+  @media (max-width: 640px) {
+    .wrap { padding: 40px 16px; }
+    nav { padding: 10px 16px; }
+    nav ul { gap: 12px; font-size: 12px; }
+    .term-body { height: 320px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="mockup-banner">⚠ Mockup Data — Demo Portfolio — Placeholder Content Only ⚠</div>
+
+<nav>
+  <div class="brand">cybersec</div>
+  <ul>
+    <li><a href="#about">about</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#terminal">terminal</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <section class="hero" id="top">
+    <div class="tag">// CYBERSECURITY STUDENT · ETHICAL HACKER</div>
+    <div class="sub"><span class="prompt">visitor@guest</span>:<span style="color:var(--cyan)">~</span>$ ./welcome.sh</div>
+    <h1>Hi, I'm <span class="accent">root_null</span>.</h1>
+    <p class="desc">
+      I break things ethically and secure them properly. Focused on penetration testing,
+      network defense, and OSINT. Currently hunting bugs and building tools that make
+      the internet a little safer.
+    </p>
+    <div class="btns">
+      <a class="btn wa" href="https://wa.me/916238712579?text=Hi%2C%20I%20saw%20your%20portfolio" target="_blank">▶ WhatsApp Me</a>
+      <a class="btn" href="mailto:contact@example.com">✉ Email</a>
+      <a class="btn" href="#terminal">⌨ Open Terminal</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-head">
+      <span class="p">root@cybersec</span><span class="muted">:</span><span class="path">~</span><span class="muted">$</span>
+      <span class="cmd">cat about.md</span>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>whoami</h3>
+        <p>Cybersecurity student based in India. 3+ years of hands-on labs, CTFs, and bug bounty.</p>
+        <p class="meta">// mockup data</p>
+      </div>
+      <div class="card">
+        <h3>mission</h3>
+        <p>Learn offensive security deeply, use it responsibly, and help small teams secure what matters.</p>
+        <p class="meta">// mockup data</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head">
+      <span class="p">root@cybersec</span><span class="muted">:</span><span class="path">~</span><span class="muted">$</span>
+      <span class="cmd">ls skills/</span>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Offensive</h3>
+        <div class="skill"><div class="name"><span>Web App Pentesting</span><span>86%</span></div><div class="bar"><span data-w="86"></span></div></div>
+        <div class="skill"><div class="name"><span>Burp Suite</span><span>80%</span></div><div class="bar"><span data-w="80"></span></div></div>
+        <div class="skill"><div class="name"><span>Metasploit</span><span>75%</span></div><div class="bar"><span data-w="75"></span></div></div>
+        <div class="skill"><div class="name"><span>OSINT</span><span>82%</span></div><div class="bar"><span data-w="82"></span></div></div>
+      </div>
+      <div class="card">
+        <h3>Defensive & Tooling</h3>
+        <div class="skill"><div class="name"><span>Linux / Bash</span><span>90%</span></div><div class="bar"><span data-w="90"></span></div></div>
+        <div class="skill"><div class="name"><span>Python</span><span>85%</span></div><div class="bar"><span data-w="85"></span></div></div>
+        <div class="skill"><div class="name"><span>Networking (TCP/IP)</span><span>88%</span></div><div class="bar"><span data-w="88"></span></div></div>
+        <div class="skill"><div class="name"><span>Nmap / Wireshark</span><span>92%</span></div><div class="bar"><span data-w="92"></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head">
+      <span class="p">root@cybersec</span><span class="muted">:</span><span class="path">~</span><span class="muted">$</span>
+      <span class="cmd">./list_projects --all</span>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <h3>ReconX</h3>
+        <p>Automated recon framework — subdomain enum + port scan + screenshot pipeline.</p>
+        <p class="meta">Python · Nmap · AsyncIO</p>
+      </div>
+      <div class="card">
+        <h3>PhishGuard</h3>
+        <p>ML model detecting phishing URLs with 96% accuracy (mockup dataset).</p>
+        <p class="meta">scikit-learn · Flask</p>
+      </div>
+      <div class="card">
+        <h3>VulnBot</h3>
+        <p>Discord bot that queries CVE databases in real time for quick triage.</p>
+        <p class="meta">Python · NVD API</p>
+      </div>
+      <div class="card">
+        <h3>HomeLab SOC</h3>
+        <p>Self-hosted SOC stack: Wazuh + ELK + Zeek for threat detection practice.</p>
+        <p class="meta">Wazuh · ELK · Docker</p>
+      </div>
+      <div class="card">
+        <h3>CTF Writeups</h3>
+        <p>150+ solved challenges documented with methodology and lessons.</p>
+        <p class="meta">Markdown · Git</p>
+      </div>
+      <div class="card">
+        <h3>PassForge</h3>
+        <p>Password strength auditor + policy generator for small businesses.</p>
+        <p class="meta">Python · CLI</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="terminal">
+    <div class="sec-head">
+      <span class="p">root@cybersec</span><span class="muted">:</span><span class="path">~</span><span class="muted">$</span>
+      <span class="cmd">./interactive_shell</span>
+    </div>
+
+    <div class="terminal-widget">
+      <div class="tb">
+        <div class="dots">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        </div>
+        <span class="t">guest@cybersec: ~ — interactive shell</span>
+      </div>
+      <div class="term-body" id="termBody"></div>
+      <div class="term-input-line" id="termInputLine">
+        <span class="ps1">guest@cybersec<span class="muted">:</span><span class="path">~</span><span class="muted">$</span></span>
+        <input id="termInput" autocomplete="off" spellcheck="false" placeholder="type 'help' and press Enter…" />
+      </div>
+      <div class="term-tips">
+        <span class="tip" data-cmd="help">help</span>
+        <span class="tip" data-cmd="whoami">whoami</span>
+        <span class="tip" data-cmd="skills">skills</span>
+        <span class="tip" data-cmd="projects">projects</span>
+        <span class="tip" data-cmd="contact">contact</span>
+        <span class="tip" data-cmd="scan">scan</span>
+        <span class="tip" data-cmd="banner">banner</span>
+        <span class="tip" data-cmd="clear">clear</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-head">
+      <span class="p">root@cybersec</span><span class="muted">:</span><span class="path">~</span><span class="muted">$</span>
+      <span class="cmd">./contact.sh</span>
+    </div>
+    <div class="contact-box">
+      <h3>[ ESTABLISH SECURE CHANNEL ]</h3>
+      <p style="color:#b8e6c4; font-size:13px;">Open to internships, freelance pentesting gigs, and CTF collabs.</p>
+      <div class="links">
+        <a class="btn wa" href="https://wa.me/916238712579?text=Hi%2C%20I%20saw%20your%20portfolio" target="_blank">▶ WhatsApp</a>
+        <a class="btn" href="mailto:contact@example.com">✉ contact@example.com</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>// end of transmission //</div>
+  <div class="blink">_</div>
+  <div style="margin-top:8px; opacity:0.6;">© 2026 — Mockup portfolio. All data is placeholder.</div>
+</footer>
+
+<button class="sound-btn" id="soundBtn">🔊 SOUND: ON</button>
+
+<script>
+let soundOn = true;
+let audioCtx = null;
+function initAudio() {
+  if (!audioCtx) {
+    try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){}
+  }
+}
+function beep(freq=800, dur=0.03, type='square', vol=0.03) {
+  if (!soundOn || !audioCtx) return;
+  const o = audioCtx.createOscillator();
+  const g = audioCtx.createGain();
+  o.type = type; o.frequency.value = freq;
+  g.gain.value = vol;
+  o.connect(g); g.connect(audioCtx.destination);
+  const t = audioCtx.currentTime;
+  o.start(t);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  o.stop(t + dur);
+}
+function keySound(){ beep(1200 + Math.random()*400, 0.015, 'square', 0.015); }
+function enterSound(){ beep(400, 0.08, 'sawtooth', 0.04); }
+function okSound(){ beep(660,0.06); setTimeout(()=>beep(880,0.08),70); setTimeout(()=>beep(1320,0.1),160); }
+function errSound(){ beep(180,0.15,'sawtooth',0.05); }
+
+const soundBtn = document.getElementById('soundBtn');
+soundBtn.addEventListener('click', (e) => {
+  initAudio();
+  soundOn = !soundOn;
+  soundBtn.textContent = soundOn ? '🔊 SOUND: ON' : '🔇 SOUND: OFF';
+  if (soundOn) beep(1000, 0.06);
+});
+document.body.addEventListener('click', initAudio, { once: true });
+document.body.addEventListener('keydown', initAudio, { once: true });
+
+const canvas = document.getElementById('matrix');
+const mctx = canvas.getContext('2d');
+let cols, drops;
+function resizeMatrix() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  cols = Math.floor(canvas.width / 16);
+  drops = Array(cols).fill(1);
+}
+resizeMatrix();
+window.addEventListener('resize', resizeMatrix);
+const CHARS = "01アイウエオカキクケコサシスセソタチツテトナニヌネノABCDEF#$%&".split("");
+setInterval(() => {
+  mctx.fillStyle = 'rgba(10,14,10,0.08)';
+  mctx.fillRect(0, 0, canvas.width, canvas.height);
+  mctx.fillStyle = '#00ff41';
+  mctx.font = '15px monospace';
+  for (let i = 0; i < drops.length; i++) {
+    const t = CHARS[Math.floor(Math.random()*CHARS.length)];
+    mctx.fillText(t, i*16, drops[i]*16);
+    if (drops[i]*16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+    drops[i]++;
+  }
+}, 60);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.bar span').forEach(el => {
+        el.style.width = el.dataset.w + '%';
+      });
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.card').forEach(c => observer.observe(c));
+
+const termBody = document.getElementById('termBody');
+const termInput = document.getElementById('termInput');
+
+const PROMPT_HTML = `<span class="p1">guest@cybersec</span><span class="muted">:</span><span class="p2">~</span><span class="muted">$</span> `;
+
+let busy = false;
+let history = [];
+let histIdx = -1;
+
+function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+
+function tprint(html) {
+  const div = document.createElement('div');
+  div.className = 'term-line';
+  div.innerHTML = html;
+  termBody.appendChild(div);
+  termBody.scrollTop = termBody.scrollHeight;
+  return div;
+}
+
+async function ttype(html, speed = 10) {
+  const div = document.createElement('div');
+  div.className = 'term-line';
+  termBody.appendChild(div);
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  const plain = tmp.textContent;
+  for (let i = 0; i < plain.length; i++) {
+    div.textContent = plain.slice(0, i+1);
+    if (i % 3 === 0) keySound();
+    await sleep(speed);
+    termBody.scrollTop = termBody.scrollHeight;
+  }
+  div.innerHTML = html;
+  termBody.scrollTop = termBody.scrollHeight;
+}
+
+const CMDS = {
+  help: async () => {
+    tprint(`<span class="ok">Available commands:</span>`);
+    const rows = [
+      ["help", "Show this list"],
+      ["whoami", "About me"],
+      ["skills", "Technical skills"],
+      ["projects", "Security projects"],
+      ["certs", "Certifications"],
+      ["experience", "Work & internships"],
+      ["contact", "Get in touch"],
+      ["scan", "Simulated port scan"],
+      ["banner", "ASCII banner"],
+      ["date", "Current date/time"],
+      ["echo <text>", "Repeat text"],
+      ["clear", "Clear terminal"],
+      ["sudo", "Nice try 😏"],
+    ];
+    for (const [c, d] of rows) {
+      tprint(`  <span class="cyan">${c.padEnd(14)}</span> <span class="muted">— ${d}</span>`);
+      await sleep(40);
+    }
+  },
+  whoami: async () => {
+    tprint(`<span class="p2">┌─[ ABOUT ]──────────────────────────</span>`);
+    tprint(`<span class="p2">│</span> Handle  : root_null`);
+    tprint(`<span class="p2">│</span> Role    : Cybersecurity Student & Ethical Hacker`);
+    tprint(`<span class="p2">│</span> Focus   : Pentesting · Network Security · OSINT`);
+    tprint(`<span class="p2">│</span> Location: India`);
+    tprint(`<span class="p2">└────────────────────────────────────</span>`);
+    tprint(`<span class="muted">* Mockup data for demo only.</span>`);
+  },
+  skills: async () => {
+    tprint(`<span class="ok">[+] Technical Skills</span>`);
+    const bars = [
+      ["Linux / Bash", 90], ["Python", 85], ["Networking", 88],
+      ["Burp Suite", 80], ["Nmap / Wireshark", 92], ["Metasploit", 75],
+    ];
+    for (const [n, v] of bars) {
+      const f = Math.round(v/5);
+      const bar = "█".repeat(f) + "░".repeat(20-f);
+      tprint(`  ${n.padEnd(20)} <span class="cyan">[${bar}]</span> ${v}%`);
+      beep(600 + v*5, 0.02);
+      await sleep(120);
+    }
+  },
+  projects: async () => {
+    tprint(`<span class="ok">[+] Security Projects</span>`);
+    const list = [
+      ["ReconX", "Automated recon framework", "Python · Nmap"],
+      ["PhishGuard", "ML phishing URL detector (96%)", "sklearn · Flask"],
+      ["VulnBot", "Discord CVE lookup bot", "Python · NVD"],
+      ["HomeLab SOC", "Self-hosted SOC w/ Wazuh + ELK", "Docker"],
+      ["CTF Writeups", "150+ solved challenges", "Git"],
+    ];
+    for (const [n, d, s] of list) {
+      tprint(`  <span class="cyan">▸</span> <span style="color:#fff">${n}</span> <span class="muted">— ${d} [${s}]</span>`);
+      await sleep(80);
+    }
+  },
+  certs: async () => {
+    tprint(`<span class="ok">[+] Certifications (Mockup)</span>`);
+    tprint(`  <span class="cyan">✔</span> CompTIA Security+ (SY0-701)`);
+    tprint(`  <span class="cyan">✔</span> eJPT — eLearnSecurity Junior Pentester`);
+    tprint(`  <span class="cyan">✔</span> Google Cybersecurity Professional`);
+    tprint(`  <span class="warn">◐</span> OSCP — in progress…`);
+  },
+  experience: async () => {
+    tprint(`<span class="ok">[+] Experience</span>`);
+    tprint(`  <span class="cyan">2024–now</span>  Security Analyst Intern @ MockCorp`);
+    tprint(`  <span class="muted">    → Triaged 200+ alerts/week.</span>`);
+    tprint(`  <span class="cyan">2023–24</span>   Freelance Pentester (bug bounty)`);
+    tprint(`  <span class="muted">    → 12 valid reports, 3 medium severity.</span>`);
+    tprint(`  <span class="cyan">2022–now</span>  CTF Team Captain @ College Cyber Club`);
+  },
+  contact: async () => {
+    tprint(`<span class="ok">[+] Contact</span>`);
+    tprint(`  <span class="cyan">Email</span>   : <a href="mailto:contact@example.com">contact@example.com</a>`);
+    tprint(`  <span class="cyan">WhatsApp</span>: <a href="https://wa.me/916238712579" target="_blank">+91 62387 12579</a>`);
+    tprint(`  <span class="cyan">PGP</span>     : <span class="muted">0xDEADBEEF (mockup)</span>`);
+  },
+  scan: async () => {
+    tprint(`<span class="warn">[!] Simulated scan on 10.0.0.1 (mockup)</span>`);
+    await sleep(250);
+    const ports = [
+      [22, "ssh", "OpenSSH 8.9"],
+      [80, "http", "nginx 1.24"],
+      [443, "https", "nginx 1.24"],
+      [3306, "mysql", "MySQL 8.0"],
+      [8080, "http-proxy", "unknown"],
+    ];
+    for (const [p, s, v] of ports) {
+      tprint(`  <span class="ok">PORT ${p}/tcp OPEN</span>  <span class="cyan">${s}</span>  <span class="muted">${v}</span>`);
+      beep(700 + p, 0.03);
+      await sleep(250);
+    }
+    tprint(`<span class="ok">[✓] Scan complete. 5 open ports. (mockup)</span>`);
+    okSound();
+  },
+  banner: async () => {
+    const art = `
+ ██████╗██╗   ██╗██████╗ ███████╗██████╗ ███████╗███████╗ ██████╗
+██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝██╔════╝
+██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝███████╗█████╗  ██║
+██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗╚════██║██╔══╝  ██║
+╚██████╗   ██║   ██████╔╝███████╗██║  ██║███████║███████╗╚██████╗
+ ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝`;
+    tprint(`<span style="white-space:pre; font-size:11px; color:var(--green)">${art}</span>`);
+    beep(300,0.1); setTimeout(()=>beep(500,0.1),100); setTimeout(()=>beep(800,0.15),220);
+  },
+  date: async () => {
+    tprint(`<span class="cyan">${new Date().toString()}</span>`);
+  },
+  echo: async (args) => {
+    tprint(`<span style="color:#fff">${args.join(' ')}</span>`);
+  },
+  clear: async () => {
+    termBody.innerHTML = '';
+  },
+  sudo: async () => {
+    tprint(`<span class="err">[sudo] password for guest:</span>`);
+    await sleep(500);
+    tprint(`<span class="err">Sorry, try again.</span>`);
+    await sleep(400);
+    tprint(`<span class="err">sudo: 3 incorrect password attempts</span>`);
+    tprint(`<span class="muted">Nice try though. 😉</span>`);
+    errSound();
+  },
+};
+
+async function runCmd(raw) {
+  const cmd = raw.trim();
+  if (!cmd) return;
+  busy = true;
+  const [name, ...args] = cmd.split(/\s+/);
+  const fn = CMDS[name.toLowerCase()];
+  if (!fn) {
+    tprint(`<span class="err">command not found:</span> <span style="color:#fff">${name}</span> <span class="muted">— type 'help'</span>`);
+    errSound();
+  } else {
+    try { await fn(args); } catch(e) { tprint(`<span class="err">error: ${e.message}</span>`); }
+  }
+  busy = false;
+}
+
+termInput.addEventListener('keydown', async (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    if (busy) return;
+    const cmd = termInput.value;
+    tprint(PROMPT_HTML + `<span style="color:#fff">${escapeHtml(cmd)}</span>`);
+    termInput.value = '';
+    if (cmd.trim()) history.push(cmd.trim());
+    histIdx = history.length;
+    enterSound();
+    await runCmd(cmd);
+    termInput.focus();
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (!history.length) return;
+    histIdx = Math.max(0, histIdx - 1);
+    termInput.value = history[histIdx] || '';
+  } else if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    histIdx = Math.min(history.length, histIdx + 1);
+    termInput.value = history[histIdx] || '';
+  } else if (e.key === 'Tab') {
+    e.preventDefault();
+    const cur = termInput.value;
+    const match = Object.keys(CMDS).find(c => c.startsWith(cur) && c !== cur);
+    if (match) { termInput.value = match; beep(1500,0.015); }
+  } else {
+    keySound();
+  }
+});
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+document.querySelectorAll('.term-tips .tip').forEach(t => {
+  t.addEventListener('click', async () => {
+    if (busy) return;
+    const cmd = t.dataset.cmd;
+    tprint(PROMPT_HTML + `<span style="color:#fff">${cmd}</span>`);
+    enterSound();
+    await runCmd(cmd);
+    termInput.focus();
+  });
+});
+
+(async function boot() {
+  await sleep(400);
+  await ttype(`<span class="cyan">Welcome to my interactive portfolio shell.</span>`, 8);
+  await sleep(150);
+  await ttype(`<span class="muted">Type </span><span class="ok">help</span><span class="muted"> and press Enter, or click a shortcut below.</span>`, 5);
+  termInput.focus();
+})();
+</script>
+
+<!-- Made by WYNEX — backlink badge (keep on every demo) -->
+<a class="wynex-badge" href="../../#examples" aria-label="Back to WYNEX demos">Made by WYNEX <span aria-hidden="true">→</span></a>
+<style>.wynex-badge{position:fixed;right:16px;bottom:16px;z-index:10000;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:100px;background:rgba(5,8,5,.9);color:#00ff41;font:500 12px/1.4 'JetBrains Mono',monospace;letter-spacing:.02em;text-decoration:none;border:1px solid rgba(0,255,65,.4);box-shadow:0 0 20px rgba(0,255,65,.2)}</style>
+</body>
+</html>

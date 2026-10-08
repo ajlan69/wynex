@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumière — Beauty & Hair Studio</title>
+<meta name="description" content="Boutique beauty studio — hair, skin, nails and bridal artistry with WhatsApp booking. WYNEX demo.">
+<link rel="canonical" href="https://ajlan69.github.io/wynex/demos/salon/">
+<meta name="theme-color" content="#fdf6f0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lumière — Beauty & Hair Studio">
+<meta property="og:description" content="Packages, services and WhatsApp booking for a boutique beauty studio. WYNEX demo for salons.">
+<meta property="og:url" content="https://ajlan69.github.io/wynex/demos/salon/">
+<meta property="og:image" content="https://ajlan69.github.io/wynex/assets/img/demo-salon.svg">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #fdf6f0;
+    --blush: #f7d9d9;
+    --rose: #e8b4b8;
+    --deep-rose: #b76e79;
+    --dark-rose: #9a5560;
+    --gold: #c9a24b;
+    --soft-gold: #e0c188;
+    --charcoal: #2b2320;
+    --muted: #8a7a72;
+    --white: #ffffff;
+    --shadow-sm: 0 4px 20px rgba(183,110,121,0.08);
+    --shadow-md: 0 12px 40px rgba(183,110,121,0.15);
+    --shadow-lg: 0 24px 60px rgba(183,110,121,0.22);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .logo { font-family: 'Georgia', serif; font-weight: 400; letter-spacing: 0.5px; }
+
+  /* ---------- Mockup banner ---------- */
+  .mockup-banner {
+    background: var(--deep-rose);
+    color: #fff;
+    text-align: center;
+    font-size: 11px;
+    padding: 7px 10px;
+    letter-spacing: 2px;
+    font-family: -apple-system, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 200;
+  }
+
+  /* ---------- Progress bar ---------- */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--deep-rose));
+    width: 0;
+    z-index: 1000;
+    transition: width 0.15s;
+  }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(253, 246, 240, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--blush);
+    padding: 16px 32px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .logo {
+    font-size: 26px;
+    color: var(--deep-rose);
+    letter-spacing: 3px;
+    font-style: italic;
+    cursor: pointer;
+  }
+  nav .logo::after { content: "✦"; color: var(--gold); font-size: 14px; margin-left: 8px; font-style: normal; }
+  nav ul { list-style: none; display: flex; gap: 32px; align-items: center; }
+  nav a {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: -apple-system, sans-serif;
+    transition: color 0.2s;
+    position: relative;
+  }
+  nav a:hover { color: var(--deep-rose); }
+  nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px; left: 50%;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: all 0.3s;
+    transform: translateX(-50%);
+  }
+  nav a:hover::after { width: 100%; }
+  nav .book-btn {
+    background: var(--deep-rose);
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    font-size: 12px;
+    animation: book-pulse 3s infinite;
+  }
+  nav .book-btn:hover { background: var(--gold); animation: none; }
+  nav .book-btn::after { display: none; }
+  @keyframes book-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(183,110,121,0.5); }
+    50% { box-shadow: 0 0 0 10px rgba(183,110,121,0); }
+  }
+
+  /* ---------- Reveal animations ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.on { opacity: 1; transform: translateY(0); }
+  .reveal.d1 { transition-delay: 0.1s; }
+  .reveal.d2 { transition-delay: 0.2s; }
+  .reveal.d3 { transition-delay: 0.3s; }
+  .reveal.d4 { transition-delay: 0.4s; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    overflow: hidden;
+    background:
+      linear-gradient(135deg, rgba(253,246,240,0.72), rgba(247,217,217,0.5)),
+      url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(253,246,240,0.85) 100%);
+    pointer-events: none;
+  }
+  /* Floating petals */
+  .petal {
+    position: absolute;
+    color: var(--rose);
+    opacity: 0.5;
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+    font-size: 24px;
+  }
+  .petal:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
+  .petal:nth-child(2) { top: 25%; right: 12%; animation-delay: 1.5s; font-size: 18px; }
+  .petal:nth-child(3) { bottom: 22%; left: 14%; animation-delay: 3s; font-size: 30px; }
+  .petal:nth-child(4) { bottom: 30%; right: 10%; animation-delay: 4.5s; }
+  .petal:nth-child(5) { top: 45%; left: 5%; animation-delay: 2s; font-size: 16px; }
+  .petal:nth-child(6) { top: 55%; right: 6%; animation-delay: 3.5s; font-size: 22px; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+    50% { transform: translateY(-30px) rotate(20deg); opacity: 0.9; }
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 780px; }
+  .hero .eyebrow {
+    font-family: -apple-system, sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: var(--deep-rose);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeDown 1s 0.2s forwards;
+  }
+  .hero .eyebrow::before, .hero .eyebrow::after {
+    content: "—— ✦ ——";
+    color: var(--gold);
+    letter-spacing: 0;
+    margin: 0 14px;
+    font-size: 11px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 6vw, 72px);
+    line-height: 1.05;
+    color: var(--charcoal);
+    margin-bottom: 22px;
+    font-style: italic;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.4s forwards;
+  }
+  .hero h1 em { color: var(--deep-rose); font-style: italic; position: relative; }
+  .hero h1 em::after {
+    content: "";
+    position: absolute;
+    bottom: 5px; left: 0;
+    width: 100%; height: 8px;
+    background: var(--soft-gold);
+    opacity: 0.4;
+    z-index: -1;
+  }
+  .hero p {
+    font-size: 17px;
+    color: #5c4f48;
+    max-width: 560px;
+    margin: 0 auto 36px;
+    font-family: -apple-system, sans-serif;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.7s forwards;
+  }
+  .hero .cta-row {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1.2s 1s forwards;
+  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Hero stats */
+  .hero-stats {
+    margin-top: 46px;
+    display: flex; justify-content: center; gap: 46px; flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1.2s 1.3s forwards;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    color: var(--deep-rose);
+    font-style: italic;
+  }
+  .hero-stat .num .suf { color: var(--gold); font-size: 20px; }
+  .hero-stat .lbl {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 34px;
+    font-family: -apple-system, sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary {
+    background: var(--deep-rose);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(183, 110, 121, 0.35);
+  }
+  .btn-primary:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(201, 162, 75, 0.4);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--charcoal);
+    border: 1.5px solid var(--charcoal);
+  }
+  .btn-outline:hover { background: var(--charcoal); color: #fff; }
+  .btn-wa {
+    background: #25d366;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+  }
+  .btn-wa:hover { background: #1ebe5b; transform: translateY(-2px); }
+
+  section { padding: 100px 24px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .sec-head { text-align: center; margin-bottom: 60px; }
+  .sec-head .label {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .sec-head h2 {
+    font-size: clamp(28px, 4vw, 46px);
+    color: var(--charcoal);
+    font-style: italic;
+    line-height: 1.2;
+  }
+  .sec-head h2 em { color: var(--deep-rose); }
+  .sec-head p {
+    max-width: 560px;
+    margin: 16px auto 0;
+    color: var(--muted);
+    font-family: -apple-system, sans-serif;
+    font-weight: 300;
+  }
+
+  /* ---------- Packages (Highlighted) ---------- */
+  #packages {
+    background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+    position: relative;
+  }
+  .packages-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 46px;
+    flex-wrap: wrap;
+  }
+  .tab {
+    font-family: -apple-system, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 11px 26px;
+    border-radius: 30px;
+    border: 1.5px solid var(--blush);
+    background: var(--white);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+  }
+  .tab:hover { border-color: var(--rose); color: var(--deep-rose); }
+  .tab.active {
+    background: var(--deep-rose);
+    color: #fff;
+    border-color: var(--deep-rose);
+    box-shadow: 0 8px 22px rgba(183,110,121,0.35);
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    align-items: stretch;
+  }
+  .pkg {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px 32px;
+    border: 1.5px solid var(--blush);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .pkg::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--rose), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .pkg:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--rose);
+  }
+  .pkg:hover::before { transform: scaleX(1); }
+
+  .pkg.featured {
+    background: linear-gradient(160deg, #fff, #fdf1f1);
+    border-color: var(--gold);
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
+  }
+  .pkg.featured::before { transform: scaleX(1); background: linear-gradient(90deg, var(--gold), var(--deep-rose)); }
+  .pkg.featured:hover { transform: translateY(-10px) scale(1.05); }
+
+  .pkg .ribbon {
+    position: absolute;
+    top: 18px; right: -34px;
+    background: var(--gold);
+    color: #fff;
+    font-family: -apple-system, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 6px 40px;
+    transform: rotate(38deg);
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(201,162,75,0.4);
+  }
+  .pkg .tag {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .pkg h3 {
+    font-size: 28px;
+    color: var(--deep-rose);
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  .pkg .sub {
+    font-family: -apple-system, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 22px;
+  }
+  .pkg .price {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    color: var(--charcoal);
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  .pkg .price .cur { font-size: 22px; color: var(--deep-rose); vertical-align: super; }
+  .pkg .price .was {
+    font-size: 16px;
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-left: 8px;
+    font-family: -apple-system, sans-serif;
+    font-style: normal;
+  }
+  .pkg .save {
+    display: inline-block;
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    background: rgba(37,211,102,0.12);
+    color: #1b8f4a;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    font-weight: 600;
+  }
+  .pkg ul {
+    list-style: none;
+    margin-bottom: 26px;
+    flex-grow: 1;
+  }
+  .pkg ul li {
+    font-family: -apple-system, sans-serif;
+    font-size: 14px;
+    color: #5c4f48;
+    font-weight: 300;
+    padding: 7px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    border-bottom: 1px dashed rgba(183,110,121,0.15);
+  }
+  .pkg ul li:last-child { border-bottom: none; }
+  .pkg ul li::before {
+    content: "✦";
+    color: var(--gold);
+    font-size: 12px;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+  .pkg .btn { width: 100%; justify-content: center; }
+
+  /* ---------- Services ---------- */
+  #services { background: var(--cream); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+  }
+  .service {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+    border: 1px solid var(--blush);
+    position: relative;
+    cursor: pointer;
+  }
+  .service:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--rose);
+  }
+  .service .img {
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s;
+  }
+  .service:hover .img { transform: scale(1.08); }
+  .service .img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(43,35,32,0.5) 100%);
+  }
+  .service .img .overlay-price {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    background: rgba(255,255,255,0.95);
+    color: var(--deep-rose);
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    z-index: 2;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .service .body { padding: 26px; }
+  .service h3 {
+    font-size: 22px;
+    color: var(--deep-rose);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .service p {
+    font-family: -apple-system, sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  .service .dur {
+    font-family: -apple-system, sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .service .book-mini {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--deep-rose);
+    text-decoration: none;
+    border-bottom: 1px solid var(--deep-rose);
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+  .service .book-mini:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* ---------- Gallery with filter ---------- */
+  #gallery { background: var(--white); }
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .filter {
+    font-family: -apple-system, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 9px 22px;
+    border-radius: 30px;
+    border: 1.5px solid var(--blush);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .filter:hover { border-color: var(--rose); color: var(--deep-rose); }
+  .filter.active {
+    background: var(--deep-rose);
+    color: #fff;
+    border-color: var(--deep-rose);
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .gallery-grid .g {
+    height: 300px;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+    cursor: pointer;
+  }
+  .gallery-grid .g::after {
+    content: "✦ View";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(183,110,121,0.55), rgba(201,162,75,0.35));
+    color: #fff;
+    font-family: -apple-system, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .gallery-grid .g:hover { transform: scale(1.04); }
+  .gallery-grid .g:hover::after { opacity: 1; }
+  .gallery-grid .g.hide { display: none; }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(43,35,32,0.92);
+    backdrop-filter: blur(8px);
+    z-index: 900;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .lightbox.on { display: flex; animation: fadeIn 0.3s; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 16px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+  .lightbox .close {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .lightbox .close:hover { background: var(--deep-rose); }
+
+  /* ---------- Why us ---------- */
+  #why { background: linear-gradient(180deg, var(--blush) 0%, var(--cream) 100%); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    text-align: center;
+  }
+  .why-item .icon {
+    width: 76px; height: 76px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: var(--deep-rose);
+    box-shadow: 0 10px 30px rgba(183,110,121,0.15);
+    transition: all 0.4s;
+  }
+  .why-item:hover .icon {
+    transform: translateY(-8px) rotate(-8deg);
+    background: var(--deep-rose);
+    color: #fff;
+    box-shadow: 0 16px 40px rgba(183,110,121,0.4);
+  }
+  .why-item h3 { font-size: 20px; color: var(--charcoal); margin-bottom: 10px; font-style: italic; }
+  .why-item p {
+    font-family: -apple-system, sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  /* ---------- Booking ---------- */
+  #booking { background: var(--white); }
+  .booking-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .booking-img {
+    height: 560px;
+    border-radius: 24px;
+    background: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80') center/cover;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+  }
+  .booking-img::after {
+    content: "✦ ✦ ✦";
+    position: absolute;
+    top: -20px; right: -20px;
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 8px;
+    animation: float 4s ease-in-out infinite;
+  }
+  .booking-form { font-family: -apple-system, sans-serif; }
+  .booking-form h3 {
+    font-family: 'Georgia', serif;
+    font-size: 34px;
+    color: var(--deep-rose);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .booking-form .sub {
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 28px;
+    font-size: 15px;
+  }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .field input, .field select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid var(--blush);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    background: var(--cream);
+    color: var(--charcoal);
+    transition: all 0.2s;
+    outline: none;
+  }
+  .field input:focus, .field select:focus {
+    border-color: var(--deep-rose);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(183,110,121,0.08);
+  }
+  .booking-form .btn { width: 100%; justify-content: center; margin-top: 8px; }
+  .booking-form .note {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 14px;
+    font-weight: 300;
+  }
+
+  /* ---------- Testimonials slider ---------- */
+  #testimonials { background: var(--cream); overflow: hidden; }
+  .testi-wrap { position: relative; }
+  .testi-track {
+    display: flex;
+    gap: 28px;
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+    padding: 6px;
+  }
+  .testi {
+    min-width: 340px;
+    flex-shrink: 0;
+    background: var(--white);
+    padding: 36px 32px;
+    border-radius: 20px;
+    border: 1px solid var(--blush);
+    position: relative;
+    transition: all 0.3s;
+  }
+  .testi:hover { box-shadow: var(--shadow-md); }
+  .testi::before {
+    content: "\201C";
+    position: absolute;
+    top: 10px; left: 22px;
+    font-family: Georgia, serif;
+    font-size: 60px;
+    color: var(--blush);
+    line-height: 1;
+  }
+  .testi .stars { color: var(--gold); margin-bottom: 14px; font-size: 14px; letter-spacing: 3px; }
+  .testi p {
+    font-family: -apple-system, sans-serif;
+    font-size: 14px;
+    color: #5c4f48;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    min-height: 100px;
+  }
+  .testi .who { display: flex; align-items: center; gap: 12px; }
+  .testi .who .av {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--gold);
+  }
+  .testi .who .name { font-family: -apple-system, sans-serif; font-size: 14px; font-weight: 600; color: var(--charcoal); }
+  .testi .who .role { font-family: -apple-system, sans-serif; font-size: 12px; color: var(--muted); }
+
+  .slider-ctrl { display: flex; justify-content: center; gap: 14px; margin-top: 34px; }
+  .slider-btn {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid var(--deep-rose);
+    background: transparent;
+    color: var(--deep-rose);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider-btn:hover { background: var(--deep-rose); color: #fff; transform: scale(1.08); }
+
+  /* ---------- CTA strip ---------- */
+  .cta-strip {
+    background: linear-gradient(135deg, var(--deep-rose), #a95c68);
+    color: #fff;
+    text-align: center;
+    padding: 90px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-strip::before {
+    content: "✦";
+    position: absolute;
+    font-size: 380px;
+    color: rgba(255,255,255,0.06);
+    top: -60px; right: -60px;
+    animation: rotate 30s linear infinite;
+  }
+  @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .cta-strip h2 {
+    font-size: clamp(30px, 4.5vw, 50px);
+    font-style: italic;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .cta-strip p {
+    font-family: -apple-system, sans-serif;
+    font-weight: 300;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    position: relative;
+  }
+  .cta-strip .btn-wa { background: #fff; color: var(--deep-rose); position: relative; }
+  .cta-strip .btn-wa:hover { background: var(--gold); color: #fff; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 60px 24px 30px;
+    text-align: center;
+    font-family: -apple-system, sans-serif;
+    font-size: 13px;
+  }
+  footer .logo {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-style: italic;
+    color: var(--soft-gold);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+  footer .info {
+    display: flex;
+    justify-content: center;
+    gap: 34px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+    color: #c8b9ae;
+    font-weight: 300;
+  }
+  footer .info a { color: #c8b9ae; text-decoration: none; transition: color 0.2s; }
+  footer .info a:hover { color: var(--soft-gold); }
+  footer .copy {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 22px;
+    color: #8a7a72;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .wa-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 62px;
+    height: 62px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(37,211,102,0.45);
+    z-index: 500;
+    transition: all 0.3s;
+    animation: wa-pulse 2.5s infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); background: #1ebe5b; }
+  .wa-float svg { width: 34px; height: 34px; fill: #fff; }
+  @keyframes wa-pulse {
+    0% { box-shadow: 0 10px 30px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.6); }
+    70% { box-shadow: 0 10px 30px rgba(37,211,102,0.45), 0 0 0 18px rgba(37,211,102,0); }
+    100% { box-shadow: 0 10px 30px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0); }
+  }
+  .wa-float .tip {
+    position: absolute;
+    right: 74px;
+    background: var(--charcoal);
+    color: #fff;
+    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-family: -apple-system, sans-serif;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .wa-float:hover .tip { opacity: 1; }
+
+  /* ---------- Sticky mobile booking bar ---------- */
+  .sticky-book {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--white);
+    border-top: 1px solid var(--blush);
+    padding: 12px 16px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 400;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.08);
+    transform: translateY(100%);
+    transition: transform 0.4s;
+  }
+  .sticky-book.on { transform: translateY(0); }
+  .sticky-book .info { font-family: -apple-system, sans-serif; font-size: 13px; color: var(--muted); }
+  .sticky-book .info strong { color: var(--deep-rose); font-weight: 600; }
+  .sticky-book .btn { padding: 11px 22px; font-size: 11px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    nav { padding: 12px 18px; }
+    nav ul li:not(:last-child) { display: none; }
+    nav .logo { font-size: 22px; }
+    .booking-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .booking-img { height: 340px; }
+    section { padding: 70px 20px; }
+    .pkg.featured { transform: scale(1); }
+    .pkg.featured:hover { transform: translateY(-10px) scale(1); }
+    .testi { min-width: 300px; }
+    .sticky-book { display: flex; }
+    .wa-float { bottom: 88px; }
+  }
+  @media (max-width: 480px) {
+    .hero { min-height: 80vh; }
+    .hero .eyebrow { letter-spacing: 3px; font-size: 10px; }
+    .hero .eyebrow::before, .hero .eyebrow::after { display: none; }
+    .btn { padding: 13px 26px; font-size: 12px; }
+    .hero .cta-row { flex-direction: column; align-items: stretch; }
+    .hero-stats { gap: 24px; }
+    .hero-stat .num { font-size: 26px; }
+    .testi { min-width: 260px; padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="mockup-banner">✦ Mockup Demo — Placeholder Content & Images ✦</div>
+
+<nav>
+  <div class="logo" onclick="scrollTo({top:0,behavior:'smooth'})">Lumière</div>
+  <ul>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="https://wa.me/916238712579?text=Hi%20Lumi%C3%A8re%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" class="book-btn">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="petal">✿</span>
+  <span class="petal">✦</span>
+  <span class="petal">❀</span>
+  <span class="petal">✧</span>
+  <span class="petal">✦</span>
+  <span class="petal">✿</span>
+  <div class="hero-inner">
+    <div class="eyebrow">Beauty · Hair · Wellness</div>
+    <h1>Where every <em>woman</em><br/>feels like a masterpiece.</h1>
+    <p>A boutique beauty studio crafted for you — hair, skin, nails, and bridal artistry. Book in seconds on WhatsApp.</p>
+    <div class="cta-row">
+      <a class="btn btn-wa" href="https://wa.me/916238712579?text=Hi%20Lumi%C3%A8re%2C%20I%20want%20to%20book%20an%20appointment" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.93 7.93 0 0 0 3.85 1h.01a7.94 7.94 0 0 0 5.54-13.58zM12.05 18.5h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.6 6.6 0 1 1 5.6 3.09zM12.05 18.5h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.6 6.6 0 1 1 5.6 3.09zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.61.77-.11.13-.22.15-.42.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.1-1.38-.11-.2-.01-.31.09-.41.09-.09.2-.22.3-.33.1-.11.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.44-1.07-.61-1.46-.16-.38-.32-.33-.44-.34-.11-.01-.24-.01-.37-.01-.13 0-.35.05-.53.25-.18.2-.7.68-.7 1.66 0 .98.72 1.93.82 2.06.1.13 1.41 2.16 3.42 3.03.48.21.85.33 1.14.42.48.15.92.13 1.27.08.39-.06 1.17-.48 1.34-.94.16-.46.16-.86.11-.94-.05-.08-.18-.13-.38-.23z"/></svg>
+        Book on WhatsApp
+      </a>
+      <a class="btn btn-outline" href="#packages">See Packages</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num"><span data-count="2400">0</span><span class="suf">+</span></div><div class="lbl">Happy Clients</div></div>
+      <div class="hero-stat"><div class="num"><span data-count="8">0</span><span class="suf">yrs</span></div><div class="lbl">Experience</div></div>
+      <div class="hero-stat"><div class="num"><span data-count="4">0</span><span class="suf">.9★</span></div><div class="lbl">Google Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PACKAGES ======================= -->
+<section id="packages">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="label">Special Packages</div>
+      <h2>Curated <em>offers</em> just for you</h2>
+      <p>Bundle our most-loved services and save up to 35%. Limited slots each week.</p>
+    </div>
+
+    <div class="packages-tabs reveal">
+      <button class="tab active" data-filter="all">All Packages</button>
+      <button class="tab" data-filter="bridal">Bridal</button>
+      <button class="tab" data-filter="glow">Glow</button>
+      <button class="tab" data-filter="pamper">Pamper</button>
+    </div>
+
+    <div class="packages-grid" id="pkgGrid">
+
+      <div class="pkg featured reveal d1" data-cat="bridal">
+        <div class="ribbon">Popular</div>
+        <div class="tag">Bestseller</div>
+        <h3>Bridal Bliss</h3>
+        <div class="sub">Complete wedding-day transformation</div>
+        <div class="price"><span class="cur">₹</span>18,999 <span class="was">₹24,999</span></div>
+        <div class="save">Save ₹6,000</div>
+        <ul>
+          <li>HD Bridal Makeup + Hair Styling</li>
+          <li>Pre-bridal 4-session skin prep</li>
+          <li>Free trial session included</li>
+          <li>On-location service available</li>
+          <li>Complimentary touch-up kit</li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/916238712579?text=Hi%2C%20I%27m%20interested%20in%20the%20Bridal%20Bliss%20package" target="_blank">Book This Package</a>
+      </div>
+
+      <div class="pkg reveal d2" data-cat="glow">
+        <div class="tag">Glow Package</div>
+        <h3>Radiance Ritual</h3>
+        <div class="sub">3-session glow-boost combo</div>
+        <div class="price"><span class="cur">₹</span>4,499 <span class="was">₹6,000</span></div>
+        <div class="save">Save ₹1,500</div>
+        <ul>
+          <li>Hydra-facial (2 sessions)</li>
+          <li>Detan & brightening pack</li>
+          <li>Signature head massage</li>
+          <li>Complimentary nail polish</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/916238712579?text=Hi%2C%20I%27m%20interested%20in%20the%20Radiance%20Ritual%20package" target="_blank">Book This Package</a>
+      </div>
+
+      <div class="pkg reveal d3" data-cat="pamper">
+        <div class="tag">Pamper Package</div>
+        <h3>Queen for a Day</h3>
+        <div class="sub">Half-day luxury pampering</div>
+        <div class="price"><span class="cur">₹</span>6,999 <span class="was">₹9,500</span></div>
+        <div class="save">Save ₹2,500</div>
+        <ul>
+          <li>Hair spa + deep conditioning</li>
+          <li>Luxury manicure & pedicure</li>
+          <li>Full-face cleanup + mask</li>
+          <li>Relaxing shoulder massage</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/916238712579?text=Hi%2C%20I%27m%20interested%20in%20the%20Queen%20for%20a%20Day%20package" target="_blank">Book This Package</a>
+      </div>
+
+      <div class="pkg reveal d1" data-cat="bridal">
+        <div class="tag">Bridal Lite</div>
+        <h3>Engagement Elegance</h3>
+        <div class="sub">For the big yes-day look</div>
+        <div class="price"><span class="cur">₹</span>8,499 <span class="was">₹11,000</span></div>
+        <div class="save">Save ₹2,500</div>
+        <ul>
+          <li>Engagement makeup + hair</li>
+          <li>Saree / lehenga draping</li>
+          <li>Basic jewellery setting</li>
+          <li>Complimentary nail paint</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/916238712579?text=Hi%2C%20I%27m%20interested%20in%20the%20Engagement%20Elegance%20package" target="_blank">Book This Package</a>
+      </div>
+
+      <div class="pkg reveal d2" data-cat="glow">
+        <div class="tag">Glow Lite</div>
+        <h3>Weekend Glow</h3>
+        <div class="sub">Quick refresh before the event</div>
+        <div class="price"><span class="cur">₹</span>2,499 <span class="was">₹3,200</span></div>
+        <div class="save">Save ₹700</div>
+        <ul>
+          <li>Express facial (30 min)</li>
+          <li>Threading (eyebrow + upper lip)</li>
+          <li>Blow-dry styling</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/916238712579?text=Hi%2C%20I%27m%20interested%20in%20the%20Weekend%20Glow%20package" target="_blank">Book This Package</a>
+      </div>
+
+      <div class="pkg reveal d3" data-cat="pamper">
+        <div class="tag">Spa Escape</div>
+        <h3>Herbal Retreat</h3>
+        <div class="sub">Full-body relaxation</div>
+        <div class="price"><span class="cur">₹</span>3,999 <span class="was">₹5,200</span></div>
+        <div class="save">Save ₹1,200</div>
+        <ul>
+          <li>60-min aromatherapy massage</li>
+          <li>Herbal body scrub</li>
+          <li>Hair oil treatment</li>
+          <li>Green tea &amp; refreshments</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/916238712579?text=Hi%2C%20I%27m%20interested%20in%20the%20Herbal%20Retreat%20package" target="_blank">Book This Package</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SERVICES ======================= -->
+<section id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="label">Our Services</div>
+      <h2>Crafted for <em>your</em> glow</h2>
+      <p>From everyday elegance to your once-in-a-lifetime bridal look — every service is personalised.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service reveal d1">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80')">
+          <div class="overlay-price">From ₹1,200</div>
+        </div>
+        <div class="body">
+          <h3>Hair Styling & Color</h3>
+          <p>Cuts, balayage, keratin, and blowouts by senior stylists.</p>
+          <div class="dur">⏱ 60–120 min</div><br/>
+          <a class="book-mini" href="https://wa.me/916238712579?text=Hi%2C%20I%20want%20to%20book%20Hair%20Styling%20%26%20Color" target="_blank">Book this →</a>
+        </div>
+      </div>
+
+      <div class="service reveal d2">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80')">
+          <div class="overlay-price">From ₹1,500</div>
+        </div>
+        <div class="body">
+          <h3>Skin & Facial</h3>
+          <p>Glow facials, hydra-facial, acne care, and bridal skin prep.</p>
+          <div class="dur">⏱ 45–90 min</div><br/>
+          <a class="book-mini" href="https://wa.me/916238712579?text=Hi%2C%20I%20want%20to%20book%20a%20Facial" target="_blank">Book this →</a>
+        </div>
+      </div>
+
+      <div class="service reveal d3">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80')">
+          <div class="overlay-price">From ₹800</div>
+        </div>
+        <div class="body">
+          <h3>Nails & Manicure</h3>
+          <p>Gel, extensions, nail art, and luxurious spa manicures.</p>
+          <div class="dur">⏱ 45–90 min</div><br/>
+          <a class="book-mini" href="https://wa.me/916238712579?text=Hi%2C%20I%20want%20to%20book%20Nails%20%26%20Manicure" target="_blank">Book this →</a>
+        </div>
+      </div>
+
+      <div class="service reveal d4">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80')">
+          <div class="overlay-price">From ₹15,000</div>
+        </div>
+        <div class="body">
+          <h3>Bridal Makeup</h3>
+          <p>HD & airbrush bridal packages with trial session included.</p>
+          <div class="dur">⏱ 3–4 hrs</div><br/>
+          <a class="book-mini" href="https://wa.me/916238712579?text=Hi%2C%20I%20want%20to%20enquire%20about%20Bridal%20Makeup" target="_blank">Enquire →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= GALLERY ======================= -->
+<section id="gallery">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="label">Our Work</div>
+      <h2>Moments of <em>transformation</em></h2>
+    </div>
+
+    <div class="filters reveal">
+      <button class="filter active" data-f="all">All</button>
+      <button class="filter" data-f="bridal">Bridal</button>
+      <button class="filter" data-f="hair">Hair</button>
+      <button class="filter" data-f="skin">Skin</button>
+      <button class="filter" data-f="nails">Nails</button>
+    </div>
+
+    <div class="gallery-grid reveal" id="galGrid">
+      <div class="g" data-cat="bridal" data-full="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1400&q=80" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=80')"></div>
+      <div class="g" data-cat="hair" data-full="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1400&q=80" style="background-image:url('https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=80')"></div>
+      <div class="g" data-cat="skin" data-full="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=80" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80')"></div>
+      <div class="g" data-cat="nails" data-full="https://images.unsplash.com/photo-1503236823255-94609f598e71?auto=format&fit=crop&w=1400&q=80" style="background-image:url('https://images.unsplash.com/photo-1503236823255-94609f598e71?auto=format&fit=crop&w=700&q=80')"></div>
+      <div class="g" data-cat="bridal" data-full="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=1400&q=80" style="background-image:url('https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=700&q=80')"></div>
+      <div class="g" data-cat="hair" data-full="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=1400&q=80" style="background-image:url('https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=700&q=80')"></div>
+      <div class="g" data-cat="skin" data-full="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1400&q=80" style="background-image:url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80')"></div>
+      <div class="g" data-cat="nails" data-full="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=1400&q=80" style="background-image:url('https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=700&q=80')"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="close" id="lbClose">✕</button>
+  <img src="" alt="Gallery preview" id="lbImg" />
+</div>
+
+<!-- ======================= WHY US ======================= -->
+<section id="why">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="label">Why Lumière</div>
+      <h2>A studio you can <em>trust</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal d1">
+        <div class="icon">✦</div>
+        <h3>Premium Products</h3>
+        <p>We use only globally trusted, cruelty-free brands on every client.</p>
+      </div>
+      <div class="why-item reveal d2">
+        <div class="icon">❤</div>
+        <h3>Hygiene First</h3>
+        <p>Sanitised tools, single-use kits, and spotless stations — always.</p>
+      </div>
+      <div class="why-item reveal d3">
+        <div class="icon">✿</div>
+        <h3>Personalised Care</h3>
+        <p>Every session begins with a consultation — no one-size-fits-all.</p>
+      </div>
+      <div class="why-item reveal d4">
+        <div class="icon">✧</div>
+        <h3>Senior Artists</h3>
+        <p>Trained stylists with 5+ years of experience in bridal and editorial work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BOOKING ======================= -->
+<section id="booking">
+  <div class="container">
+    <div class="booking-wrap">
+      <div class="booking-img reveal"></div>
+      <div class="booking-form reveal d2">
+        <h3>Book your slot</h3>
+        <p class="sub">Fill this in — we'll confirm instantly on WhatsApp.</p>
+        <div class="field">
+          <label>Your Name</label>
+          <input type="text" id="bName" placeholder="e.g. Ananya" />
+        </div>
+        <div class="field">
+          <label>Service / Package</label>
+          <select id="bService">
+            <option>Bridal Bliss Package</option>
+            <option>Radiance Ritual Package</option>
+            <option>Queen for a Day Package</option>
+            <option>Engagement Elegance Package</option>
+            <option>Weekend Glow Package</option>
+            <option>Herbal Retreat Package</option>
+            <option>Hair Styling & Color</option>
+            <option>Skin & Facial</option>
+            <option>Nails & Manicure</option>
+            <option>Other / Consultation</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Preferred Date</label>
+          <input type="date" id="bDate" />
+        </div>
+        <div class="field">
+          <label>Preferred Time</label>
+          <input type="time" id="bTime" />
+        </div>
+        <button class="btn btn-wa" onclick="bookOnWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.93 7.93 0 0 0 3.85 1h.01a7.94 7.94 0 0 0 5.54-13.58zM12.05 18.5h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.6 6.6 0 1 1 5.6 3.09z"/></svg>
+          Confirm on WhatsApp
+        </button>
+        <p class="note">Or message us directly — replies within minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= TESTIMONIALS SLIDER ======================= -->
+<section id="testimonials">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="label">Kind Words</div>
+      <h2>Loved by <em>our clients</em></h2>
+    </div>
+    <div class="testi-wrap reveal">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p>My bridal makeup was absolutely flawless — it lasted the entire day without a touch-up. The team made me feel so calm and pampered.</p>
+          <div class="who">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80')"></div>
+            <div><div class="name">Aarohi Menon</div><div class="role">Bridal Client</div></div>
+          </div>
+        </div>
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p>Best balayage I've had in years. The stylist actually listened to what I wanted instead of doing a template cut. Obsessed.</p>
+          <div class="who">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80')"></div>
+            <div><div class="name">Sneha Kapoor</div><div class="role">Regular Client</div></div>
+          </div>
+        </div>
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p>The cleanliness and attention to detail is unmatched. Booking on WhatsApp took me literally 30 seconds. Loved every minute.</p>
+          <div class="who">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80')"></div>
+            <div><div class="name">Riya Sharma</div><div class="role">Facial & Nails</div></div>
+          </div>
+        </div>
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p>The Radiance Ritual package saved me so much. Glowing skin for my sister's wedding — everyone kept asking what I did!</p>
+          <div class="who">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=200&q=80')"></div>
+            <div><div class="name">Meera Iyer</div><div class="role">Glow Package</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-ctrl">
+        <button class="slider-btn" id="prevBtn">←</button>
+        <button class="slider-btn" id="nextBtn">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CTA STRIP ======================= -->
+<div class="cta-strip">
+  <h2>Ready for your glow-up?</h2>
+  <p>Message us on WhatsApp and lock your slot today.</p>
+  <a class="btn btn-wa" href="https://wa.me/916238712579?text=Hi%20Lumi%C3%A8re%2C%20I%20want%20to%20book%20an%20appointment" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.93 7.93 0 0 0 3.85 1h.01a7.94 7.94 0 0 0 5.54-13.58zM12.05 18.5h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.6 6.6 0 1 1 5.6 3.09z"/></svg>
+    Chat on WhatsApp
+  </a>
+</div>
+
+<!-- ======================= FOOTER ======================= -->
+<footer>
+  <div class="logo">Lumière</div>
+  <div class="info">
+    <span>📍 Kochi, Kerala</span>
+    <span>🕐 Mon–Sun · 9am – 9pm</span>
+    <a href="https://wa.me/916238712579" target="_blank">📞 +91 62387 12579</a>
+  </div>
+  <div class="copy">© 2026 Lumière Beauty Studio · Mockup Demo — Placeholder Data</div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/916238712579?text=Hi%20Lumi%C3%A8re%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" aria-label="WhatsApp">
+  <span class="tip">Chat with us</span>
+  <svg viewBox="0 0 24 24"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.93 7.93 0 0 0 3.85 1h.01a7.94 7.94 0 0 0 5.54-13.58zM12.05 18.5h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.6 6.6 0 1 1 5.6 3.09zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.61.77-.11.13-.22.15-.42.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.1-1.38-.11-.2-.01-.31.09-.41.09-.09.2-.22.3-.33.1-.11.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.44-1.07-.61-1.46-.16-.38-.32-.33-.44-.34-.11-.01-.24-.01-.37-.01-.13 0-.35.05-.53.25-.18.2-.7.68-.7 1.66 0 .98.72 1.93.82 2.06.1.13 1.41 2.16 3.42 3.03.48.21.85.33 1.14.42.48.15.92.13 1.27.08.39-.06 1.17-.48 1.34-.94.16-.46.16-.86.11-.94-.05-.08-.18-.13-.38-.23z"/></svg>
+</a>
+
+<!-- Sticky mobile book bar -->
+<div class="sticky-book" id="stickyBook">
+  <div class="info">✦ <strong>Save up to 35%</strong> on packages</div>
+  <a class="btn btn-wa" href="https://wa.me/916238712579?text=Hi%20Lumi%C3%A8re%2C%20I%20want%20to%20book%20an%20appointment" target="_blank">Book</a>
+</div>
+
+<script>
+/* ============================================================
+   PROGRESS BAR
+============================================================ */
+const progressBar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  progressBar.style.width = scrolled + '%';
+});
+
+/* ============================================================
+   REVEAL ON SCROLL
+============================================================ */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ============================================================
+   COUNTER ANIMATION
+============================================================ */
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = parseInt(el.dataset.count);
+      const dur = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased).toLocaleString();
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      counterObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+/* ============================================================
+   PACKAGE FILTER TABS
+============================================================ */
+document.querySelectorAll('.packages-tabs .tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.packages-tabs .tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const f = tab.dataset.filter;
+    document.querySelectorAll('#pkgGrid .pkg').forEach(pkg => {
+      const match = f === 'all' || pkg.dataset.cat === f;
+      pkg.style.display = match ? 'flex' : 'none';
+      if (match) {
+        pkg.style.animation = 'none';
+        pkg.offsetHeight;
+        pkg.style.animation = 'fadeUp 0.5s forwards';
+      }
+    });
+  });
+});
+
+/* ============================================================
+   GALLERY FILTER + LIGHTBOX
+============================================================ */
+document.querySelectorAll('.filter').forEach(f => {
+  f.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(x => x.classList.remove('active'));
+    f.classList.add('active');
+    const cat = f.dataset.f;
+    document.querySelectorAll('#galGrid .g').forEach(g => {
+      const match = cat === 'all' || g.dataset.cat === cat;
+      g.classList.toggle('hide', !match);
+    });
+  });
+});
+
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+document.querySelectorAll('#galGrid .g').forEach(g => {
+  g.addEventListener('click', () => {
+    lbImg.src = g.dataset.full || g.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/)[1];
+    lightbox.classList.add('on');
+  });
+});
+document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('on'));
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('on'); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('on'); });
+
+/* ============================================================
+   TESTIMONIALS SLIDER
+============================================================ */
+const track = document.getElementById('testiTrack');
+let idx = 0;
+function visibleCount() {
+  const w = window.innerWidth;
+  if (w < 600) return 1;
+  if (w < 1000) return 2;
+  return 3;
+}
+function updateSlider() {
+  const cards = track.children;
+  const cardW = cards[0].offsetWidth + 28;
+  const maxIdx = Math.max(0, cards.length - visibleCount());
+  if (idx > maxIdx) idx = maxIdx;
+  if (idx < 0) idx = 0;
+  track.style.transform = `translateX(-${idx * cardW}px)`;
+}
+document.getElementById('nextBtn').addEventListener('click', () => {
+  const max = track.children.length - visibleCount();
+  idx = idx >= max ? 0 : idx + 1;
+  updateSlider();
+});
+document.getElementById('prevBtn').addEventListener('click', () => {
+  const max = track.children.length - visibleCount();
+  idx = idx <= 0 ? max : idx - 1;
+  updateSlider();
+});
+window.addEventListener('resize', updateSlider);
+setInterval(() => {
+  const max = track.children.length - visibleCount();
+  idx = idx >= max ? 0 : idx + 1;
+  updateSlider();
+}, 6000);
+
+/* ============================================================
+   STICKY MOBILE BOOK BAR
+============================================================ */
+const stickyBook = document.getElementById('stickyBook');
+const heroEl = document.querySelector('.hero');
+const stickyObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) stickyBook.classList.remove('on');
+    else stickyBook.classList.add('on');
+  });
+}, { threshold: 0.05 });
+stickyObs.observe(heroEl);
+
+/* ============================================================
+   BOOK ON WHATSAPP
+============================================================ */
+function bookOnWhatsApp() {
+  const name = document.getElementById('bName').value.trim();
+  const service = document.getElementById('bService').value;
+  const date = document.getElementById('bDate').value;
+  const time = document.getElementById('bTime').value;
+
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!date) { alert('Please pick a date.'); return; }
+  if (!time) { alert('Please pick a time.'); return; }
+
+  const msg =
+    `Hi Lumière ✨%0A` +
+    `I would like to book an appointment.%0A%0A` +
+    `👤 Name: ${encodeURIComponent(name)}%0A` +
+    `💅 Service: ${encodeURIComponent(service)}%0A` +
+    `📅 Date: ${encodeURIComponent(date)}%0A` +
+    `🕐 Time: ${encodeURIComponent(time)}`;
+
+  window.open(`https://wa.me/916238712579?text=${msg}`, '_blank');
+}
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+<!-- Made by WYNEX — backlink badge (keep on every demo) -->
+<a class="wynex-badge" href="../../demos.html" aria-label="Back to WYNEX demos">Made by WYNEX <span aria-hidden="true">→</span></a>
+<style>.wynex-badge{position:fixed;right:16px;bottom:16px;z-index:1000;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:100px;background:rgba(43,35,32,.92);color:#fdf6f0;font:500 12px/1.4 Georgia,serif;letter-spacing:.06em;text-decoration:none;border:1px solid rgba(201,162,75,.6);box-shadow:0 8px 24px -10px rgba(0,0,0,.5)}</style>
+</body>
+</html>

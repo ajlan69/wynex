@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="WYNEX — custom portfolio websites">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="WYNEX — one link for your CV, Instagram and clients">
   <rect width="1200" height="630" fill="#0c0e13"/>
   <g font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
     <text x="80" y="150" fill="#7b8393" font-size="22" letter-spacing="6">WYNEX</text>
-    <text x="80" y="250" fill="#fbfbfc" font-size="62" font-weight="700">Custom Portfolio Websites</text>
-    <text x="80" y="330" fill="#fbfbfc" font-size="62" font-weight="700">for Students, Creators</text>
-    <text x="80" y="410" fill="#fbfbfc" font-size="62" font-weight="700">&amp; Professionals</text>
-    <text x="80" y="500" fill="#9db0ff" font-size="34">Get your portfolio in 48 hours. Starting ₹1,999.</text>
+    <text x="80" y="255" fill="#fbfbfc" font-size="66" font-weight="700">One link for your CV,</text>
+    <text x="80" y="335" fill="#fbfbfc" font-size="66" font-weight="700">Instagram and clients.</text>
+    <text x="80" y="425" fill="#9db0ff" font-size="36">Starter from ₹1,999 · targeted in 48 hours</text>
+    <text x="80" y="480" fill="#7b8393" font-size="26">Kerala · serving clients across India · pay after your written scope</text>
   </g>
 </svg>

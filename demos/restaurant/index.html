@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thalassery Table — Kerala Kitchen, Kozhikode | Demo</title>
+<meta name="description" content="Kerala restaurant in Kozhikode. Table-QR menu with order-over-WhatsApp. WYNEX demo.">
+<link rel="canonical" href="https://ajlan69.github.io/wynex/demos/restaurant/">
+<meta name="theme-color" content="#171208">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thalassery Table — Kerala Kitchen, Kozhikode">
+<meta property="og:description" content="Scan, pick, order on WhatsApp. WYNEX demo for restaurants.">
+<meta property="og:url" content="https://ajlan69.github.io/wynex/demos/restaurant/">
+<meta property="og:image" content="https://ajlan69.github.io/wynex/assets/img/demo-restaurant.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23D97706'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16'%3E🍽%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#171208;--bg2:#211A0D;--card:#241C0E;--card2:#2C2311;--ink:#FFF7E8;--muted:#C9B895;--line:rgba(255,247,232,.13);--amber:#F59E0B;--amber2:#FCD34D;--green:#4ADE80;--red:#F87171;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--ease:cubic-bezier(.22,1,.36,1);--r:16px;--gut:clamp(18px,4vw,36px);--max:1020px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:radial-gradient(1000px 500px at 50% -10%,rgba(245,158,11,.16),transparent),var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:min(var(--max),100% - var(--gut)*2);margin-inline:auto}
+.top{text-align:center;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:10px;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:12px}
+.brand{font-family:var(--serif);font-size:1.4rem;font-weight:700}.brand em{color:var(--amber2);font-style:italic}
+.pill{font-size:.72rem;border:1px solid var(--line);border-radius:100px;padding:7px 13px;color:var(--muted)}
+.hero{text-align:center;padding:26px 0 6px}
+.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,6.5vw,4rem);line-height:1;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--amber2)}
+.hero p{color:var(--muted);margin:12px auto 0;max-width:52ch;font-size:.95rem}
+.meta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.meta span{font-size:.75rem;border:1px solid var(--line);background:var(--card);padding:6px 12px;border-radius:100px;color:var(--muted)}
+.cats{display:flex;gap:8px;justify-content:flex-start;overflow-x:auto;padding:18px 0 4px;scrollbar-width:none}
+.cats button{flex:none;font:inherit;font-size:.82rem;font-weight:600;padding:9px 16px;border-radius:100px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer}
+.cats button.on{background:var(--amber);border-color:var(--amber);color:#231603}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.dish{display:flex;justify-content:space-between;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px}
+.dish h3{font-size:.95rem;display:flex;align-items:center;gap:8px}
+.dot{width:11px;height:11px;border-radius:50%;flex:none;border:1.5px solid}.veg{border-color:var(--green);position:relative}.veg::after{content:'';position:absolute;inset:2px;border-radius:50%;background:var(--green)}.nonveg{border-color:var(--red);position:relative}.nonveg::after{content:'';position:absolute;inset:2px;background:var(--red);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.dish p{font-size:.8rem;color:var(--muted);margin-top:3px}
+.price{font-weight:700;white-space:nowrap}
+.add{margin-top:10px;font:inherit;font-size:.78rem;font-weight:700;padding:8px 14px;border-radius:100px;background:transparent;border:1px solid var(--amber);color:var(--amber2);cursor:pointer;transition:.25s}
+.add:hover{background:var(--amber);color:#231603}
+.add.in{background:var(--amber);color:#231603}
+.bar{position:sticky;bottom:12px;margin-top:18px;background:#FFF7E8;color:#231603;border-radius:18px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 20px 50px -20px rgba(0,0,0,.7)}
+.bar b{font-size:.95rem}.bar small{display:block;font-size:.75rem;opacity:.7}
+.order{font:inherit;font-weight:700;font-size:.88rem;background:#15803D;color:#fff;border:0;border-radius:12px;padding:13px 20px;cursor:pointer}
+.info{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:18px}
+.info div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;font-size:.84rem;color:var(--muted)}
+.info b{display:block;color:var(--ink);margin-bottom:4px;font-size:.9rem}
+footer{padding:26px 0 110px;color:var(--muted);font-size:.76rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:760px){.menu{grid-template-columns:1fr}.info{grid-template-columns:1fr}.pill{display:none}}
+</style>
+</head>
+<body>
+<p class="top">📍 Kozhikode · Open 11am – 11pm · Table QR menu — no app needed</p>
+<div class="wrap">
+<nav class="nav"><span class="brand">Thalassery <em>Table</em></span><span class="pill">Table No. 7 · scan-to-order demo</span></nav>
+<header class="hero"><h1>Sadhya soul, <em>served fast.</em></h1><p>Pick below, tap <b style="color:#fff">Add</b>, then send the whole order to our kitchen on WhatsApp. Pay at the table by UPI.</p><div class="meta"><span>⭐ 4.6 · 2,000+ reviews</span><span>🛵 Swiggy + direct</span><span>🌱 Veg + non-veg</span></div></header>
+<nav class="cats" aria-label="Menu categories"><button class="on" data-f="all">All</button><button data-f="meals">Meals</button><button data-f="biryani">Biryani</button><button data-f="snacks">Snacks</button><button data-f="drinks">Drinks</button></nav>
+<div class="menu" id="menu">
+<div class="dish" data-c="meals"><div><h3><span class="dot veg"></span>Kerala meals</h3><p>Rice, sambar, avial, thoran, pickle, pappadam.</p><button class="add" data-n="Kerala meals" data-p="120">Add · ₹120</button></div><span class="price">₹120</span></div>
+<div class="dish" data-c="meals"><div><h3><span class="dot veg"></span>Fish curry meals</h3><p>Meals + ayala curry, fry &amp; extra chapati.</p><button class="add" data-n="Fish curry meals" data-p="180">Add · ₹180</button></div><span class="price">₹180</span></div>
+<div class="dish" data-c="biryani"><div><h3><span class="dot nonveg"></span>Thalassery chicken biryani</h3><p>Our signature. Raitha, pickle &amp; sweet included.</p><button class="add" data-n="Chicken biryani" data-p="160">Add · ₹160</button></div><span class="price">₹160</span></div>
+<div class="dish" data-c="biryani"><div><h3><span class="dot nonveg"></span>Beef biryani</h3><p>Slow-cooked, Friday–Sunday only.</p><button class="add" data-n="Beef biryani" data-p="190">Add · ₹190</button></div><span class="price">₹190</span></div>
+<div class="dish" data-c="snacks"><div><h3><span class="dot veg"></span>Pazham pori (4 pc)</h3><p>Evening classic with hot chai.</p><button class="add" data-n="Pazham pori" data-p="60">Add · ₹60</button></div><span class="price">₹60</span></div>
+<div class="dish" data-c="snacks"><div><h3><span class="dot nonveg"></span>Chicken 65</h3><p>Curry leaves, red chillies, lemon.</p><button class="add" data-n="Chicken 65" data-p="170">Add · ₹170</button></div><span class="price">₹170</span></div>
+<div class="dish" data-c="drinks"><div><h3><span class="dot veg"></span>Sulaimani (2)</h3><p>Black tea, lemon, mint after biryani.</p><button class="add" data-n="Sulaimani" data-p="40">Add · ₹40</button></div><span class="price">₹40</span></div>
+<div class="dish" data-c="drinks"><div><h3><span class="dot veg"></span>Tender coconut payasam</h3><p>Our dessert. Ask for it chilled.</p><button class="add" data-n="Payasam" data-p="90">Add · ₹90</button></div><span class="price">₹90</span></div>
+</div>
+<div class="bar"><div><b id="count">0 items · ₹0</b><small>Table 7 · order goes to kitchen WhatsApp</small></div><button class="order" onclick="sendOrder()">Send order →</button></div>
+<div class="info"><div><b>Hours</b>11am–3:30pm meals<br>4–11pm full menu</div><div><b>Bulk &amp; party</b>Sadhya from ₹150/plate.<br><a href="https://wa.me/910000000000" style="color:var(--amber2)">Quote on WhatsApp →</a></div><div><b>Find us</b>SM Street, Kozhikode<br><a href="tel:+910000000000" style="color:var(--amber2)">Call the counter →</a></div></div>
+<footer><span>© 2026 Thalassery Table · Demo persona for illustration</span><span>Demo by WYNEX · Orders via WhatsApp</span></footer>
+</div>
+<script>
+var cart={};
+document.querySelectorAll('.add').forEach(function(b){b.addEventListener('click',function(){var n=b.dataset.n,p=+b.dataset.p;cart[n]=cart[n]||{q:0,p:p};cart[n].q++;b.classList.add('in');b.textContent='Added × '+cart[n].q;render();})});
+document.querySelectorAll('.cats button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.cats button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');var f=b.dataset.f;document.querySelectorAll('.dish').forEach(function(d){d.style.display=(f==='all'||d.dataset.c===f)?'flex':'none'})})});
+function render(){var n=0,t=0;for(var k in cart){n+=cart[k].q;t+=cart[k].q*cart[k].p}document.getElementById('count').textContent=n+' item'+(n===1?'':'s')+' · ₹'+t;}
+function sendOrder(){var keys=Object.keys(cart);if(!keys.length){alert('Add something first — try the biryani.');return}var lines=keys.map(function(k){return '• '+k+' × '+cart[k].q+' (₹'+(cart[k].q*cart[k].p)+')'});var total=keys.reduce(function(s,k){return s+cart[k].q*cart[k].p},0);window.open('https://wa.me/910000000000?text='+encodeURIComponent('Hi! Table 7 order:\n'+lines.join('\n')+'\nTotal: ₹'+total),'_blank');}
+</script>
+<!-- Made by WYNEX — backlink badge (keep on every demo) -->
+<a class="wynex-badge" href="../../#examples" aria-label="Back to WYNEX demos">Made by WYNEX <span aria-hidden="true">→</span></a>
+<style>.wynex-badge{position:fixed;right:16px;bottom:16px;z-index:9000;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:100px;background:rgba(255,247,232,.94);color:#231603;font:600 12px/1.4 Inter,system-ui,sans-serif;text-decoration:none;border:1px solid rgba(0,0,0,.1)}</style>
+</body>
+</html>

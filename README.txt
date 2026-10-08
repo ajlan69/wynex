@@ -1,4 +1,4 @@
-WYNEX portfolio-business landing page
+﻿WYNEX portfolio-business landing page
 
 How to use:
 1. Open index.html in a browser.
